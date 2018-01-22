@@ -60,12 +60,11 @@ public class CalendarStuff {
    *  NOTE: this is optional, but suggested
    */
    private static int[]    days        = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
-
   /**
    * The constructor for the class
    */
    public CalendarStuff () {
-      System.out.println( "Constructor called..." );  // replace this with the actual code
+      System.out.println( "Constructor called..." );  // REAPLACE THIS WITH ACTUAL CODE
    }
 
   /**
@@ -75,8 +74,7 @@ public class CalendarStuff {
    * @return         boolean which is true if the parameter is a leap year
    */
    public static boolean isLeapYear( long year ) {
-
-      return true;  // replace this with the actual code
+      return ((year % 4 === 0) && (year % 100 !== 0)) || (year % 400 === 0);
    }
 
   /**
@@ -88,10 +86,16 @@ public class CalendarStuff {
    *         be decremented to make the appropriate index value
    */
    public static long daysInMonth( long month, long year ) {
+     if (isLeapYear() && month === FEBRUARY) {
+       return days[month-1]+1;
+     }
+     else {
+       return days[month-1];
+     }
+   }
+  //  reurn ((isLeapYear() && month === FEBRUARY) ? days[month-1]+1 : days[month-1]);
 // if leap year & feb   days[month-1]+1
 // else return   days[month-1]
-      return 33;  // replace this with the actual code
-   }
 
   /**
    * A method to determine if two dates are exactly equal
@@ -104,7 +108,7 @@ public class CalendarStuff {
    * @return          boolean which is true if the two dates are exactly the same
    */
    public static boolean dateEquals( long month1, long day1, long year1, long month2, long day2, long year2 ) {
-      return true;  // replace this with the actual code
+      return ((month1 == month2) && (day1 == day2) && (year1 == year2));
    }
 
   /**
@@ -118,8 +122,15 @@ public class CalendarStuff {
    * @return          int    -1/0/+1 if first date is less than/equal to/greater than second
    */
    public static int compareDate( long month1, long day1, long year1, long month2, long day2, long year2 ) {
-      return 0;  // replace this with the actual code
-      // use dateEquals
+      if (dateEquals()) {
+        reurn 0;
+      }
+      else if (year1 < year2 || month1 < month2 || day1 < day2) {
+        reurn -1;
+      }
+      else {
+        return 0;
+      }
       // check years then months then days
    }
 
@@ -133,7 +144,7 @@ public class CalendarStuff {
    *         be decremented to make the appropriate index value
    */
    public static boolean isValidDate( long month, long day, long year ) {
-      return true;  // replace this with the actual code
+      return true;  // REAPLACE THIS WITH ACTUAL CODE
    }
 
   /**
