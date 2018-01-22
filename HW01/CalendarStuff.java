@@ -86,16 +86,15 @@ public class CalendarStuff {
    *         be decremented to make the appropriate index value
    */
    public static long daysInMonth( long month, long year ) {
-     if (isLeapYear() && month === FEBRUARY) {
-       return days[month-1]+1;
+     if (isLeapYear(year) && month === FEBRUARY) {
+       return days[month]+1;
      }
      else {
-       return days[month-1];
+       return days[month];
      }
    }
-  //  reurn ((isLeapYear() && month === FEBRUARY) ? days[month-1]+1 : days[month-1]);
-// if leap year & feb   days[month-1]+1
-// else return   days[month-1]
+  //  return ((isLeapYear(year) && month === FEBRUARY) ? days[month]+1 : days[month]);
+
 
   /**
    * A method to determine if two dates are exactly equal
@@ -122,18 +121,29 @@ public class CalendarStuff {
    * @return          int    -1/0/+1 if first date is less than/equal to/greater than second
    */
    public static int compareDate( long month1, long day1, long year1, long month2, long day2, long year2 ) {
-      if (dateEquals()) {
-        reurn 0;
-      }
-      else if (year1 < year2 || month1 < month2 || day1 < day2) {
-        reurn -1;
-      }
-      else {
+      if (dateEquals(month1, day1, year1, month2, day2, year2)) {
         return 0;
       }
-      // check years then months then days
+      else if (year1 < year2) {
+        reurn -1;
+      }
+      else if (year1 > year2) {
+        return 1;
+      }
+      else if (month1 < month2){
+        return -1;
+      }
+      else if (month1 > month2) {
+        return 1;
+      }
+      else if (day1 < day2){
+        return -1;
+      }
+      else {
+        return 1;
+      }
    }
-
+// CAN I PUT ALL ORS?
   /**
    * A method to return whether a date is a valid date
    * @param    month long    containing month number, starting with "1" for "January"
