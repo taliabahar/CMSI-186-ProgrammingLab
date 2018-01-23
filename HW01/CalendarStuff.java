@@ -39,7 +39,7 @@ public class CalendarStuff {
   /**
    * A listing of the months of the year, assigning numbers; I suppose these could be ENUMs instead, but whatever
    */
-   private static final int JANUARY   = 0;
+   private static final int JANUARY   = 1;
    private static final int FEBRUARY  = JANUARY   + 1;
    private static final int MARCH     = FEBRUARY  + 1;
    private static final int APRIL     = MARCH     + 1;
@@ -59,7 +59,7 @@ public class CalendarStuff {
    *  NOTE: this excludes leap years, so those will be handled as special cases
    *  NOTE: this is optional, but suggested
    */
-   private static int[]    days        = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+   private static int[]    days        = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
   /**
    * The constructor for the class
    */
@@ -87,10 +87,10 @@ public class CalendarStuff {
    */
    public static long daysInMonth( long month, long year ) {
      if (isLeapYear(year) && month === FEBRUARY) {
-       return days[month-1]+1;
+       return days[(int)month]+1;
      }
      else {
-       return days[month-1];
+       return days[month];
      }
    }
   //  return ((isLeapYear(year) && month === FEBRUARY) ? days[month-1]+1 : days[month-1]);
@@ -154,6 +154,19 @@ public class CalendarStuff {
    */
    public static boolean isValidDate( long month, long day, long year ) {
       return (month >= 1 && month <= 12 && day >= 1 && day <= 7)
+      if (month<1 || month > 12){
+        return false;
+      }
+      else if (year <= 0){
+        return false;
+      }
+      else if (isLeapYear(year) && day = FEBRUARY) {
+        // if leap year & feb then day > +1
+        return
+      }
+      else if (day <= 0 || day > days[month]){
+        return false;
+      }
    }
   //  invalid year, not a number( a string )?
   // Or add an if esle if you want to make the system print out which part of date is not equal
@@ -164,7 +177,7 @@ public class CalendarStuff {
    * @return         String containing the string value of the month (no spaces)
    */
    public static String toMonthString( int month ) {
-      switch( month - 1 ) {
+      switch( month ) {
             case 1:  month = "January";
                      break;
             case 2:  month= "February";
