@@ -87,13 +87,13 @@ public class CalendarStuff {
    */
    public static long daysInMonth( long month, long year ) {
      if (isLeapYear(year) && month === FEBRUARY) {
-       return days[month]+1;
+       return days[month-1]+1;
      }
      else {
-       return days[month];
+       return days[month-1];
      }
    }
-  //  return ((isLeapYear(year) && month === FEBRUARY) ? days[month]+1 : days[month]);
+  //  return ((isLeapYear(year) && month === FEBRUARY) ? days[month-1]+1 : days[month-1]);
 
 
   /**
@@ -143,7 +143,6 @@ public class CalendarStuff {
         return 1;
       }
    }
-// CAN I PUT ALL ORS?
   /**
    * A method to return whether a date is a valid date
    * @param    month long    containing month number, starting with "1" for "January"
@@ -154,8 +153,10 @@ public class CalendarStuff {
    *         be decremented to make the appropriate index value
    */
    public static boolean isValidDate( long month, long day, long year ) {
-      return true;  // REAPLACE THIS WITH ACTUAL CODE
+      return (month >= 1 && month <= 12 && day >= 1 && day <= 7)
    }
+  //  invalid year, not a number( a string )?
+  // Or add an if esle if you want to make the system print out which part of date is not equal
 
   /**
    * A method to return a string version of the month name
@@ -164,8 +165,33 @@ public class CalendarStuff {
    */
    public static String toMonthString( int month ) {
       switch( month - 1 ) {
-         default: throw new IllegalArgumentException( "Illegal month value given to 'toMonthString()'." );
+            case 1:  month = "January";
+                     break;
+            case 2:  month= "February";
+                     break;
+            case 3:  month = "March";
+                     break;
+            case 4:  month = "April";
+                     break;
+            case 5:  month = "May";
+                     break;
+            case 6:  month = "June";
+                     break;
+            case 7:  month = "July";
+                     break;
+            case 8:  month = "August";
+                     break;
+            case 9:  month = "September";
+                     break;
+            case 10: month = "October";
+                     break;
+            case 11: month = "November";
+                     break;
+            case 12: month = "December";
+                     break;
+            default: throw new IllegalArgumentException( "Illegal month value given to 'toMonthString()'." );
       }
+      // System.out.println(toMonthString); do we need this? b/c doesn't the throw itself cause a break
    }
 
   /**
@@ -175,7 +201,21 @@ public class CalendarStuff {
    */
    public static String toDayOfWeekString( int day ) {
       switch( day - 1 ) {
-         default       : throw new IllegalArgumentException( "Illegal day value given to 'toDayOfWeekString()'." );
+           case 1:  day = "Sunday";
+                    break;
+           case 2:  day = "Monday";
+                    break;
+           case 3:  day = "Tuesday";
+                    break;
+           case 4:  day = "Wednesday";
+                    break;
+           case 5:  day = "Thursday";
+                    break;
+           case 6:  day = "Friday";
+                    break;
+           case 7:  day = "Saturday";
+                    break;
+           default: throw new IllegalArgumentException( "Illegal day value given to 'toDayOfWeekString()'." );
       }
    }
 
