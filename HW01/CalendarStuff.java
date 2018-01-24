@@ -5,12 +5,7 @@
  *  Date          :  2017-01-02 (prototype)
  *  Author        :  Talia Bahar
  *  Date          :  2018-01-18
- *  Description   :  This file provides the supporting methods for the CountTheDays program which will
- *                   calculate the number of days between two dates.  It shows the use of modularization
- *                   when writing Java code, and how the Java compiler can "figure things out" on its
- *                   own at "compile time".  It also provides examples of proper documentation, and uses
- *                   the source file header template as specified in the "Greeter.java" template program
- *                   file for use in CMSI 186, Spring 2017.
+ *  Description   :  ADD DESCRIPTION HERE
  *  Notes         :  None
  *  Warnings      :  None
  *  Exceptions    :  None
@@ -59,12 +54,12 @@ public class CalendarStuff {
    *  NOTE: this excludes leap years, so those will be handled as special cases
    *  NOTE: this is optional, but suggested
    */
-   private static int[]    days        = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+   private static int[]    days        = {0,31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
   /**
    * The constructor for the class
    */
    public CalendarStuff () {
-      System.out.println( "Constructor called..." );  // REAPLACE THIS WITH ACTUAL CODE
+      System.out.println( "Constructor called..." );  // WHY DO WE NEED
    }
 
   /**
@@ -74,7 +69,7 @@ public class CalendarStuff {
    * @return         boolean which is true if the parameter is a leap year
    */
    public static boolean isLeapYear( long year ) {
-      return ((year % 4 === 0) && (year % 100 !== 0)) || (year % 400 === 0);
+      return ((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0);
    }
 
   /**
@@ -86,14 +81,14 @@ public class CalendarStuff {
    *         be decremented to make the appropriate index value
    */
    public static long daysInMonth( long month, long year ) {
-     if (isLeapYear(year) && month === FEBRUARY) {
+     if (isLeapYear(year) && month == FEBRUARY) {
        return days[(int)month]+1;
      }
      else {
-       return days[month];
+       return days[(int)month];
      }
    }
-  //  return ((isLeapYear(year) && month === FEBRUARY) ? days[month-1]+1 : days[month-1]);
+  //  return ((isLeapYear(year) && month == FEBRUARY) ? days[month]+1 : days[month]);
 
 
   /**
@@ -125,7 +120,7 @@ public class CalendarStuff {
         return 0;
       }
       else if (year1 < year2) {
-        reurn -1;
+        return -1;
       }
       else if (year1 > year2) {
         return 1;
@@ -153,20 +148,20 @@ public class CalendarStuff {
    *         be decremented to make the appropriate index value
    */
    public static boolean isValidDate( long month, long day, long year ) {
-      return (month >= 1 && month <= 12 && day >= 1 && day <= 7)
+      int leapYear = 0;
       if (month<1 || month > 12){
         return false;
       }
-      else if (year <= 0){
+      if (year <= 0){
         return false;
       }
-      else if (isLeapYear(year) && day = FEBRUARY) {
-        // if leap year & feb then day > +1
-        return
+      if (isLeapYear(year) && month == FEBRUARY) {
+        leapYear = 1;
       }
-      else if (day <= 0 || day > days[month]){
+      if (day <= 0 || day > days[(int)month] + leapYear){
         return false;
       }
+      return true;
    }
   //  invalid year, not a number( a string )?
   // Or add an if esle if you want to make the system print out which part of date is not equal
@@ -178,33 +173,20 @@ public class CalendarStuff {
    */
    public static String toMonthString( int month ) {
       switch( month ) {
-            case 1:  month = "January";
-                     break;
-            case 2:  month= "February";
-                     break;
-            case 3:  month = "March";
-                     break;
-            case 4:  month = "April";
-                     break;
-            case 5:  month = "May";
-                     break;
-            case 6:  month = "June";
-                     break;
-            case 7:  month = "July";
-                     break;
-            case 8:  month = "August";
-                     break;
-            case 9:  month = "September";
-                     break;
-            case 10: month = "October";
-                     break;
-            case 11: month = "November";
-                     break;
-            case 12: month = "December";
-                     break;
+            case 1:  return "January";
+            case 2:  return  "February";
+            case 3:  return  "March";
+            case 4:  return  "April";
+            case 5:  return  "May";
+            case 6:  return  "June";
+            case 7:  return  "July";
+            case 8:  return  "August";
+            case 9:  return  "September";
+            case 10: return  "October";
+            case 11: return  "November";
+            case 12: return  "December";
             default: throw new IllegalArgumentException( "Illegal month value given to 'toMonthString()'." );
       }
-      // System.out.println(toMonthString); do we need this? b/c doesn't the throw itself cause a break
    }
 
   /**
@@ -214,20 +196,13 @@ public class CalendarStuff {
    */
    public static String toDayOfWeekString( int day ) {
       switch( day - 1 ) {
-           case 1:  day = "Sunday";
-                    break;
-           case 2:  day = "Monday";
-                    break;
-           case 3:  day = "Tuesday";
-                    break;
-           case 4:  day = "Wednesday";
-                    break;
-           case 5:  day = "Thursday";
-                    break;
-           case 6:  day = "Friday";
-                    break;
-           case 7:  day = "Saturday";
-                    break;
+           case 1:  return "Sunday";
+           case 2:  return "Monday";
+           case 3:  return "Tuesday";
+           case 4:  return "Wednesday";
+           case 5:  return "Thursday";
+           case 6:  return "Friday";
+           case 7:  return"Saturday";
            default: throw new IllegalArgumentException( "Illegal day value given to 'toDayOfWeekString()'." );
       }
    }
@@ -243,8 +218,73 @@ public class CalendarStuff {
    * @return          long   count of total number of days
    */
    public static long daysBetween( long month1, long day1, long year1, long month2, long day2, long year2 ) {
-      long dayCount = 0;
-      return dayCount;
+      long daysInBetween = 0;
+      int compare = compareDate(month1, day1, year1, month2, day2, year2);
+      if (compare == 0) {
+        return daysInBetween = 0;
+      }
+      if(compare == -1){
+        while(day1 != day2) {
+          daysInBetween++;
+          day1++;
+          if(day1 > daysInMonth(month1,year1)){
+            day1 = 1;
+            month1++;
+            if(month1 > 12){
+              month1=1;
+              year1++;
+            }
+          }
+        }
+        while(month1 != month2) {
+          daysInBetween += daysInMonth(month1, year1);
+          month1++;
+          if(month1 > 12){
+            month1=1;
+            year1++;
+          }
+        }
+        while(year1 != year2) {
+          year1++;
+          if(isLeapYear(year1)){
+            daysInBetween += 366;
+          }
+          else {
+            daysInBetween += 365;
+          }
+        }
+      }
+      else {
+        while(day2 != day1) {
+          daysInBetween++;
+          day2++;
+          if(day2 > daysInMonth(month2,year2)){
+            day2 = 1;
+            month2++;
+            if(month2 > 12){
+              month2=1;
+              year2++;
+            }
+          }
+        }
+        while(month2 != month1) {
+          daysInBetween += daysInMonth(month2, year2);
+          month2++;
+          if(month2 > 12){
+            month2=1;
+            year2++;
+          }
+        }
+        while(year2 != year1) {
+          year2++;
+          if(isLeapYear(year2)){
+            daysInBetween += 366;
+          }
+          else {
+            daysInBetween += 365;
+          }
+        }
+      }
+      return daysInBetween;
    }
-
 }
