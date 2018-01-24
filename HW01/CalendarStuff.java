@@ -219,72 +219,53 @@ public class CalendarStuff {
    */
    public static long daysBetween( long month1, long day1, long year1, long month2, long day2, long year2 ) {
       long daysInBetween = 0;
+      long m1 = month1;
+      long m2 = month2;
+      long d1 = day1;
+      long d2 = day2;
+      long y1 = year1;
+      long y2 = year2;
       int compare = compareDate(month1, day1, year1, month2, day2, year2);
       if (compare == 0) {
         return daysInBetween = 0;
       }
-      if(compare == -1){
-        while(day1 != day2) {
-          daysInBetween++;
-          day1++;
-          if(day1 > daysInMonth(month1,year1)){
-            day1 = 1;
-            month1++;
-            if(month1 > 12){
-              month1=1;
-              year1++;
-            }
-          }
-        }
-        while(month1 != month2) {
-          daysInBetween += daysInMonth(month1, year1);
-          month1++;
-          if(month1 > 12){
-            month1=1;
-            year1++;
-          }
-        }
-        while(year1 != year2) {
-          year1++;
-          if(isLeapYear(year1)){
-            daysInBetween += 366;
-          }
-          else {
-            daysInBetween += 365;
+      if (compare == 1){
+        m1 = month2;
+        m2 = month1;
+        d1 = day2;
+        d2 = day1;
+        y1 = year2;
+        y2 = year1;
+      }
+      while(d1 != d2) {
+        daysInBetween++;
+        d1++;
+        if(d1 > daysInMonth(m1,y1)){
+          d1 = 1;
+          m1++;
+          if(m1 > 12){
+            m1=1;
+            y1++;
           }
         }
       }
-      else {
-        while(day2 != day1) {
-          daysInBetween++;
-          day2++;
-          if(day2 > daysInMonth(month2,year2)){
-            day2 = 1;
-            month2++;
-            if(month2 > 12){
-              month2=1;
-              year2++;
-            }
-          }
-        }
-        while(month2 != month1) {
-          daysInBetween += daysInMonth(month2, year2);
-          month2++;
-          if(month2 > 12){
-            month2=1;
-            year2++;
-          }
-        }
-        while(year2 != year1) {
-          year2++;
-          if(isLeapYear(year2)){
-            daysInBetween += 366;
-          }
-          else {
-            daysInBetween += 365;
-          }
+      while(m1 != m2) {
+        daysInBetween += daysInMonth(m1, y1);
+        m1++;
+        if(m1 > 12){
+          m1=1;
+          y1++;
         }
       }
-      return daysInBetween;
+      while(y1 != y2) {
+        y1++;
+        if(isLeapYear(y1) && m1 > 2){
+          daysInBetween += 366;
+        }
+        else {
+          daysInBetween += 365;
+        }
+      }
+    return daysInBetween;
    }
 }
