@@ -36,11 +36,23 @@ public class StringStuff {
    */
   //  char at - give me index i'll you the characters
    public static boolean containsVowel( String s ) {
-    //  System.out.println(s);
       String lower = s.toLowerCase();
       return (lower.contains("a") || lower.contains("e") || lower.contains("i") || lower.contains("o") || lower.contains("u") || lower.contains("y"));
    }
 
+   /**
+    * Method to return the reverse of a string passed as an argument
+    *
+    * @param s String containing the data to be reversed
+    * @return  String containing the reverse of the input string
+    */
+    public static String reverse( String s ) {
+      String reversed = "";
+      for(int i = s.length()-1; i >= 0; i--){
+        reversed = reversed + s.charAt(i);
+      }
+       return reversed;
+    }
   /**
    * Method to determine if a string is a palindrome.  Does it the brute-force way, checking
    * the first and last, second and last-but-one, etc. against each other.  If something doesn't
@@ -50,7 +62,8 @@ public class StringStuff {
    * @return  boolean which is true if this a palindrome, or false otherwise
    */
    public static boolean isPalindrome( String s ) {
-      return true;
+     String t = reverse(s);
+     return (t.equals(s));
    }
 
   /**
@@ -107,16 +120,6 @@ public class StringStuff {
    */
    public static String oddsOnlyNoDupes( String s ) {
       return new String( "IK" );
-   }
-
-  /**
-   * Method to return the reverse of a string passed as an argument
-   *
-   * @param s String containing the data to be reversed
-   * @return  String containing the reverse of the input string
-   */
-   public static String reverse( String s ) {
-      return new String( "kculc eht tahw" );
    }
 
 

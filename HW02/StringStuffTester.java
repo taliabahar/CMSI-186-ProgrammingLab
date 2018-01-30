@@ -110,6 +110,29 @@ public class StringStuffTester {
 
    }
 
+   /**
+    * test method to test out the operation of the reverse method
+    */
+    public static void test_reverse() {
+       System.out.println( "\nFOUR TESTS FOR reverse():" );
+       System.out.print( "   Testing 'xylophones' should return senohpolyx: " );
+       try { System.out.println( (0 == StringStuff.reverse( "xylophones" ).compareTo( "senohpolyx" )) ? "got it" : "don't got it" ); }
+       catch( Exception e ) { System.out.println ( false ); }
+
+       System.out.print( "   Testing 'XYloPHonES' should return SEnoHPolYX: " );
+       try { System.out.println( (0 == StringStuff.reverse( "XYloPHonES" ).compareTo("SEnoHPolYX")) ? "got it" : "don't got it" ); }
+       catch( Exception e ) { System.out.println ( false ); }
+
+       System.out.print( "   Testing 'AmanAplanAcAnalpAnamA' should return AmanAplanAcAnalpAnamA: " );
+       try { System.out.println( (0 == StringStuff.reverse( "AmanAplanAcAnalpAnamA" ).compareTo("AmanAplanAcAnalpAnamA")) ? "got it" : "don't got it" ); }
+       catch( Exception e ) { System.out.println ( false ); }
+
+       System.out.print( "   Testing 'shut the front door 1234567890' should return 0987654321 rood tnorf eht tuhs: " );
+       try { System.out.println( (0 == StringStuff.reverse( "shut the front door 1234567890" ).compareTo("0987654321 rood tnorf eht tuhs")) ? "got it" : "don't got it" ); }
+       catch( Exception e ) { System.out.println ( false ); }
+
+    }
+
   /**
    * test method to test out the operation of the isPalindrome method
    */
@@ -321,28 +344,6 @@ public class StringStuffTester {
 
    }
 
-  /**
-   * test method to test out the operation of the reverse method
-   */
-   public static void test_reverse() {
-      System.out.println( "\nFOUR TESTS FOR reverse():" );
-      System.out.print( "   Testing 'xylophones' should return senohpolyx: " );
-      try { System.out.println( (0 == StringStuff.reverse( "xylophones" ).compareTo( "senohpolyx" )) ? "got it" : "don't got it" ); }
-      catch( Exception e ) { System.out.println ( false ); }
-
-      System.out.print( "   Testing 'XYloPHonES' should return SEnoHPolYX: " );
-      try { System.out.println( (0 == StringStuff.reverse( "XYloPHonES" ).compareTo("SEnoHPolYX")) ? "got it" : "don't got it" ); }
-      catch( Exception e ) { System.out.println ( false ); }
-
-      System.out.print( "   Testing 'AmanAplanAcAnalpAnamA' should return AmanAplanAcAnalpAnamA: " );
-      try { System.out.println( (0 == StringStuff.reverse( "AmanAplanAcAnalpAnamA" ).compareTo("AmanAplanAcAnalpAnamA")) ? "got it" : "don't got it" ); }
-      catch( Exception e ) { System.out.println ( false ); }
-
-      System.out.print( "   Testing 'shut the front door 1234567890' should return 0987654321 rood tnorf eht tuhs: " );
-      try { System.out.println( (0 == StringStuff.reverse( "shut the front door 1234567890" ).compareTo("0987654321 rood tnorf eht tuhs")) ? "got it" : "don't got it" ); }
-      catch( Exception e ) { System.out.println ( false ); }
-
-   }
 
   /**
    * test method to test out the operation of the removeDupes method
