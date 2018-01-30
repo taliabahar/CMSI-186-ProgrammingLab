@@ -3,6 +3,8 @@
  *  Purpose       :  A file full of stuff to do with the Java String class
  *  Author        :  B.J. Johnson
  *  Date          :  2017-01-19
+ *  Author        :  Talia Bahar
+ *  Date          :  2018-01-30
  *  Description   :  This file presents a bunch of String-style helper methods.  Although pretty much
  *                   any and every thing you'd want to do with Strings is already made for you in the
  *                   Jave String class, this exercise gives you a chance to do it yourself [DIY] for some
@@ -32,8 +34,11 @@ public class StringStuff {
    * @param s String containing the data to be checked for &quot;vowel-ness&quot;
    * @return  boolean which is true if there is a vowel, or false otherwise
    */
+  //  char at - give me index i'll you the characters
    public static boolean containsVowel( String s ) {
-      return false;
+    //  System.out.println(s);
+      String lower = s.toLowerCase();
+      return (lower.contains("a") || lower.contains("e") || lower.contains("i") || lower.contains("o") || lower.contains("u") || lower.contains("y"));
    }
 
   /**
@@ -72,6 +77,16 @@ public class StringStuff {
       return new String( "IKIKIK" );
    }
 
+   /**
+    * Method to remove the duplicate letters in a string passed as an argument
+    *
+    * @param s String containing the data to be parsed for non-repeating letters
+    * @return  String containing no duplicates
+    */
+   public static String removeDupes( String s ) {
+      return new String( "no dupes" );
+   }
+
   /**
    * Method to return the characters in a string that correspond to the &quot;EVEN&quot; index
    * numbers of the alphabet, but with no duplicate characters in the resulting string.
@@ -104,15 +119,6 @@ public class StringStuff {
       return new String( "kculc eht tahw" );
    }
 
-   /**
-    * Method to remove the duplicate letters in a string passed as an argument
-    *
-    * @param s String containing the data to be parsed for non-repeating letters
-    * @return  String containing no duplicates
-    */
-   public static String removeDupes( String s ) {
-      return new String( "no dupes" );
-   }
 
   /**
    * Main method to test the methods in this class
