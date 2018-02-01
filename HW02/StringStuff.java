@@ -101,8 +101,8 @@ public class StringStuff {
        noEvens = noEvens + (Character.toString(s.charAt(i)));
      }
    }
-     return noEvens;
-   }
+   return noEvens;
+  }
 
    /**
     * Method to remove the duplicate letters in a string passed as an argument
@@ -111,9 +111,14 @@ public class StringStuff {
     * @return  String containing no duplicates
     */
    public static String removeDupes( String s ) {
-    //  two diff. for loops i,j go through and compare if they are not equal push
-      return new String( "no dupes" );
-   }
+      String noDupes = "";
+      for (int i=0; i < s.length(); i++) {
+        if(!(noDupes.contains(Character.toString(s.charAt(i))))) {
+          noDupes = noDupes + (Character.toString(s.charAt(i)));
+        }
+      }
+      return noDupes;
+     }
 
   /**
    * Method to return the characters in a string that correspond to the &quot;EVEN&quot; index
@@ -122,8 +127,9 @@ public class StringStuff {
    * @param s String containing the data to be parsed for &quot;even&quot; letters
    * @return  String containing the &quot;even&quot; letters from the input without duplicates
    */
+
    public static String evensOnlyNoDupes( String s ) {
-      return new String( "HJ" );
+      return new String();
    }
 
   /**
