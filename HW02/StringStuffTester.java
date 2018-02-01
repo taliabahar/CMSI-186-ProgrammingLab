@@ -3,6 +3,8 @@
  *  Purpose       :  A test harness file for testing out the methods in the "StringStuff.java" class
  *  Author        :  B.J. Johnson
  *  Date          :  2017-01-25
+ *  Author        :  Talia Bahar
+ *  Date          :  2018-01-30
  *  Description   :  This file provides the "test harness" for checking out the methods which are part of
  *                   the homework02 assignment.  It also provides examples of proper documentation, and
  *                   uses the source file header template as specified in the "Greeter.java" template file

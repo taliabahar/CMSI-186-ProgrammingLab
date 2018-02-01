@@ -1,6 +1,6 @@
 /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  *  File name     :  StringStuff.java
- *  Purpose       :  A file full of stuff to do with the Java String class
+ *  Purpose       : Contains string manipulation methods
  *  Author        :  B.J. Johnson
  *  Date          :  2017-01-19
  *  Author        :  Talia Bahar
@@ -75,7 +75,14 @@ public class StringStuff {
    * @return  String containing the &quot;even&quot; letters from the input
    */
    public static String evensOnly( String s ) {
-      return new String( "HJHJHJ" );
+     String evenLetters = "bdfhjlnprtvxzBDFHJLNPRTVXZ";
+     String noOdds = "";
+     for (int i=0; i < s.length(); i++){
+     if(evenLetters.contains(Character.toString(s.charAt(i)))){
+       noOdds = noOdds + (Character.toString(s.charAt(i)));
+     }
+   }
+     return noOdds;
    }
 
   /**
@@ -87,7 +94,14 @@ public class StringStuff {
    * @return  String containing the &quot;odd&quot; letters from the input
    */
    public static String oddsOnly( String s ) {
-      return new String( "IKIKIK" );
+     String oddLetters = "acegikmoqsuwyACEGIKMOQSUWY";
+     String noEvens = "";
+     for (int i=0; i < s.length(); i++){
+     if(oddLetters.contains(Character.toString(s.charAt(i)))){
+       noEvens = noEvens + (Character.toString(s.charAt(i)));
+     }
+   }
+     return noEvens;
    }
 
    /**
@@ -97,6 +111,7 @@ public class StringStuff {
     * @return  String containing no duplicates
     */
    public static String removeDupes( String s ) {
+    //  two diff. for loops i,j go through and compare if they are not equal push
       return new String( "no dupes" );
    }
 
