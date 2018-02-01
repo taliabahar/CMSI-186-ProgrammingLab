@@ -129,7 +129,7 @@ public class StringStuff {
    */
 
    public static String evensOnlyNoDupes( String s ) {
-      return new String();
+     return removeDupes(evensOnly(s));
    }
 
   /**
@@ -140,9 +140,8 @@ public class StringStuff {
    * @return  String containing the &quot;odd&quot; letters from the input without duplicates
    */
    public static String oddsOnlyNoDupes( String s ) {
-      return new String( "IK" );
+     return removeDupes(oddsOnly(s));
    }
-
 
   /**
    * Main method to test the methods in this class
