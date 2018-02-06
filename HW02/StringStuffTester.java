@@ -6,11 +6,10 @@
  *  Author        :  Talia Bahar
  *  Date          :  2018-01-30
  *  Description   :  This file provides the "test harness" for checking out the methods which are part of
- *                   the homework02 assignment.  It also provides examples of proper documentation, and
+ *                   StringStuff.java. It also provides examples of proper documentation, and
  *                   uses the source file header template as specified in the "Greeter.java" template file
  *                   for use in CMSI 186, Spring 2017.
- *  Notes         :  TEMPLATE FILE ONLY: Your job is to fill in as many test cases as you think are needed
- *                   to thoroughly and completely test your StringStuff class.
+*  Notes          :  None
  *  Warnings      :  None
  *  Exceptions    :  None
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
