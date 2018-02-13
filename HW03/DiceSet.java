@@ -45,7 +45,7 @@ public class DiceSet {
    * @note   parameters are checked for validity; invalid values throw "IllegalArgumentException"
    */
    public DiceSet( int count, int sides ) {
-      ds = new Die[ count ];
+      ds = new Die[ count ]; 
    }
 
   /**
