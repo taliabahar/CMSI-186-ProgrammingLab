@@ -13,7 +13,7 @@
  *                   public int getIndividual( int i );               // Gets the value of the ith die in this set
  *                   public String toString();                        // Returns a stringy representation of this set of dice
  *                   public static String toString( DiceSet ds );     // Classwide version of the preceding instance method
- *                   public boolean isIdentical( DiceSet ds );        // Returns true iff this set is identical to the set ds
+ *                   public boolean isIdentical( DiceSet ds );        // Returns true if this set is identical to the set ds
  *                   public static void main( String[] args );        // The built-in test program for this class
  *
  *  Notes         :  Stolen from Dr. Dorin pretty much verbatim, then modified to show some interesting
@@ -67,7 +67,7 @@ public class DiceSet {
    * Randomly rolls a single die of the dice in this set indexed by 'dieIndex'
    * @param  dieIndex int of which die to roll
    * @return the integer value of the newly rolled die
-   * @trhows IllegalArgumentException if the index is out of range
+   * @throws IllegalArgumentException if the index is out of range
    */
    public int rollIndividual( int dieIndex ) {
       return 0;
@@ -98,7 +98,7 @@ public class DiceSet {
    }
 
   /**
-   * @return  tru iff this set is identical to the set passed as an argument
+   * @return  true if this set is identical to the set passed as an argument
    */
    public boolean isIdentical( DiceSet ds ) {
       return true;

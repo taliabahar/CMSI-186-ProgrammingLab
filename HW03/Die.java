@@ -49,7 +49,8 @@ public class Die {
    * @throws       IllegalArgumentException
    * Note: parameter must be checked for validity; invalid value must throw "IllegalArgumentException"
    */
-   public Die ( int nSides ) {
+   public Die ( int nSides ) throws IllegalArgumentException {
+     if(nSides < 4){throw new IllegalArgumentException();}
      sides = nSides;
    }
 
@@ -58,7 +59,7 @@ public class Die {
    * @return  integer value of the result of the roll, randomly selected
    */
    public int roll() {
-      pips = (int)(Math.random() * this.sides) + 1);
+      pips = (int)(Math.random() * this.sides) + 1;
       return pips;
    }
 
@@ -78,9 +79,10 @@ public class Die {
    * @return      The new number of sides, in case anyone is looking
    * @throws      IllegalArgumentException
    */
-   public void setSides( int sides ) {
+   public int setSides( int sides ) throws IllegalArgumentException {
+     if(sides < 4){throw new IllegalArgumentException();}
      this.sides = sides;
-     this.roll();
+     return sides;
    }
 
   /**
@@ -114,43 +116,50 @@ public class Die {
      catch (IllegalArgumentException iae) {System.out.println ("Too few sides requested to constructor...");}
      System.out.println("roll() test for a 4 sided die");
      System.out.println("You rolled a " + d.roll() );
-     try {d = new Die(5);}
+     try {
+       d = new Die(5);
+       System.out.println("roll() test for a 5 sided die");
+       System.out.println("You rolled a " + d.roll() );
+     }
      catch (IllegalArgumentException iae) {System.out.println ("Too few sides requested to constructor...");}
-     System.out.println("roll() test for a 5 sided die");
-     System.out.println("You rolled a " + d.roll() );
-     try {d = new Die(6);}
-     System.out.println("roll() test for a 6 sided die");
-     System.out.println("You rolled a " + d.roll() );
-     try {d = new Die(7);}
-     System.out.println("roll() test for a 7 sided die");
-     System.out.println("You rolled a " + d.roll() );
-     try {d = new Die(8);}
-     System.out.println("roll() test for a 8 sided die");
-     System.out.println("You rolled a " + d.roll() );
-     try {d = new Die(9);}
-     System.out.println("roll() test for a 9 sided die");
-     System.out.println("You rolled a " + d.roll() );
-     try {d = new Die(10);}
-     System.out.println("roll() test for a 10 sided die");
-     System.out.println("You rolled a " + d.roll() );
-     try {d = new Die(11);}
-     System.out.println("Resetting current die side count is not " + d.getSides() );
-     System.out.println("Rolling with new side count --");
-
-
-
-    // Die d = null; reference object --- has a main in it so can say java Die to test
-    // this until try {d = new Die(4);} because 4 is valid  still have 1st catch up to 6
-    // catch (IllegalArgumentException iae) {System.out.println ("Too few sides requested to constructor...");}
-    // System.out.println("roll() test for a 4 sided die");
-    // System.out.println("You rolled a " + d.roll() );
-    //
-    //
-    //
-    // for 11 & up start with
-    // System.out.println("Resetting current die side count is not " + d.getSides() );
-    // System.out.println("Rolling with new side count --"");
-
+     try {
+       d = new Die(6);
+       System.out.println("roll() test for a 6 sided die");
+       System.out.println("You rolled a " + d.roll() );
+     }
+     catch (IllegalArgumentException iae) {System.out.println ("Too few sides requested to constructor...");}
+     try {
+       d = new Die(7);
+       System.out.println("roll() test for a 7 sided die");
+       System.out.println("You rolled a " + d.roll() );
+     }
+     catch (IllegalArgumentException iae) {System.out.println ("Too few sides requested to constructor...");}
+     try {
+       d = new Die(8);
+       System.out.println("roll() test for a 8 sided die");
+       System.out.println("You rolled a " + d.roll() );
+     }
+     catch (IllegalArgumentException iae) {System.out.println ("Too few sides requested to constructor...");}
+     try {
+       d = new Die(9);
+       System.out.println("roll() test for a 9 sided die");
+       System.out.println("You rolled a " + d.roll() );
+     }
+     catch (IllegalArgumentException iae) {System.out.println ("Too few sides requested to constructor...");}
+     try {
+       d = new Die(10);
+       System.out.println("roll() test for a 10 sided die");
+       System.out.println("You rolled a " + d.roll() );
+     }
+     catch (IllegalArgumentException iae) {System.out.println ("Too few sides requested to constructor...");}
+    try {
+      d = new Die(11);
+      System.out.println("Resetting current die side count is" + d.setSides(11) );
+      System.out.println("roll() test for an 11 sided die");
+      System.out.println("You rolled a " + d.roll() );
+      System.out.println("You rolled a " + d.getValue() );
+     }
+     catch (IllegalArgumentException iae) {System.out.println ("Too few sides requested to constructor...");}
 
       System.out.println( "Hello world from the Die class..." );
    }
