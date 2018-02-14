@@ -45,14 +45,19 @@ public class DiceSet {
    * @note   parameters are checked for validity; invalid values throw "IllegalArgumentException"
    */
    public DiceSet( int count, int sides ) {
-      ds = new Die[ count ]; 
+      this.count = count;
+      this. sides = sides;
+      ds = new Die[ count ];
+      for(int i=0; i < count ;i++){
+        ds[i] = new Die(sides);
+      }
    }
 
   /**
-   * @return the sum of all the dice values in the set
+   * @return the sum of all the dice values in the set AFTER rolling
    */
    public int sum() {
-      return 0;
+
    }
 
   /**
@@ -61,6 +66,10 @@ public class DiceSet {
    *  the values of the dice in the set
    */
    public void roll() {
+     for (int i=0; i < ds.length - 1; i++){
+       String values = ds[i].roll().toString();
+    }
+    System.out.println(values);
    }
 
   /**
@@ -70,7 +79,7 @@ public class DiceSet {
    * @throws IllegalArgumentException if the index is out of range
    */
    public int rollIndividual( int dieIndex ) {
-      return 0;
+     return ds[dieIndex].roll().toString();
    }
 
   /**
