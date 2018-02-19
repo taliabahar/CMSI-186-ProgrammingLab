@@ -44,10 +44,11 @@ public class DiceSet {
    * @throws IllegalArgumentException if one or both arguments don't make sense
    * @note   parameters are checked for validity; invalid values throw "IllegalArgumentException"
    */
-   public DiceSet( int count, int sides ) {
+   public DiceSet( int count, int sides )throws IllegalArgumentException {
+     if (count < 1 || sides < 4) {throw new IllegalArgumentException();}
       this.count = count;
-      this. sides = sides;
-      ds = new Die[ count ];
+      this.sides = sides;
+      ds = new Die[ count ] ;
       for(int i=0; i < count ;i++){
         ds[i] = new Die(sides);
       }
@@ -57,7 +58,11 @@ public class DiceSet {
    * @return the sum of all the dice values in the set AFTER rolling
    */
    public int sum() {
-
+     int sum = 0;
+     for (int i=0; i < ds.length; i++){
+       sum += ds[i].roll();
+    }
+    return sum;
    }
 
   /**
@@ -66,8 +71,9 @@ public class DiceSet {
    *  the values of the dice in the set
    */
    public void roll() {
-     for (int i=0; i < ds.length - 1; i++){
-       String values = ds[i].roll().toString();
+     String values = "";
+     for (int i=0; i < ds.length; i++){
+       values += new Integer(ds[i].roll()).toString() + " ";
     }
     System.out.println(values);
    }
@@ -78,45 +84,65 @@ public class DiceSet {
    * @return the integer value of the newly rolled die
    * @throws IllegalArgumentException if the index is out of range
    */
-   public int rollIndividual( int dieIndex ) {
-     return ds[dieIndex].roll().toString();
+   public int rollIndividual( int dieIndex ) throws IllegalArgumentException {
+     if (dieIndex > ds.length) {throw new IllegalArgumentException();}
+     return ds[dieIndex].roll();
    }
 
   /**
    * Gets the value of the die in this set indexed by 'dieIndex'
    * @param  dieIndex int of which die to roll
-   * @trhows IllegalArgumentException if the index is out of range
+   * @throws IllegalArgumentException if the index is out of range
    */
-   public int getIndividual( int dieIndex ) {
-      return -999;
+   public int getIndividual( int dieIndex ) throws IllegalArgumentException {
+     if (dieIndex > ds.length) {throw new IllegalArgumentException();}
+     return ds[dieIndex].getValue();
    }
 
   /**
    * @return Public Instance method that returns a String representation of the DiceSet instance
    */
    public String toString() {
-      String result = "";
-      return result;
+     String values = "";
+     for (int i=0; i < ds.length; i++){
+       values += new Integer(ds[i].getValue()).toString() + " ";
+    }
+    return values;
    }
 
   /**
    * @return Class-wide version of the preceding instance method
    */
    public static String toString( DiceSet ds ) {
-      return "";
+     return ds.toString();
    }
 
   /**
    * @return  true if this set is identical to the set passed as an argument
    */
    public boolean isIdentical( DiceSet ds ) {
-      return true;
-   }
+      return (ds.sum() == this.sum() && ds.count == this.count && ds.sides == this.sides);
+    }
+
+
   /**
    * A little test main to check things out
    */
    public static void main( String[] args ) {
-      // You do this part!
+     DiceSet ds = null;
+     try {ds = new DiceSet(1, 1);}
+     catch (IllegalArgumentException iae) {System.out.println ("Too few sides requested to constructor or number of die is out of bounds");}
+     try {ds = new DiceSet(2, 2);}
+     catch (IllegalArgumentException iae) {System.out.println ("Too few sides requested to constructor or number of die is out of bounds");}
+     try {ds = new DiceSet(3, 3);}
+     catch (IllegalArgumentException iae) {System.out.println ("Too few sides requested to constructor or number of die is out of bounds");}
+     try{ds = new DiceSet(4, 4);}
+     catch (IllegalArgumentException iae) {System.out.println ("Too few sides requested to constructor or number of die is out of bounds");}
+     System.out.println("roll() test for a dice set of 4 die with 4 sides each");
+     System.out.println("Your roll of ALL the dice is " + ds.sum());
+     System.out.println("Each dice rolled " + ds.toString());
+     System.out.println("Role of only the 2nd die is " + ds.rollIndividual(1));
+     System.out.println("The value of that role is " + ds.getIndividual(1));
+     System.out.println("Your out of bound role " + ds.rollIndividual(8));
    }
-
 }
