@@ -3,6 +3,8 @@
  *  Purpose       :  Provides a class describing a set of dice
  *  Author        :  B.J. Johnson
  *  Date          :  2017-02-09
+ *  Author        :  Talia Bahar
+ *  Date          :  2018-02-13
  *  Description   :  This class provides everything needed (pretty much) to describe a set of dice.  The
  *                   idea here is to have an implementing class that uses the Die.java class.  Includes
  *                   the following:
@@ -143,6 +145,5 @@ public class DiceSet {
      System.out.println("Each dice rolled " + ds.toString());
      System.out.println("Role of only the 2nd die is " + ds.rollIndividual(1));
      System.out.println("The value of that role is " + ds.getIndividual(1));
-     System.out.println("Your out of bound role " + ds.rollIndividual(8));
    }
 }
