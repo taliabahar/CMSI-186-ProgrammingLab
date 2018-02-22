@@ -144,12 +144,20 @@ public class DiceSet {
      System.out.println("Your roll of ALL the dice is " + ds.sum());
      System.out.println("Role of only the 2nd die is " + ds.rollIndividual(1));
      System.out.println("The value of that role is " + ds.getIndividual(1));
-     DiceSet ds2 = new DiceSet(4,4);
+     DiceSet ds2 = new DiceSet(4, 4);
      System.out.println("DiceSet 1 is NOT identical to DiceSet 2 " + !ds.isIdentical(ds2));
      System.out.println("DiceSet 1 IS identical to DiceSet 1 " + ds.isIdentical(ds));
      try{ds = new DiceSet(5, 7);}
      catch (IllegalArgumentException iae) {System.out.println ("Too few sides requested to constructor or number of die is out of bounds");}
      System.out.println("roll() test for a dice set of 5 die with 7 sides each");
+     ds.roll();
+     System.out.println("Each dice rolled " + ds.toString());
+     System.out.println("Your roll of ALL the dice is " + ds.sum());
+     System.out.println("Role of only the 2nd die is " + ds.rollIndividual(1));
+     System.out.println("The value of that role is " + ds.getIndividual(1));
+     try{ds = new DiceSet(30, 49);}
+     catch (IllegalArgumentException iae) {System.out.println ("Too few sides requested to constructor or number of die is out of bounds");}
+     System.out.println("roll() test for a dice set of 30 die with 49 sides each");
      ds.roll();
      System.out.println("Each dice rolled " + ds.toString());
      System.out.println("Your roll of ALL the dice is " + ds.sum());
