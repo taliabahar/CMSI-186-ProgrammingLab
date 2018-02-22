@@ -34,49 +34,52 @@ public class HighRoll{
          inputLine = input.readLine();
          String values[] = inputLine.split(" ");
          DiceSet dset = new DiceSet(Integer.parseInt(values[0]),Integer.parseInt(values[1]));
-         }
-         catch( IOException ioe ) {
-            System.out.println( "Caught IOException" );
-         }
+         int highScore = 0;
+         int score = 0;
+         while( true ) {
+            System.out.println( "\n You are rolling " + Integer.parseInt(values[0]) + " dice with " +  Integer.parseInt(values[1]) + " sides \n" );
+            System.out.println( "\n Press 1 to ROLL ALL THE DICE \n" );
+            System.out.println( "\n Press 2 to ROLL A SINGLE DIE \n" );
+            System.out.println( "\n Press 3 to CALCULATE THE SCORE FOR THIS SET  \n" );
+            System.out.println( "\n Press 4 to SAVE THIS SCORE AS HIGH SCORE  \n" );
+            System.out.println( "\n Press 5 to DISPLAY THE HIGH SCORE \n" );
+            System.out.println( "\n ENTER 'Q' TO QUIT THE PROGRAM \n" );
 
+            System.out.print( ">>" );
+            inputLine = null;
 
-      while( true ) {
-        //  System.out.println( "\n You are rolling " + Integer.parseInt(values[0]) + " dice with " +  Integer.parseInt(values[0]) + " sides" \n" );
-        //  System.out.println( "  You are rolling " + inputLine.charAt(0) + " dice with " +  inputLine.charAt(2) + " sides");
-         System.out.println( "\n Press 1 to ROLL ALL THE DICE \n" );
-         System.out.println( "\n Press 2 to ROLL A SINGLE DIE \n" );
-         System.out.println( "\n Press 3 to CALCULATE THE SCORE FOR THIS SET  \n" );
-         System.out.println( "\n Press 4 to SAVE THIS SCORE AS HIGH SCORE  \n" );
-         System.out.println( "\n Press 5 to DISPLAY THE HIGH SCORE \n" );
-         System.out.println( "\n ENTER 'Q' TO QUIT THE PROGRAM \n" );
+            try {
+               inputLine = input.readLine();
 
-         System.out.print( ">>" );
-         inputLine = null;
-
-         try {
-            inputLine = input.readLine();
-            if(1 == inputLine.charAt(0)) {
-              System.out.println("1");
+               if('1' == inputLine.charAt(0)) {
+                 dset.roll();
+                 System.out.println(dset.toString());
+               }
+               if('2' == inputLine.charAt(0)) {
+                 System.out.println(dset.rollIndividual(0));
+               }
+               if('3' == inputLine.charAt(0)) {
+                 score = dset.sum();
+                 System.out.println(dset.sum());
+               }
+               if('4' == inputLine.charAt(0)) {
+                  highScore = score;
+                  System.out.println(highScore + " is your new High Score");
+               }
+               if('5' == inputLine.charAt(0)) {
+                 System.out.println("High Score: " + highScore);
+               }
+               if( 'q' == inputLine.charAt(0) ) {
+                  break;
+               }
             }
-            if(2 == inputLine.charAt(0)) {
-              System.out.println("2");
-            }
-            if(3 == inputLine.charAt(0)) {
-               System.out.println("3");
-            }
-            if(4 == inputLine.charAt(0)) {
-               System.out.println("4");
-            }
-            if(5 == inputLine.charAt(0)) {
-               System.out.println("5");
-            }
-            if( 'q' == inputLine.charAt(0) ) {
-               break;
+            catch( IOException ioe ) {
+               System.out.println( "Caught IOException" );
             }
          }
-         catch( IOException ioe ) {
-            System.out.println( "Caught IOException" );
-         }
+      }
+      catch( IOException ioe ) {
+          System.out.println( "Caught IOException" );
       }
    }
 }

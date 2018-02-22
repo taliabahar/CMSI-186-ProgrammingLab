@@ -23,8 +23,8 @@
  *  Warnings      :  None
  *  Exceptions    :  IllegalArgumentException when the number of sides or pips is out of range
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- *  Revision Histor
- *  ---------------
+ *  Revision History
+ *  ----------------
  *            Rev      Date     Modified by:  Reason for change/modification
  *           -----  ----------  ------------  -----------------------------------------------------------
  *  @version 1.0.0  2017-02-09  B.J. Johnson  Initial writing and release
@@ -62,7 +62,7 @@ public class DiceSet {
    public int sum() {
      int sum = 0;
      for (int i=0; i < ds.length; i++){
-       sum += ds[i].roll();
+       sum += ds[i].getValue();
     }
     return sum;
    }
@@ -73,11 +73,9 @@ public class DiceSet {
    *  the values of the dice in the set
    */
    public void roll() {
-     String values = "";
      for (int i=0; i < ds.length; i++){
-       values += new Integer(ds[i].roll()).toString() + " ";
+       ds[i].roll();
     }
-    System.out.println(values);
    }
 
   /**
@@ -141,8 +139,20 @@ public class DiceSet {
      try{ds = new DiceSet(4, 4);}
      catch (IllegalArgumentException iae) {System.out.println ("Too few sides requested to constructor or number of die is out of bounds");}
      System.out.println("roll() test for a dice set of 4 die with 4 sides each");
-     System.out.println("Your roll of ALL the dice is " + ds.sum());
+     ds.roll();
      System.out.println("Each dice rolled " + ds.toString());
+     System.out.println("Your roll of ALL the dice is " + ds.sum());
+     System.out.println("Role of only the 2nd die is " + ds.rollIndividual(1));
+     System.out.println("The value of that role is " + ds.getIndividual(1));
+     DiceSet ds2 = new DiceSet(4,4);
+     System.out.println("DiceSet 1 is NOT identical to DiceSet 2 " + !ds.isIdentical(ds2));
+     System.out.println("DiceSet 1 IS identical to DiceSet 1 " + ds.isIdentical(ds));
+     try{ds = new DiceSet(5, 7);}
+     catch (IllegalArgumentException iae) {System.out.println ("Too few sides requested to constructor or number of die is out of bounds");}
+     System.out.println("roll() test for a dice set of 5 die with 7 sides each");
+     ds.roll();
+     System.out.println("Each dice rolled " + ds.toString());
+     System.out.println("Your roll of ALL the dice is " + ds.sum());
      System.out.println("Role of only the 2nd die is " + ds.rollIndividual(1));
      System.out.println("The value of that role is " + ds.getIndividual(1));
    }
