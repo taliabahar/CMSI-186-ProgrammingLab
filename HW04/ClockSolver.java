@@ -23,7 +23,7 @@ public class ClockSolver {
    */
    private final double MAX_TIME_SLICE_IN_SECONDS  = 1800.00;
    private final double DEFAULT_TIME_SLICE_SECONDS = 60.0;
-   private final static double EPSILON_VALUE       = 1;      // small value for double-precision comparisons
+   private final static double EPSILON_VALUE       = 5;      // small value for double-precision comparisons
    private static double targetAngle = 0;
    private static double timeSlice = 0;
 
@@ -46,6 +46,7 @@ public class ClockSolver {
      // you may want to consider using args[2] for an "angle window"
 
       System.out.println( "\n   Hello world, from the ClockSolver program!!\n\n" ) ;
+
       if( 0 == args.length ) {
          System.out.println( "   Sorry you must enter at least one argument\n" +
                              "   Usage: java ClockSolver <angle> [timeSlice]\n" +
@@ -76,13 +77,13 @@ public class ClockSolver {
       cse.handleInitialArguments( args );
       Clock clock    = new Clock( cse.targetAngle, cse.timeSlice);
       int totalSecondsIn12Hours = 43200;
+      System.out.println( "\n   Looking for angles of " + targetAngle + " degrees with a " + timeSlice + " second timeslice \n" ) ;
       while( clock.getTotalSeconds() < totalSecondsIn12Hours ) {
-        // System.out.println(clock.getTotalSeconds());
-         if (clock.getHandAngle()==cse.targetAngle || clock.getHandAngle() - cse.targetAngle <= EPSILON_VALUE){
+         if (cse.targetAngle - clock.getHandAngle() <= EPSILON_VALUE) {
+          //  System.out.println(clock.getHandAngle() + " <=====> " + cse.targetAngle);
            System.out.println(clock.toString());
          }
          clock.tick();
-        //  System.out.println(clock.getHandAngle());
       }
       System.exit( 0 );
    }
