@@ -17,19 +17,21 @@
  *  @version 1.0.0  2017-02-28  B.J. Johnson  Initial writing and release
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-public class ClockSolverEmpty {
+public class ClockSolver {
   /**
    *  Class field definintions go here
    */
    private final double MAX_TIME_SLICE_IN_SECONDS  = 1800.00;
    private final double DEFAULT_TIME_SLICE_SECONDS = 60.0;
-   private final double EPSILON_VALUE              = 0.1;      // small value for double-precision comparisons
+   private final static double EPSILON_VALUE       = 1;      // small value for double-precision comparisons
+   private static double targetAngle = 0;
+   private static double timeSlice = 0;
 
   /**
    *  Constructor
    *  This just calls the superclass constructor, which is "Object"
    */
-   public ClockSolverEmpty() {
+   public ClockSolver() {
       super();
    }
 
@@ -50,7 +52,14 @@ public class ClockSolverEmpty {
                              "   Please try again..........." );
          System.exit( 1 );
       }
-      Clock clock = new Clock();
+      if( 1 == args.length ) {
+         targetAngle = Double.parseDouble(args[0]);
+         timeSlice = DEFAULT_TIME_SLICE_SECONDS;
+      }
+      if( 2 == args.length ) {
+         targetAngle = Double.parseDouble(args[0]);
+         timeSlice = Double.parseDouble(args[1]);
+      }
    }
 
   /**
@@ -58,16 +67,22 @@ public class ClockSolverEmpty {
    *  remember the constraints from the project description
    *  @see  http://bjohnson.lmu.build/cmsi186web/homework04.html
    *  @param  args  String array of the arguments from the command line
-   *                args[0] is the angle for which we are looking
+   *                args[0] is the angle for which we are  looking
    *                args[1] is the time slice; this is optional and defaults to 60 seconds
    */
    public static void main( String args[] ) {
-      ClockSolverEmpty cse = new ClockSolverEmpty();
-      ClockEmpty clock    = new ClockEmpty();
+      ClockSolver cse = new ClockSolver();
       double[] timeValues = new double[3];
       cse.handleInitialArguments( args );
-      while( true ) {
-         break;
+      Clock clock    = new Clock( cse.targetAngle, cse.timeSlice);
+      int totalSecondsIn12Hours = 43200;
+      while( clock.getTotalSeconds() < totalSecondsIn12Hours ) {
+        // System.out.println(clock.getTotalSeconds());
+         if (clock.getHandAngle()==cse.targetAngle || clock.getHandAngle() - cse.targetAngle <= EPSILON_VALUE){
+           System.out.println(clock.toString());
+         }
+         clock.tick();
+        //  System.out.println(clock.getHandAngle());
       }
       System.exit( 0 );
    }

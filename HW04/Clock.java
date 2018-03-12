@@ -46,7 +46,8 @@ public class Clock {
    *  @return double-precision value of the current clock tick
    */
    public double tick() {
-      return totalSeconds + timeSlice;
+      totalSeconds += timeSlice;
+      return totalSeconds;
    }
 
   /**
@@ -99,9 +100,9 @@ public class Clock {
    *  @return double-precision value of the angle between the two hands
    */
    public double getHandAngle() {
-     double angleBetween = Math.abs(getHourHandAngle()-getMinuteHandAngle());
-     if (angleBetween > 180){
-       return 360-angleBetween;
+     double angleBetween = Math.abs(getHourHandAngle()-getMinuteHandAngle()) % 360;
+     if (angleBetween > 180) {
+       return 360 - angleBetween;
      }
      return angleBetween;
    }
@@ -120,7 +121,7 @@ public class Clock {
    *  @return String value of the current clock
    */
    public String toString() {
-      return Double.toString(getHourHandAngle()) + ":" + Double.toString(getMinuteHandAngle()) + ":" + Double.toString(getTotalSeconds());
+      return Double.toString(getTotalSeconds() / 3600)  + "   :   " + Double.toString((getTotalSeconds() / 60) % 60) + "   :   " + Double.toString(getTotalSeconds());
    }
 
 
@@ -132,11 +133,11 @@ public class Clock {
    *  remember you are trying to BREAK your code, not just prove it works!
    */
    public static void main( String args[] ) {
-      if (args.length < 2){
+      if (args.length == 0){
         timeSlice = DEFAULT_TIME_SLICE_IN_SECONDS;
       }
       else {
-        timeSlice = totalSeconds;
+        timeSlice = Double.parseDouble(args[1]);
       }
       System.out.println( "\nCLOCK CLASS TESTER PROGRAM\n" +
                           "--------------------------\n" );
