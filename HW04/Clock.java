@@ -3,6 +3,8 @@
  *  Purpose       :  Provides a class defining methods for the ClockSolver class
  *  @author       :  B.J. Johnson
  *  Date written  :  2017-02-28
+ *  @author       :  Talia Bahar
+ *  Date written  :  2017-03-11
  *  Description   :  This class provides a bunch of methods which may be useful for the ClockSolver class
  *                   for Homework 4, part 1.  Includes the following:
  *
@@ -34,8 +36,12 @@ public class Clock {
   /**
    *  Constructor goes here
    */
+   public Clock(){
+      this.timeSlice = 60;
+   }
+
    public Clock(double angle, double timeSlice) {
-     targetAngle = angle % 360;
+     this.targetAngle = angle % 360;
      this.timeSlice = timeSlice;
    }
 
@@ -75,7 +81,7 @@ public class Clock {
    */
    public double validateTimeSliceArg( String argValue ) throws NumberFormatException {
      double newArgValue = Double.parseDouble(argValue);
-     if(newArgValue < 0 || newArgValue > 1800){throw new NumberFormatException();}
+     if(newArgValue < 0 || newArgValue > 1800){return INVALID_ARGUMENT_VALUE;}
       return newArgValue;
    }
 
@@ -148,5 +154,39 @@ public class Clock {
       System.out.print( "      sending '  0 degrees', expecting double value   0.0" );
       try { System.out.println( (0.0 == clock.validateAngleArg( "0.0" )) ? " - got 0.0" : " - no joy" ); }
       catch( Exception e ) { System.out.println ( " - Exception thrown: " + e.toString() ); }
+      System.out.println(clock.getTotalSeconds());
+      int numSeconds = 0;
+      for (int i=0;i<10;i++) {
+        numSeconds += Double.parseDouble(args[1]);
+        clock.tick();
+        try { System.out.println( (numSeconds == clock.getTotalSeconds()) ? " - got the right amount of seconds" : " - no joy" ); }
+        catch( Exception e ) { System.out.println ( " - Exception thrown: " + e.toString() ); }
+      }
+     System.out.println(clock.getTotalSeconds());
+     try { System.out.println( (100 == clock.validateTimeSliceArg("100")) ? " - 100 is a valid time slice" : " - 100 is not a valid time slice" ); }
+     catch( NumberFormatException nfe ) { System.out.println ( " - Exception thrown: " + nfe.toString() ); }
+     try { System.out.println( (23.4 == clock.validateTimeSliceArg("23.4")) ? " - 23.4 is a valid time slice" : " - 23.4 is not a valid time slice" ); }
+     catch( NumberFormatException nfe ) { System.out.println ( " - Exception thrown: " + nfe.toString() ); }
+     try { System.out.println( (-50 == clock.validateTimeSliceArg("-50")) ? " - -50 is a valid time slice" : " - -50 is not a valid time slice" ); }
+     catch( NumberFormatException nfe ) { System.out.println ( " - Exception thrown: " + nfe.toString() ); }
+     try { System.out.println( (-1 == clock.validateTimeSliceArg("2000")) ? " - 2000 is not a valid time slice" : " not correct output" ); }
+     catch( NumberFormatException nfe ) { System.out.println ( " - Exception thrown: " + nfe.toString() ); }
+     try { System.out.println( (-1 == clock.validateTimeSliceArg("abc")) ? " - abc is a valid time slice" : " - abc is not a valid time slice" ); }
+     catch( NumberFormatException nfe ) { System.out.println ( " - Exception thrown: " + nfe.toString() ); }
+
+     try { System.out.println( (100 == clock.validateAngleArg("100")) ? " - 100 is a valid angle" : " - 100 is not a valid angle" ); }
+     catch( NumberFormatException nfe ) { System.out.println ( " - Exception thrown: " + nfe.toString() ); }
+     try { System.out.println( (23.4 == clock.validateAngleArg("23.4")) ? " - 23.4 is a valid angle" : " - 23.4 is not a valid angle" ); }
+     catch( NumberFormatException nfe ) { System.out.println ( " - Exception thrown: " + nfe.toString() ); }
+     try { System.out.println( (-50 == clock.validateAngleArg("-50")) ? " - -50 is a valid angle" : " - -50 is not a valid angle" ); }
+     catch( NumberFormatException nfe ) { System.out.println ( " - Exception thrown: " + nfe.toString() ); }
+     try { System.out.println( (450 == clock.validateAngleArg("450")) ? " - 450 is a valid angle" : " - 450 is not a valid angle" ); }
+     catch( NumberFormatException nfe ) { System.out.println ( " - Exception thrown: " + nfe.toString() ); }
+
+
+
+
+// wanna check hand stuff
+
    }
 }
