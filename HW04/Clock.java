@@ -127,7 +127,7 @@ public class Clock {
    *  @return String value of the current clock
    */
    public String toString() {
-      return "Target Angle found at " + targetAngle + " degrees =  " + Double.toString(Math.floor(getTotalSeconds() / 3600))  + " hours : " + Double.toString((getTotalSeconds() / 60) % 60) +  " minutes : " + Double.toString(getTotalSeconds() % 60) + " seconds";
+      return "Target Angle found at " + targetAngle + " degrees =  " + Double.toString(Math.floor(getTotalSeconds() / 3600))  + " hours : " + Double.toString(Math.floor((getTotalSeconds() / 60) % 60)) +  " minutes : " + Double.toString(getTotalSeconds() % 60) + " seconds";
    }
 
 
@@ -182,11 +182,5 @@ public class Clock {
      catch( NumberFormatException nfe ) { System.out.println ( " - Exception thrown: " + nfe.toString() ); }
      try { System.out.println( (450 == clock.validateAngleArg("450")) ? " - 450 is a valid angle" : " - 450 is not a valid angle" ); }
      catch( NumberFormatException nfe ) { System.out.println ( " - Exception thrown: " + nfe.toString() ); }
-
-
-
-
-// wanna check hand stuff
-
    }
 }

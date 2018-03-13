@@ -42,10 +42,6 @@ public class ClockSolver {
    *   this sets up the variables for the simulation
    */
    public void handleInitialArguments( String args[] ) {
-     // args[0] specifies the angle for which you are looking
-     //  your simulation will find all the angles in the 12-hour day at which those angles occur
-     // args[1] if present will specify a time slice value; if not present, defaults to 60 seconds
-     // you may want to consider using args[2] for an "angle window"
       System.out.println( "\n   Hello world, from the ClockSolver program!!\n\n" ) ;
       Clock c = new Clock();
       if( 0 == args.length ) {
@@ -67,15 +63,6 @@ public class ClockSolver {
       }
    }
 
-  /**
-   *  The main program starts here
-   *  remember the constraints from the project description
-   *  @see  http://bjohnson.lmu.build/cmsi186web/homework04.html
-   *  @param  args  String array of the arguments from the command line
-   *                args[0] is the angle for which we are  looking
-   *                args[1] is the time slice; this is optional and defaults to 60 seconds
-   */
-  //  validateArgs (clock.validateAngle & clock.validateTimeSlice)
    public static void main( String args[] ) {
       ClockSolver cse = new ClockSolver();
       double[] timeValues = new double[3];
@@ -84,9 +71,12 @@ public class ClockSolver {
       int totalSecondsIn12Hours = 43200;
       System.out.println( "\n   Looking for angles of " + targetAngle + " degrees with a " + timeSlice + " second timeslice \n" ) ;
       while( clock.getTotalSeconds() < totalSecondsIn12Hours ) {
-        // make this absolute value
-         if (cse.targetAngle - clock.getHandAngle() <= EPSILON_VALUE) {
-          //  System.out.println(clock.getHandAngle() + " <=====> " + cse.targetAngle);
+        if (clock.getTotalSeconds() == 712) {
+           System.out.println(clock.getHandAngle() + " <=====> " + cse.targetAngle);
+
+        }
+         if (cse.targetAngle - clock.getHandAngle() <= EPSILON_VALUE && cse.targetAngle - clock.getHandAngle() >= 0 ||
+             clock.getHandAngle() - cse.targetAngle <= EPSILON_VALUE && clock.getHandAngle() - cse.targetAngle >= 0) {
            System.out.println(clock.toString());
          }
          clock.tick();
