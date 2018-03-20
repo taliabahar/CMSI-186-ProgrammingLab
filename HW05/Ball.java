@@ -10,86 +10,101 @@
  *  Exceptions    :  IllegalArgumentException when the input arguments are "hinky"
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 public class Ball {
-  private static final double DEFAULT_TIME_SLICE_IN_SECONDS = 60.0;
-  private static final double INVALID_ARGUMENT_VALUE = -1.0;
-  private static final double FRICATION_VALUE               = .99;
-  private static double DEFAULT_X1_LOC                      = 10;
-  private static double DEFAULT_Y1_LOC                      = 10;
-  private static double DEFAULY_X1_MOVE                     = 1;
-  private static double DEFAULY_Y1_MOVE                     = 1;
-  private static double DEFAULT_X2_LOC                      = -10;
-  private static double DEFAULT_Y2_LOC                      = 10;
-  private static double DEFAULY_X2_MOVE                     = 1;
-  private static double DEFAULY_Y2_MOVE                     = 1;
-  private static double totalSeconds                        = 0;
-  private static double timeSlice                           = 0;
+  private static final double INVALID_ARGUMENT_VALUE        = -1.0;
+  private static final double FRICTION_VALUE                = .99;
 
-  private static double BallX1Loc                           = 0;
-  private static double BallX1Vel                           = 0;
-  private static double BallY1Loc                           = 0;
-  private static double BallY1Vel                           = 0;
-  private static double BallX2Loc                           = 0;
-  private static double BallX2Vel                           = 0;
-  private static double BallY2Loc                           = 0;
-  private static double BallY2Vel                           = 0;
+  private static final double DEFAULT_X_LOC                 = 10;
+  private static final double DEFAULT_Y_LOC                 = 10;
+  private static final double DEFAULT_X_MOVE                = 1;
+  private static final double DEFAULT_Y_MOVE                = 1;
 
-  private static double fieldWidth                           = 500;
-  private static double fieldHeight                          = 500;
+  private static double ballXLoc                            = 0;
+  private static double ballXVel                            = 0;
+  private static double ballYLoc                            = 0;
+  private static double ballYVel                            = 0;
 
 
+  private static double fieldWidth                          = 500;
+  private static double fieldHeight                         = 500;
 
+  private static double quadrant1Width                      = 250;
+  private static double quadrant2Width                      = -250;
+  private static double quadrant3Width                      = -250;
+  private static double quadrant4Width                      = 250;
 
-// validate location
-// has collided
-// calculate location
+// calculation has to divide that in half
+
 // update velocity every time slice
+// velocity is in feet BUT when the velocity is <= 1 inch per second
+// ball radius is in inches
+// constructor in ball only has one ball
+// constructor in soccersim has multiple
+// positive reals do not include 0
+// non-negative reals do include 0
 
-  // constructor
   public Ball() {
-    BallX1Loc = DEFAULT_X1_LOC;
-    BallY1Loc = DEFAULT_Y1_LOC;
-    BallX1Vel = DEFAULT_X1_MOVE;
-    BallY1Vel = DEFAULY_Y1_MOVE;
-    BallX2Loc = DEFAULT_X2_LOC;
-    BallY2Loc = DEFAULT_Y2_LOC;
-    BallX2Vel = DEFAULY_X2_MOVE;
-    BallY2Vel = DEFAULY_Y2_MOVE;
-    timeSlice = DEFAULT_TIME_SLICE_IN_SECONDS;
+    ballXLoc = DEFAULT_X_LOC;
+    ballYLoc = DEFAULT_Y_LOC;
+    ballXVel = DEFAULT_X_MOVE;
+    ballYVel = DEFAULT_Y_MOVE;
   }
 
-  public Ball(double x1loc, double y1loc, double x1move, double y1move, double x2loc, double y2loc, double x2move, double y2move, double timeSlice) {
-    BallX1Loc = x1loc;
-    BallY1Loc = y1loc;
-    BallX1Vel = x1move;
-    BallY1Vel = y1move;
-    BallX2Loc = x2loc;
-    BallY2Loc = y2loc;
-    BallX2Vel = x2move;
-    BallY2Vel = y2move;
-    timeSlice = this.timeSlice;
+  public Ball(double xloc, double yloc, double xmove, double ymove) {
+    ballXLoc = xloc;
+    ballYLoc = yloc;
+    ballXVel = xmove;
+    ballYVel = ymove;
   }
 
-
-  public double tick() {
-     totalSeconds += timeSlice;
-     return totalSeconds;
-  }
-
-  public double validateBallXLocation( String xloc ) throws NumberFormatException {
-    double newXloc = Double.parseDouble(xloc);
-    if(newXloc < 0 || newXloc > fieldWidth){throw new NumberFormatException();}
-     return newXloc;
-  }
-  public double validateBallXLocation( String yloc ) throws NumberFormatException {
-    double newYloc = Double.parseDouble(yloc);
-    if(newYloc < 0 || newYloc > fieldHeight){throw new NumberFormatException();}
-     return newYloc;
-  }
-
-  public double validateTimeSliceArg( String argValue ) throws NumberFormatException {
+  public double validateBallXLocation( String argValue ) throws NumberFormatException {
     double newArgValue = Double.parseDouble(argValue);
-    if(newArgValue < 0 || newArgValue > 1800){return INVALID_ARGUMENT_VALUE;}
+    if(newArgValue < 0 || newArgValue > fieldWidth){throw new NumberFormatException();}
      return newArgValue;
+  }
+
+  public double validateBallYLocation( String argValue ) throws NumberFormatException {
+    double newArgValue = Double.parseDouble(argValue);
+    if(newArgValue < 0 || newArgValue > fieldHeight){throw new NumberFormatException();}
+     return newArgValue;
+  }
+
+  public double validateBallVelocity( String argValue ) throws NumberFormatException {
+    double newArgValue = Double.parseDouble(argValue);
+    if(){throw new NumberFormatException();}
+     return newArgValue;
+  }
+  // check if its bigger than the size of the field
+  // do not want x and y location to be the same
+
+  // public double[] calculateLocation(){
+  //     double[] location = {ballXLoc, ballYLoc};
+  //     return location;
+  // }
+  //
+  // public double[] calculateVelocity(){
+  //   double[] velocity = {ballXVel, ballYVel};
+  //   return velocity;
+  // }
+  public void move(double timeSlice) {
+    // distance = velocity * time + 1/2 * acceleration * t ^ 2
+    ballXLoc += ballXVel * timeSlice + 0.5 * FRICTION_VALUE * Math.pow(timeSlice, 2);
+    ballYLoc += ballYVel * timeSlice + 0.5 * FRICTION_VALUE * Math.pow(timeSlice, 2);
+    ballXVel *= FRICTION_VALUE * timeSlice;
+    ballYVel *= FRICTION_VALUE * timeSlice;
+    if (Math.abs(ballXVel) < 1) {
+      ballXVel = 0;
+    }
+    if (Math.abs(ballYVel) < 1) {
+      ballYVel = 0;
+    }
+  }
+
+
+
+  public String toString(){
+    return "";
+    // "Location x : ii Location y : ii Velcotiy x : ii Velocity y : ii"
+// returns current location and currrent velocity
   }
 
 
