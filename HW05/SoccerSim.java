@@ -22,13 +22,17 @@
 
    private static double timeSlice;
    private static final double DEFAULT_TIMESLICE_SECONDS           = 1;
+   private Timer timer;
+
 
    private Ball[] ballArray;
    private int numBalls;
    private static final double ballRadius                          = 4.5;
 
+   private
 
-  private static double [] pole = new double []{-300, 250}; ;
+
+  private static double [] pole = new double []{-300, 250};
 
 
 
@@ -43,6 +47,7 @@
     else {
       throw new IllegalArgumentException("Wrong number of input values");
     }
+    timer = new Timer(timeSlice);
     ballArray = new Ball[numBalls];
     int j=0;
     for (int i=0; i < ballArray.length; i+=4) {
@@ -56,7 +61,6 @@
 
   }
 
-// why just b1?
   public boolean hasCollided() {
     for (Ball b1 : ballArray) {
       if (Math.sqrt(Math.pow(pole[0] - b1.getXLoc(),2) +(Math.pow(pole[1] - b1.getYLoc(), 2))) < ballRadius){
@@ -89,69 +93,85 @@
     return true;
   }
 
-
-  // public double calculateDistance(ball1, ball2) {
-  //
-  // }
-  //
-
+public void run() {
+  for (Ball b : ballArray){
+    b.move();
+  }
+  timer.tick();
+}
   // An initial report that gives the locations of all objects, including the initial velocity of each ball.
   // After every time slice, a report showing the location and velocity of every ball.
   // A final report indicating the simulated time of the first collision, the objects involved and their locations;
   //   or, the message NO COLLISION IS POSSIBLE, giving the simulated time at which the program made that discovery.
-  // public String toString() {
-
-  // }
+  public String toString() {
+    for (Ball b : ballArray){
+    System.out.println("PORGRESS REPORT @: " + timer.totalSeconds() + b.toString());
+    }
+  }
   // if ball is at rest and collision hasn't happened its not possible
   // initial report
   // progress report @ ____
   // has collided (where and when)
 
-
-  // do not want x and y location to be the same ???
-  public double validateBallXLocation( String argValue ) throws NumberFormatException {
-    double newArgValue = Double.parseDouble(argValue);
-    if(newArgValue > Q1_AND_Q4_WIDTH || newArgValue < Q2_AND_Q3_WIDTH) {throw new NumberFormatException("Ball's X position is off the field");}
-    // if(newArgValue == Double.parseDouble(ballArray[1])){throw new NumberFormatException("Ball's starting X position is on top of Y");}
-     return newArgValue;
+  public void validateBallXLocation() throws NumberFormatException {
+    for (Ball b1 : ballArray) {
+      if (b1.getXLoc() > Q1_AND_Q4_WIDTH ||b1.getXLoc() < Q2_AND_Q3_WIDTH){
+        throw new NumberFormatException("Ball's X position is off the field");
+      }
+      for (Ball b2 : ballArray) {
+        if (b1.getXLoc() == b2.getXLoc()){
+          throw new NumberFormatException("Ball's starting X positions can not be the same");
+        }
+      }
+    }
   }
 
-  public double validateBallYLocation( String argValue ) throws NumberFormatException {
-    double newArgValue = Double.parseDouble(argValue);
-    if(newArgValue > Q1_AND_Q2_HEIGHT || newArgValue < Q3_AND_Q4_HEIGHT){throw new NumberFormatException("Ball's Y position is off the field");}
-    // if(newArgValue == xpos){throw new NumberFormatException("Ball's starting Y position is on top of X");}
-     return newArgValue;
+  public void validateBallYLocation() throws NumberFormatException {
+    for (Ball b1 : ballArray) {
+      if (b1.getYLoc() > Q1_AND_Q2_HEIGHT ||b1.getYLoc() < Q3_AND_Q4_HEIGHT){
+        throw new NumberFormatException("Balls' Y position is off the field");
+      }
+      for (Ball b2 : ballArray) {
+        if (b1.getYLoc() == b2.getYLoc()){
+          throw new NumberFormatException("Balls' starting Y positions  can not be the same");
+        }
+      }
+    }
   }
 
-  public double validateBallXVelocity( String argValue ) throws NumberFormatException {
-    double newArgValue = Double.parseDouble(argValue);
-    if(newArgValue > Q1_AND_Q4_WIDTH || newArgValue < Q2_AND_Q3_WIDTH) {throw new NumberFormatException("Ball's X velocity sends ball off the field");}
-     return newArgValue;
+  public void validateBallXVelocity() throws NumberFormatException {
+    for (Ball b : ballArray) {
+        if(b.getXVel() > Q1_AND_Q4_WIDTH || b.getXVel() < Q2_AND_Q3_WIDTH){
+         throw new NumberFormatException("Ball's X velocity sends ball off the field");
+       }
+    }
   }
 
-  public double validateBallYVelocity( String argValue ) throws NumberFormatException {
-    double newArgValue = Double.parseDouble(argValue);
-    if(newArgValue > Q1_AND_Q2_HEIGHT || newArgValue < Q3_AND_Q4_HEIGHT){throw new NumberFormatException("Ball's Y velocity sends ball off the field");}
-     return newArgValue;
+  public void validateBallYVelocity() throws NumberFormatException {
+    for (Ball b : ballArray) {
+        if(b.getYVel() > Q1_AND_Q2_HEIGHT || b.getYVel() < Q3_AND_Q4_HEIGHT){
+         throw new NumberFormatException("Ball's Y velocity sends ball off the field");
+       }
+    }
   }
 
   public static void main(String[] args) {
-    SoccerSim sse = new SoccerSim();
-    // double[] ballValues = new double[4];
-    sse.handleInitialArguments( args );
-    Timer timer = new Timer(sse.timeSlice);
-
-    while(!sse.atRest() || sse.ballIsOnField()) {
-
-       timer.tick();
+    SoccerSim sse = new SoccerSim(args);
+    try {
+      sse.validateBallXLocation();
+      sse.validateBallYLocation();
+      sse.validateBallXVelocity();
+      sse.validateBallYVelocity();
+      for (Ball b : ballArray){
+      System.out.println("INITIAL REPORT: " + b.toString());
+      }
+      while(!sse.atRest() || sse.ballIsOnField() || !sse.hasCollided()) {
+        sse.toString()
+         sse.run();
+      }
+      System.out.println("COLLSION @:");
     }
+    catch( NumberFormatException nfe ){System.out.println(nfe);}
     System.exit( 0 );
  }
 }
-    // validate args ?
-    // construct soccersim
-    // construct timer
-    // while moving and on field
-    // prints tostring
-    // collsion stops it too
-    // tick
