@@ -10,15 +10,15 @@
  *  Exceptions    :  IllegalArgumentException when the input arguments are "hinky"
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 public class Ball {
-  private static final double INVALID_ARGUMENT_VALUE        = -1.0;
-  private static final double FRICTION_VALUE                = .01;
-  private static final double DEFAULT_TIMESLICE_IN_SECONDS  = 1.0;
-  private static double timeSlice                           = 0;
+  private static final double INVALID_ARGUMENT_VALUE              = -1.0;
+  private static final double FRICTION_VALUE                      = .99;
+  private static final double DEFAULT_TIMESLICE_IN_SECONDS        = 1.0;
+  private static double timeSlice                                 = 0;
 
-  private static final double DEFAULT_X_LOC                 = 10;
-  private static final double DEFAULT_Y_LOC                 = 10;
-  private static final double DEFAULT_X_MOVE                = 1;
-  private static final double DEFAULT_Y_MOVE                = 1;
+  private static final double DEFAULT_X_LOC                       = 10;
+  private static final double DEFAULT_Y_LOC                       = 10;
+  private static final double DEFAULT_X_MOVE                      = 1;
+  private static final double DEFAULT_Y_MOVE                      = 1;
 
   private static double ballXLoc;
   private static double ballXVel;
@@ -26,10 +26,6 @@ public class Ball {
   private static double ballYVel;
 
 
-
-
-
-// calculation has to divide that in half
 
 // velocity is in feet BUT when the velocity is <= 1 inch per second
 // ball radius is in inches
@@ -58,8 +54,11 @@ public class Ball {
     // ballYLoc += ballYVel * timeSlice + 0.5 * FRICTION_VALUE * Math.pow(timeSlice, 2);
     ballXLoc += ballXVel;
     ballYLoc += ballYVel;
-    ballXVel = ballXVel - ((ballXVel * FRICTION_VALUE) * timeSlice);
-    ballYVel = ballYVel - ((ballYVel * FRICTION_VALUE) * timeSlice);
+    ballXVel = ballXVel * Math.pow(FRICTION_VALUE, timeSlice);
+    ballYVel = ballYVel * Math.pow(FRICTION_VALUE, timeSlice);
+    // ballXVel = ballXVel - ((ballXVel * FRICTION_VALUE) * timeSlice);
+    // ballYVel = ballYVel - ((ballYVel * FRICTION_VALUE) * timeSlice);
+    // for this one friction value is .01
     if ((ballXVel/12) < 1) {
       ballXVel = 0;
     }
@@ -71,7 +70,6 @@ public class Ball {
 public boolean hasStopped() {
   return ballXVel/12 < .083 && ballYVel/12 < .083;
 }
-// for velocity: vi * Math.pow(0.99, timeSlice)
 
   public double getXLoc(){
     return ballXLoc;
@@ -89,6 +87,13 @@ public boolean hasStopped() {
   public String toString(){
     return "X Location: " + ballXLoc + " Y Location: " + ballYLoc + " X Velocity: " + ballXVel + " Y Velocity: " + ballYVel;
   }
+public static void main(String[] args) {
+    System.out.println( "\nBALL CLASS TESTER PROGRAM\n" +
+                        "--------------------------\n" );
+    System.out.println( "  Creating a new ball: " );
+    Ball ball = new Ball();
+    System.out.println( "  New ball created: " + ball.toString());
+  }
 
-// test to String
+// test to String and has stopped , check if move is updating?
 }

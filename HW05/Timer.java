@@ -36,5 +36,9 @@ public String toString() {
    return  Double.toString(Math.floor(getTotalSeconds() / 3600))  + " hours : " + Double.toString(Math.floor((getTotalSeconds() / 60) % 60)) +  " minutes : " + Double.toString(getTotalSeconds() % 60) + " seconds";
 }
 
-
+public static void main(String[] args) {
+  System.out.println( "\nTIMER CLASS TESTER PROGRAM\n" +
+                      "--------------------------\n" );
+  System.out.println( "  Creating a new timer: " );
+  }
 }

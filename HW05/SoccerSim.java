@@ -12,36 +12,24 @@
  public class SoccerSim{
    private static final double fieldWidth                          = 500;
    private static final double fieldHeight                         = 500;
-   private static final double DEFAULT_TIMESLICE_SECONDS        = 1;
 
-   private static final double quadrant1Width                      = 250;
-   private static final double quadrant1Height                     = 250;
+   private static final double Q1_AND_Q4_WIDTH                     = 250;
+   private static final double Q2_AND_Q3_WIDTH                     = -250;
 
-   private static final double quadrant2Width                      = -250;
-   private static final double quadrant2Height                     = 250;
+   private static final double Q1_AND_Q2_HEIGHT                    = 250;
+   private static final double Q3_AND_Q4_HEIGHT                    = -250;
 
-   private static final double quadrant3Width                      = -250;
-   private static final double quadrant3Height                     = -250;
 
-   private static final double quadrant4Width                      = 250;
-   private static final double quadrant4Height                     = -250;
+   private static double timeSlice;
+   private static final double DEFAULT_TIMESLICE_SECONDS           = 1;
 
-  private Ball[] ballArray;
-  private int numBalls;
-  private static double timeSlice;
-  private static final double ballRadius                    = 4.5;
+   private Ball[] ballArray;
+   private int numBalls;
+   private static final double ballRadius                          = 4.5;
 
 
   private static double [] pole = new double []{-300, 250}; ;
 
-
-
-  // initial report
-  // progress report @ ____
-  // has collided (where and when) // centers <= 8.9 inches (ball radius is 4.5)
-
-  // at rest
-  // pole
 
 
   public SoccerSim(String[] args){
@@ -68,6 +56,7 @@
 
   }
 
+// why just b1?
   public boolean hasCollided() {
     for (Ball b1 : ballArray) {
       if (Math.sqrt(Math.pow(pole[0] - b1.getXLoc(),2) +(Math.pow(pole[1] - b1.getYLoc(), 2))) < ballRadius){
@@ -85,74 +74,84 @@
   public boolean atRest() {
     for (Ball b : ballArray){
       if (!b.hasStopped()) {
-        return true;
+        return false;
       }
     }
-    return false;
+    return true;
   }
-
 
   public boolean ballIsOnField() {
     for (Ball b : ballArray) {
-      if (b.getXLoc() > quadrant1Width || b.getXLoc() > quadrant2Width || b.getYLoc() > quadrant1Height || b.getXLoc() > quadrant3Height){
-        return true;
+      if (b.getXLoc() > Q1_AND_Q4_WIDTH || b.getXLoc() < Q2_AND_Q3_WIDTH || b.getYLoc() > Q1_AND_Q2_HEIGHT || b.getXLoc() > Q3_AND_Q4_HEIGHT){
+        return false;
       }
     }
-    return false;
+    return true;
   }
 
-  //
-  // public double ballsMoving() {
-  //
-  // }
-  //
+
   // public double calculateDistance(ball1, ball2) {
   //
   // }
   //
+
+  // An initial report that gives the locations of all objects, including the initial velocity of each ball.
+  // After every time slice, a report showing the location and velocity of every ball.
+  // A final report indicating the simulated time of the first collision, the objects involved and their locations;
+  //   or, the message NO COLLISION IS POSSIBLE, giving the simulated time at which the program made that discovery.
   // public String toString() {
 
   // }
   // if ball is at rest and collision hasn't happened its not possible
+  // initial report
+  // progress report @ ____
+  // has collided (where and when)
 
 
-
-
+  // do not want x and y location to be the same ???
   public double validateBallXLocation( String argValue ) throws NumberFormatException {
     double newArgValue = Double.parseDouble(argValue);
-    if(newArgValue < quadrant2Width || newArgValue > quadrant1Width){throw new NumberFormatException();}
+    if(newArgValue > Q1_AND_Q4_WIDTH || newArgValue < Q2_AND_Q3_WIDTH) {throw new NumberFormatException("Ball's X position is off the field");}
+    // if(newArgValue == Double.parseDouble(ballArray[1])){throw new NumberFormatException("Ball's starting X position is on top of Y");}
      return newArgValue;
   }
 
-  // do not want x and y location to be the same
   public double validateBallYLocation( String argValue ) throws NumberFormatException {
     double newArgValue = Double.parseDouble(argValue);
-    if(newArgValue < quadrant3Height || newArgValue > quadrant4Width){throw new NumberFormatException();}
+    if(newArgValue > Q1_AND_Q2_HEIGHT || newArgValue < Q3_AND_Q4_HEIGHT){throw new NumberFormatException("Ball's Y position is off the field");}
+    // if(newArgValue == xpos){throw new NumberFormatException("Ball's starting Y position is on top of X");}
      return newArgValue;
   }
 
-  // check if its bigger than the size of the field
-  // check both since different directions
-  // public double validateBallXVelocity( String argValue ) throws NumberFormatException {
-  //   double newArgValue = Double.parseDouble(argValue);
-  //   if(){throw new NumberFormatException();}
-  //    return newArgValue;
-  // }
-  //
-  // public double validateBallYVelocity( String argValue ) throws NumberFormatException {
-  //   double newArgValue = Double.parseDouble(argValue);
-  //   if(){throw new NumberFormatException();}
-  //    return newArgValue;
-  // }
+  public double validateBallXVelocity( String argValue ) throws NumberFormatException {
+    double newArgValue = Double.parseDouble(argValue);
+    if(newArgValue > Q1_AND_Q4_WIDTH || newArgValue < Q2_AND_Q3_WIDTH) {throw new NumberFormatException("Ball's X velocity sends ball off the field");}
+     return newArgValue;
+  }
+
+  public double validateBallYVelocity( String argValue ) throws NumberFormatException {
+    double newArgValue = Double.parseDouble(argValue);
+    if(newArgValue > Q1_AND_Q2_HEIGHT || newArgValue < Q3_AND_Q4_HEIGHT){throw new NumberFormatException("Ball's Y velocity sends ball off the field");}
+     return newArgValue;
+  }
 
   public static void main(String[] args) {
-    System.out.println("hello world XD");
-    // validate args
+    SoccerSim sse = new SoccerSim();
+    // double[] ballValues = new double[4];
+    sse.handleInitialArguments( args );
+    Timer timer = new Timer(sse.timeSlice);
+
+    while(!sse.atRest() || sse.ballIsOnField()) {
+
+       timer.tick();
+    }
+    System.exit( 0 );
+ }
+}
+    // validate args ?
     // construct soccersim
     // construct timer
     // while moving and on field
     // prints tostring
-    // collsion
+    // collsion stops it too
     // tick
-  }
-}
