@@ -26,10 +26,10 @@ public class Ball {
 
 
 
-  private static double ballXLoc;
-  private static double ballXVel;
-  private static double ballYLoc;
-  private static double ballYVel;
+  private double ballXLoc;
+  private double ballXVel;
+  private double ballYLoc;
+  private double ballYVel;
 
 // velocity is in feet BUT when the velocity is <= 1 inch per second
 // ball radius is in inches
@@ -53,26 +53,20 @@ public class Ball {
   }
 
   public void move() {
-    // distance = velocity * time + 1/2 * acceleration * t ^ 2
-    // ballXLoc += ballXVel * timeSlice + 0.5 * FRICTION_VALUE * Math.pow(timeSlice, 2);
-    // ballYLoc += ballYVel * timeSlice + 0.5 * FRICTION_VALUE * Math.pow(timeSlice, 2);
     ballXLoc += ballXVel;
     ballYLoc += ballYVel;
-    // ballXVel = ballXVel * Math.pow(FRICTION_VALUE, timeSlice);
-    // ballYVel = ballYVel * Math.pow(FRICTION_VALUE, timeSlice);
     ballXVel = ballXVel - ((ballXVel * (FRICTION_VALUE)));
     ballYVel = ballYVel - ((ballYVel * (FRICTION_VALUE)));
-    // for this one friction value is .01
-    if ((ballXVel * 12) <= 1.0) {
+    if ((Math.abs(ballXVel) * 12) <= 1.0) {
       ballXVel = 0;
     }
-    if ((ballYVel * 12) <= 1.0) {
+    if ((Math.abs(ballYVel) * 12) <= 1.0) {
       ballYVel = 0;
     }
   }
 
 public boolean hasStopped() {
-  return ballXVel * 12 < .083 && ballYVel * 12 < .083;
+  return ballXVel <= VELOCITY_AT_1INCH_PERSECOND && ballYVel <= VELOCITY_AT_1INCH_PERSECOND;
 }
 
   public double getXLoc(){
@@ -101,16 +95,16 @@ public static void main(String[] args) {
 
     ball.move();
     System.out.println("Update: " + ball.toString());
-    try { System.out.println( (15.0 == ballXLoc) ? " move() for X-Location is working as intended" : " move() is not working" ); }
+    try { System.out.println( (15.0 == ball.ballXLoc) ? " move() for X-Location is working as intended" : " move() is not working" ); }
     catch( Exception e ) { System.out.println ( " -{} Exception thrown: " + e.toString() ); }
-    try { System.out.println( (-5.0 == ballYLoc) ? " move() for Y-Location is working as intended" : " move() is not working" ); }
+    try { System.out.println( (-5.0 == ball.ballYLoc) ? " move() for Y-Location is working as intended" : " move() is not working" ); }
     catch( Exception e ) { System.out.println ( " - Exception thrown: " + e.toString() ); }
 
     ball.move();
     System.out.println("Update: " + ball.toString());
-    try { System.out.println( (19.95 == ballXLoc) ? " move() for X-Location is working as intended" : " move() is not working" ); }
+    try { System.out.println( (19.95 == ball.ballXLoc) ? " move() for X-Location is working as intended" : " move() is not working" ); }
     catch( Exception e ) { System.out.println ( " - Exception thrown: " + e.toString() ); }
-    try { System.out.println( (-0.05 <= ballYLoc) ? " move() for Y-Location is working as intended" : " move() is not working" ); }
+    try { System.out.println( (-0.05 <= ball.ballYLoc) ? " move() for Y-Location is working as intended" : " move() is not working" ); }
     catch( Exception e ) { System.out.println ( " - Exception thrown: " + e.toString() ); }
     for (int i=0; i < 900; i++){
       ball.move();
