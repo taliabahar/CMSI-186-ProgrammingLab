@@ -7,13 +7,12 @@
  *
  *  Notes         :  None right now.
  *  Warnings      :  None
- *  Exceptions    :  IllegalArgumentException when the input arguments are "hinky"
+ *  Exceptions    :  None
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 import java.text.DecimalFormat;
 
 public class Ball {
   DecimalFormat df = new DecimalFormat("#0.00");
-  private static final double INVALID_ARGUMENT_VALUE              = -1.0;
   private static final double FRICTION_VALUE                      = .01;
   private static final double DEFAULT_TIMESLICE_IN_SECONDS        = 1.0;
   private static double timeSlice                                 = 0;
@@ -24,17 +23,10 @@ public class Ball {
   private static final double DEFAULT_Y_MOVE                      = 5;
   private static final double VELOCITY_AT_1INCH_PERSECOND         = .083;
 
-
-
   private double ballXLoc;
   private double ballXVel;
   private double ballYLoc;
   private double ballYVel;
-
-// velocity is in feet BUT when the velocity is <= 1 inch per second
-// ball radius is in inches
-// positive reals do not include 0
-// non-negative reals do include 0
 
   public Ball() {
     ballXLoc = DEFAULT_X_LOC;

@@ -1,15 +1,16 @@
 /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  *  File name     :  SoccerSim.java
- *  Purpose       :
+ *  Purpose       :  Runs the discrete simulation.
  *  @author       :  Talia Bahar
  *  Date written  :  2018-03-13
- *  Description   :
- *
+ *  Description   : Discrete Simulation that creates a number of balls to move across the field based
+                    on user inputs. Balls move until they collide with another ball or a pole on the field, go off
+                    the field, or are at rest.
  *  Notes         :  None right now.
  *  Warnings      :  None
- *  Exceptions    :  IllegalArgumentException when the input arguments are "hinky"
+ *  Exceptions    :  IllegalArgumentException and NumberFormatException when the input arguments are "hinky"
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
- public class SoccerSim{
+ public class SoccerSim {
    private static final double Q1_AND_Q4_WIDTH                     = 250;
    private static final double Q2_AND_Q3_WIDTH                     = -250;
 
