@@ -1,0 +1,1577 @@
+.                                       
+.                                       
+======================================  
+... Testing Ball class ...              
+======================================  
+
+BALL CLASS TESTER PROGRAM
+--------------------------
+
+  Creating a new ball: 
+  New ball created: X-Location: 10.00 Y-Location: -10.00 X-Velocity: 5.00 Y-Velocity: 5.00
+Update: X-Location: 15.00 Y-Location: -5.00 X-Velocity: 4.95 Y-Velocity: 4.95
+ move() for X-Location is working as intended
+ move() for Y-Location is working as intended
+Update: X-Location: 19.95 Y-Location: -0.05 X-Velocity: 4.90 Y-Velocity: 4.90
+ move() for X-Location is working as intended
+ move() for Y-Location is working as intended
+Current X-Velocity is 0.0
+Current Y-Velocity is 0.0
+ hasStopped() is working as intended
+.                                       
+.                                       
+.                                       
+.                                       
+======================================  
+... Testing Timer class ...                
+======================================  
+
+TIMER CLASS TESTER PROGRAM
+--------------------------
+
+  Creating a new timer: 
+  New timer created: 0.0 hours : 0.0 minutes : 0.0 seconds
+0.0
+ - got the right amount of seconds
+ - got the right amount of seconds
+ - got the right amount of seconds
+ - got the right amount of seconds
+ - got the right amount of seconds
+ - got the right amount of seconds
+ - got the right amount of seconds
+ - got the right amount of seconds
+ - got the right amount of seconds
+ - got the right amount of seconds
+10.0
+ - 100 is a valid time slice
+ - 23.4 is a valid time slice
+ - -50 is not a valid time slice
+ - 2000 is not a valid time slice
+ - abc is not a valid time slice
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim no args...        
+======================================  
+INITIAL REPORT
+*************************************************
+*************************************************
+NO COLLISION POSSIBLE
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim one arg...        
+======================================  
+INITIAL REPORT
+*************************************************
+*************************************************
+NO COLLISION POSSIBLE
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim two args...       
+======================================  
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim three args...     
+======================================  
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim six args...       
+======================================  
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim out of bounds...  
+======================================  
+java.lang.NumberFormatException: Ball's X position is off the field
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim negative time slice...
+======================================  
+INITIAL REPORT
+X-Location: 10.00 Y-Location: 10.00 X-Velocity: 5.00 Y-Velocity: 5.00
+*************************************************
+PROGRESS REPORT @ TIME: -1.0 hours : -1.0 minutes : -1.0 seconds
+BALL 1 => X-Location: 15.00 Y-Location: 15.00 X-Velocity: 4.95 Y-Velocity: 4.95
+
+PROGRESS REPORT @ TIME: -1.0 hours : -1.0 minutes : -2.0 seconds
+BALL 1 => X-Location: 19.95 Y-Location: 19.95 X-Velocity: 4.90 Y-Velocity: 4.90
+
+PROGRESS REPORT @ TIME: -1.0 hours : -1.0 minutes : -3.0 seconds
+BALL 1 => X-Location: 24.85 Y-Location: 24.85 X-Velocity: 4.85 Y-Velocity: 4.85
+
+PROGRESS REPORT @ TIME: -1.0 hours : -1.0 minutes : -4.0 seconds
+BALL 1 => X-Location: 29.70 Y-Location: 29.70 X-Velocity: 4.80 Y-Velocity: 4.80
+
+PROGRESS REPORT @ TIME: -1.0 hours : -1.0 minutes : -5.0 seconds
+BALL 1 => X-Location: 34.50 Y-Location: 34.50 X-Velocity: 4.75 Y-Velocity: 4.75
+
+PROGRESS REPORT @ TIME: -1.0 hours : -1.0 minutes : -6.0 seconds
+BALL 1 => X-Location: 39.26 Y-Location: 39.26 X-Velocity: 4.71 Y-Velocity: 4.71
+
+PROGRESS REPORT @ TIME: -1.0 hours : -1.0 minutes : -7.0 seconds
+BALL 1 => X-Location: 43.97 Y-Location: 43.97 X-Velocity: 4.66 Y-Velocity: 4.66
+
+PROGRESS REPORT @ TIME: -1.0 hours : -1.0 minutes : -8.0 seconds
+BALL 1 => X-Location: 48.63 Y-Location: 48.63 X-Velocity: 4.61 Y-Velocity: 4.61
+
+PROGRESS REPORT @ TIME: -1.0 hours : -1.0 minutes : -9.0 seconds
+BALL 1 => X-Location: 53.24 Y-Location: 53.24 X-Velocity: 4.57 Y-Velocity: 4.57
+
+PROGRESS REPORT @ TIME: -1.0 hours : -1.0 minutes : -10.0 seconds
+BALL 1 => X-Location: 57.81 Y-Location: 57.81 X-Velocity: 4.52 Y-Velocity: 4.52
+
+PROGRESS REPORT @ TIME: -1.0 hours : -1.0 minutes : -11.0 seconds
+BALL 1 => X-Location: 62.33 Y-Location: 62.33 X-Velocity: 4.48 Y-Velocity: 4.48
+
+PROGRESS REPORT @ TIME: -1.0 hours : -1.0 minutes : -12.0 seconds
+BALL 1 => X-Location: 66.81 Y-Location: 66.81 X-Velocity: 4.43 Y-Velocity: 4.43
+
+PROGRESS REPORT @ TIME: -1.0 hours : -1.0 minutes : -13.0 seconds
+BALL 1 => X-Location: 71.24 Y-Location: 71.24 X-Velocity: 4.39 Y-Velocity: 4.39
+
+PROGRESS REPORT @ TIME: -1.0 hours : -1.0 minutes : -14.0 seconds
+BALL 1 => X-Location: 75.63 Y-Location: 75.63 X-Velocity: 4.34 Y-Velocity: 4.34
+
+PROGRESS REPORT @ TIME: -1.0 hours : -1.0 minutes : -15.0 seconds
+BALL 1 => X-Location: 79.97 Y-Location: 79.97 X-Velocity: 4.30 Y-Velocity: 4.30
+
+PROGRESS REPORT @ TIME: -1.0 hours : -1.0 minutes : -16.0 seconds
+BALL 1 => X-Location: 84.27 Y-Location: 84.27 X-Velocity: 4.26 Y-Velocity: 4.26
+
+PROGRESS REPORT @ TIME: -1.0 hours : -1.0 minutes : -17.0 seconds
+BALL 1 => X-Location: 88.53 Y-Location: 88.53 X-Velocity: 4.21 Y-Velocity: 4.21
+
+PROGRESS REPORT @ TIME: -1.0 hours : -1.0 minutes : -18.0 seconds
+BALL 1 => X-Location: 92.74 Y-Location: 92.74 X-Velocity: 4.17 Y-Velocity: 4.17
+
+PROGRESS REPORT @ TIME: -1.0 hours : -1.0 minutes : -19.0 seconds
+BALL 1 => X-Location: 96.92 Y-Location: 96.92 X-Velocity: 4.13 Y-Velocity: 4.13
+
+PROGRESS REPORT @ TIME: -1.0 hours : -1.0 minutes : -20.0 seconds
+BALL 1 => X-Location: 101.05 Y-Location: 101.05 X-Velocity: 4.09 Y-Velocity: 4.09
+
+PROGRESS REPORT @ TIME: -1.0 hours : -1.0 minutes : -21.0 seconds
+BALL 1 => X-Location: 105.14 Y-Location: 105.14 X-Velocity: 4.05 Y-Velocity: 4.05
+
+PROGRESS REPORT @ TIME: -1.0 hours : -1.0 minutes : -22.0 seconds
+BALL 1 => X-Location: 109.18 Y-Location: 109.18 X-Velocity: 4.01 Y-Velocity: 4.01
+
+PROGRESS REPORT @ TIME: -1.0 hours : -1.0 minutes : -23.0 seconds
+BALL 1 => X-Location: 113.19 Y-Location: 113.19 X-Velocity: 3.97 Y-Velocity: 3.97
+
+PROGRESS REPORT @ TIME: -1.0 hours : -1.0 minutes : -24.0 seconds
+BALL 1 => X-Location: 117.16 Y-Location: 117.16 X-Velocity: 3.93 Y-Velocity: 3.93
+
+PROGRESS REPORT @ TIME: -1.0 hours : -1.0 minutes : -25.0 seconds
+BALL 1 => X-Location: 121.09 Y-Location: 121.09 X-Velocity: 3.89 Y-Velocity: 3.89
+
+PROGRESS REPORT @ TIME: -1.0 hours : -1.0 minutes : -26.0 seconds
+BALL 1 => X-Location: 124.98 Y-Location: 124.98 X-Velocity: 3.85 Y-Velocity: 3.85
+
+PROGRESS REPORT @ TIME: -1.0 hours : -1.0 minutes : -27.0 seconds
+BALL 1 => X-Location: 128.83 Y-Location: 128.83 X-Velocity: 3.81 Y-Velocity: 3.81
+
+PROGRESS REPORT @ TIME: -1.0 hours : -1.0 minutes : -28.0 seconds
+BALL 1 => X-Location: 132.64 Y-Location: 132.64 X-Velocity: 3.77 Y-Velocity: 3.77
+
+PROGRESS REPORT @ TIME: -1.0 hours : -1.0 minutes : -29.0 seconds
+BALL 1 => X-Location: 136.41 Y-Location: 136.41 X-Velocity: 3.74 Y-Velocity: 3.74
+
+PROGRESS REPORT @ TIME: -1.0 hours : -1.0 minutes : -30.0 seconds
+BALL 1 => X-Location: 140.15 Y-Location: 140.15 X-Velocity: 3.70 Y-Velocity: 3.70
+
+PROGRESS REPORT @ TIME: -1.0 hours : -1.0 minutes : -31.0 seconds
+BALL 1 => X-Location: 143.85 Y-Location: 143.85 X-Velocity: 3.66 Y-Velocity: 3.66
+
+PROGRESS REPORT @ TIME: -1.0 hours : -1.0 minutes : -32.0 seconds
+BALL 1 => X-Location: 147.51 Y-Location: 147.51 X-Velocity: 3.62 Y-Velocity: 3.62
+
+PROGRESS REPORT @ TIME: -1.0 hours : -1.0 minutes : -33.0 seconds
+BALL 1 => X-Location: 151.13 Y-Location: 151.13 X-Velocity: 3.59 Y-Velocity: 3.59
+
+PROGRESS REPORT @ TIME: -1.0 hours : -1.0 minutes : -34.0 seconds
+BALL 1 => X-Location: 154.72 Y-Location: 154.72 X-Velocity: 3.55 Y-Velocity: 3.55
+
+PROGRESS REPORT @ TIME: -1.0 hours : -1.0 minutes : -35.0 seconds
+BALL 1 => X-Location: 158.28 Y-Location: 158.28 X-Velocity: 3.52 Y-Velocity: 3.52
+
+PROGRESS REPORT @ TIME: -1.0 hours : -1.0 minutes : -36.0 seconds
+BALL 1 => X-Location: 161.79 Y-Location: 161.79 X-Velocity: 3.48 Y-Velocity: 3.48
+
+PROGRESS REPORT @ TIME: -1.0 hours : -1.0 minutes : -37.0 seconds
+BALL 1 => X-Location: 165.28 Y-Location: 165.28 X-Velocity: 3.45 Y-Velocity: 3.45
+
+PROGRESS REPORT @ TIME: -1.0 hours : -1.0 minutes : -38.0 seconds
+BALL 1 => X-Location: 168.72 Y-Location: 168.72 X-Velocity: 3.41 Y-Velocity: 3.41
+
+PROGRESS REPORT @ TIME: -1.0 hours : -1.0 minutes : -39.0 seconds
+BALL 1 => X-Location: 172.14 Y-Location: 172.14 X-Velocity: 3.38 Y-Velocity: 3.38
+
+PROGRESS REPORT @ TIME: -1.0 hours : -1.0 minutes : -40.0 seconds
+BALL 1 => X-Location: 175.51 Y-Location: 175.51 X-Velocity: 3.34 Y-Velocity: 3.34
+
+PROGRESS REPORT @ TIME: -1.0 hours : -1.0 minutes : -41.0 seconds
+BALL 1 => X-Location: 178.86 Y-Location: 178.86 X-Velocity: 3.31 Y-Velocity: 3.31
+
+PROGRESS REPORT @ TIME: -1.0 hours : -1.0 minutes : -42.0 seconds
+BALL 1 => X-Location: 182.17 Y-Location: 182.17 X-Velocity: 3.28 Y-Velocity: 3.28
+
+PROGRESS REPORT @ TIME: -1.0 hours : -1.0 minutes : -43.0 seconds
+BALL 1 => X-Location: 185.45 Y-Location: 185.45 X-Velocity: 3.25 Y-Velocity: 3.25
+
+PROGRESS REPORT @ TIME: -1.0 hours : -1.0 minutes : -44.0 seconds
+BALL 1 => X-Location: 188.69 Y-Location: 188.69 X-Velocity: 3.21 Y-Velocity: 3.21
+
+PROGRESS REPORT @ TIME: -1.0 hours : -1.0 minutes : -45.0 seconds
+BALL 1 => X-Location: 191.91 Y-Location: 191.91 X-Velocity: 3.18 Y-Velocity: 3.18
+
+PROGRESS REPORT @ TIME: -1.0 hours : -1.0 minutes : -46.0 seconds
+BALL 1 => X-Location: 195.09 Y-Location: 195.09 X-Velocity: 3.15 Y-Velocity: 3.15
+
+PROGRESS REPORT @ TIME: -1.0 hours : -1.0 minutes : -47.0 seconds
+BALL 1 => X-Location: 198.24 Y-Location: 198.24 X-Velocity: 3.12 Y-Velocity: 3.12
+
+PROGRESS REPORT @ TIME: -1.0 hours : -1.0 minutes : -48.0 seconds
+BALL 1 => X-Location: 201.35 Y-Location: 201.35 X-Velocity: 3.09 Y-Velocity: 3.09
+
+PROGRESS REPORT @ TIME: -1.0 hours : -1.0 minutes : -49.0 seconds
+BALL 1 => X-Location: 204.44 Y-Location: 204.44 X-Velocity: 3.06 Y-Velocity: 3.06
+
+PROGRESS REPORT @ TIME: -1.0 hours : -1.0 minutes : -50.0 seconds
+BALL 1 => X-Location: 207.50 Y-Location: 207.50 X-Velocity: 3.03 Y-Velocity: 3.03
+
+PROGRESS REPORT @ TIME: -1.0 hours : -1.0 minutes : -51.0 seconds
+BALL 1 => X-Location: 210.52 Y-Location: 210.52 X-Velocity: 2.99 Y-Velocity: 2.99
+
+PROGRESS REPORT @ TIME: -1.0 hours : -1.0 minutes : -52.0 seconds
+BALL 1 => X-Location: 213.52 Y-Location: 213.52 X-Velocity: 2.96 Y-Velocity: 2.96
+
+PROGRESS REPORT @ TIME: -1.0 hours : -1.0 minutes : -53.0 seconds
+BALL 1 => X-Location: 216.48 Y-Location: 216.48 X-Velocity: 2.94 Y-Velocity: 2.94
+
+PROGRESS REPORT @ TIME: -1.0 hours : -1.0 minutes : -54.0 seconds
+BALL 1 => X-Location: 219.42 Y-Location: 219.42 X-Velocity: 2.91 Y-Velocity: 2.91
+
+PROGRESS REPORT @ TIME: -1.0 hours : -1.0 minutes : -55.0 seconds
+BALL 1 => X-Location: 222.32 Y-Location: 222.32 X-Velocity: 2.88 Y-Velocity: 2.88
+
+PROGRESS REPORT @ TIME: -1.0 hours : -1.0 minutes : -56.0 seconds
+BALL 1 => X-Location: 225.20 Y-Location: 225.20 X-Velocity: 2.85 Y-Velocity: 2.85
+
+PROGRESS REPORT @ TIME: -1.0 hours : -1.0 minutes : -57.0 seconds
+BALL 1 => X-Location: 228.05 Y-Location: 228.05 X-Velocity: 2.82 Y-Velocity: 2.82
+
+PROGRESS REPORT @ TIME: -1.0 hours : -1.0 minutes : -58.0 seconds
+BALL 1 => X-Location: 230.87 Y-Location: 230.87 X-Velocity: 2.79 Y-Velocity: 2.79
+
+PROGRESS REPORT @ TIME: -1.0 hours : -1.0 minutes : -59.0 seconds
+BALL 1 => X-Location: 233.66 Y-Location: 233.66 X-Velocity: 2.76 Y-Velocity: 2.76
+
+PROGRESS REPORT @ TIME: -1.0 hours : -1.0 minutes : -0.0 seconds
+BALL 1 => X-Location: 236.42 Y-Location: 236.42 X-Velocity: 2.74 Y-Velocity: 2.74
+
+PROGRESS REPORT @ TIME: -1.0 hours : -2.0 minutes : -1.0 seconds
+BALL 1 => X-Location: 239.16 Y-Location: 239.16 X-Velocity: 2.71 Y-Velocity: 2.71
+
+PROGRESS REPORT @ TIME: -1.0 hours : -2.0 minutes : -2.0 seconds
+BALL 1 => X-Location: 241.87 Y-Location: 241.87 X-Velocity: 2.68 Y-Velocity: 2.68
+
+PROGRESS REPORT @ TIME: -1.0 hours : -2.0 minutes : -3.0 seconds
+BALL 1 => X-Location: 244.55 Y-Location: 244.55 X-Velocity: 2.65 Y-Velocity: 2.65
+
+PROGRESS REPORT @ TIME: -1.0 hours : -2.0 minutes : -4.0 seconds
+BALL 1 => X-Location: 247.20 Y-Location: 247.20 X-Velocity: 2.63 Y-Velocity: 2.63
+
+PROGRESS REPORT @ TIME: -1.0 hours : -2.0 minutes : -5.0 seconds
+BALL 1 => X-Location: 249.83 Y-Location: 249.83 X-Velocity: 2.60 Y-Velocity: 2.60
+
+PROGRESS REPORT @ TIME: -1.0 hours : -2.0 minutes : -6.0 seconds
+BALL 1 => X-Location: 252.43 Y-Location: 252.43 X-Velocity: 2.58 Y-Velocity: 2.58
+
+*************************************************
+NO COLLISION POSSIBLE
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim time slice too large...
+======================================  
+INITIAL REPORT
+X-Location: 10.00 Y-Location: 10.00 X-Velocity: 5.00 Y-Velocity: 5.00
+*************************************************
+PROGRESS REPORT @ TIME: 0.0 hours : 30.0 minutes : 0.09999999999990905 seconds
+BALL 1 => X-Location: 15.00 Y-Location: 15.00 X-Velocity: 4.95 Y-Velocity: 4.95
+
+PROGRESS REPORT @ TIME: 1.0 hours : 0.0 minutes : 0.1999999999998181 seconds
+BALL 1 => X-Location: 19.95 Y-Location: 19.95 X-Velocity: 4.90 Y-Velocity: 4.90
+
+PROGRESS REPORT @ TIME: 1.0 hours : 30.0 minutes : 0.2999999999992724 seconds
+BALL 1 => X-Location: 24.85 Y-Location: 24.85 X-Velocity: 4.85 Y-Velocity: 4.85
+
+PROGRESS REPORT @ TIME: 2.0 hours : 0.0 minutes : 0.3999999999996362 seconds
+BALL 1 => X-Location: 29.70 Y-Location: 29.70 X-Velocity: 4.80 Y-Velocity: 4.80
+
+PROGRESS REPORT @ TIME: 2.0 hours : 30.0 minutes : 0.5 seconds
+BALL 1 => X-Location: 34.50 Y-Location: 34.50 X-Velocity: 4.75 Y-Velocity: 4.75
+
+PROGRESS REPORT @ TIME: 3.0 hours : 0.0 minutes : 0.6000000000003638 seconds
+BALL 1 => X-Location: 39.26 Y-Location: 39.26 X-Velocity: 4.71 Y-Velocity: 4.71
+
+PROGRESS REPORT @ TIME: 3.0 hours : 30.0 minutes : 0.7000000000007276 seconds
+BALL 1 => X-Location: 43.97 Y-Location: 43.97 X-Velocity: 4.66 Y-Velocity: 4.66
+
+PROGRESS REPORT @ TIME: 4.0 hours : 0.0 minutes : 0.8000000000010914 seconds
+BALL 1 => X-Location: 48.63 Y-Location: 48.63 X-Velocity: 4.61 Y-Velocity: 4.61
+
+PROGRESS REPORT @ TIME: 4.0 hours : 30.0 minutes : 0.9000000000014552 seconds
+BALL 1 => X-Location: 53.24 Y-Location: 53.24 X-Velocity: 4.57 Y-Velocity: 4.57
+
+PROGRESS REPORT @ TIME: 5.0 hours : 0.0 minutes : 1.0 seconds
+BALL 1 => X-Location: 57.81 Y-Location: 57.81 X-Velocity: 4.52 Y-Velocity: 4.52
+
+PROGRESS REPORT @ TIME: 5.0 hours : 30.0 minutes : 1.0999999999985448 seconds
+BALL 1 => X-Location: 62.33 Y-Location: 62.33 X-Velocity: 4.48 Y-Velocity: 4.48
+
+PROGRESS REPORT @ TIME: 6.0 hours : 0.0 minutes : 1.1999999999970896 seconds
+BALL 1 => X-Location: 66.81 Y-Location: 66.81 X-Velocity: 4.43 Y-Velocity: 4.43
+
+PROGRESS REPORT @ TIME: 6.0 hours : 30.0 minutes : 1.2999999999956344 seconds
+BALL 1 => X-Location: 71.24 Y-Location: 71.24 X-Velocity: 4.39 Y-Velocity: 4.39
+
+PROGRESS REPORT @ TIME: 7.0 hours : 0.0 minutes : 1.3999999999941792 seconds
+BALL 1 => X-Location: 75.63 Y-Location: 75.63 X-Velocity: 4.34 Y-Velocity: 4.34
+
+PROGRESS REPORT @ TIME: 7.0 hours : 30.0 minutes : 1.499999999992724 seconds
+BALL 1 => X-Location: 79.97 Y-Location: 79.97 X-Velocity: 4.30 Y-Velocity: 4.30
+
+PROGRESS REPORT @ TIME: 8.0 hours : 0.0 minutes : 1.5999999999912689 seconds
+BALL 1 => X-Location: 84.27 Y-Location: 84.27 X-Velocity: 4.26 Y-Velocity: 4.26
+
+PROGRESS REPORT @ TIME: 8.0 hours : 30.0 minutes : 1.6999999999898137 seconds
+BALL 1 => X-Location: 88.53 Y-Location: 88.53 X-Velocity: 4.21 Y-Velocity: 4.21
+
+PROGRESS REPORT @ TIME: 9.0 hours : 0.0 minutes : 1.7999999999883585 seconds
+BALL 1 => X-Location: 92.74 Y-Location: 92.74 X-Velocity: 4.17 Y-Velocity: 4.17
+
+PROGRESS REPORT @ TIME: 9.0 hours : 30.0 minutes : 1.8999999999869033 seconds
+BALL 1 => X-Location: 96.92 Y-Location: 96.92 X-Velocity: 4.13 Y-Velocity: 4.13
+
+PROGRESS REPORT @ TIME: 10.0 hours : 0.0 minutes : 1.999999999985448 seconds
+BALL 1 => X-Location: 101.05 Y-Location: 101.05 X-Velocity: 4.09 Y-Velocity: 4.09
+
+PROGRESS REPORT @ TIME: 10.0 hours : 30.0 minutes : 2.099999999983993 seconds
+BALL 1 => X-Location: 105.14 Y-Location: 105.14 X-Velocity: 4.05 Y-Velocity: 4.05
+
+PROGRESS REPORT @ TIME: 11.0 hours : 0.0 minutes : 2.1999999999825377 seconds
+BALL 1 => X-Location: 109.18 Y-Location: 109.18 X-Velocity: 4.01 Y-Velocity: 4.01
+
+PROGRESS REPORT @ TIME: 11.0 hours : 30.0 minutes : 2.2999999999810825 seconds
+BALL 1 => X-Location: 113.19 Y-Location: 113.19 X-Velocity: 3.97 Y-Velocity: 3.97
+
+PROGRESS REPORT @ TIME: 12.0 hours : 0.0 minutes : 2.3999999999796273 seconds
+BALL 1 => X-Location: 117.16 Y-Location: 117.16 X-Velocity: 3.93 Y-Velocity: 3.93
+
+PROGRESS REPORT @ TIME: 12.0 hours : 30.0 minutes : 2.499999999978172 seconds
+BALL 1 => X-Location: 121.09 Y-Location: 121.09 X-Velocity: 3.89 Y-Velocity: 3.89
+
+PROGRESS REPORT @ TIME: 13.0 hours : 0.0 minutes : 2.599999999976717 seconds
+BALL 1 => X-Location: 124.98 Y-Location: 124.98 X-Velocity: 3.85 Y-Velocity: 3.85
+
+PROGRESS REPORT @ TIME: 13.0 hours : 30.0 minutes : 2.6999999999752617 seconds
+BALL 1 => X-Location: 128.83 Y-Location: 128.83 X-Velocity: 3.81 Y-Velocity: 3.81
+
+PROGRESS REPORT @ TIME: 14.0 hours : 0.0 minutes : 2.7999999999738066 seconds
+BALL 1 => X-Location: 132.64 Y-Location: 132.64 X-Velocity: 3.77 Y-Velocity: 3.77
+
+PROGRESS REPORT @ TIME: 14.0 hours : 30.0 minutes : 2.8999999999723514 seconds
+BALL 1 => X-Location: 136.41 Y-Location: 136.41 X-Velocity: 3.74 Y-Velocity: 3.74
+
+PROGRESS REPORT @ TIME: 15.0 hours : 0.0 minutes : 2.999999999970896 seconds
+BALL 1 => X-Location: 140.15 Y-Location: 140.15 X-Velocity: 3.70 Y-Velocity: 3.70
+
+PROGRESS REPORT @ TIME: 15.0 hours : 30.0 minutes : 3.099999999969441 seconds
+BALL 1 => X-Location: 143.85 Y-Location: 143.85 X-Velocity: 3.66 Y-Velocity: 3.66
+
+PROGRESS REPORT @ TIME: 16.0 hours : 0.0 minutes : 3.199999999967986 seconds
+BALL 1 => X-Location: 147.51 Y-Location: 147.51 X-Velocity: 3.62 Y-Velocity: 3.62
+
+PROGRESS REPORT @ TIME: 16.0 hours : 30.0 minutes : 3.2999999999665306 seconds
+BALL 1 => X-Location: 151.13 Y-Location: 151.13 X-Velocity: 3.59 Y-Velocity: 3.59
+
+PROGRESS REPORT @ TIME: 17.0 hours : 0.0 minutes : 3.3999999999650754 seconds
+BALL 1 => X-Location: 154.72 Y-Location: 154.72 X-Velocity: 3.55 Y-Velocity: 3.55
+
+PROGRESS REPORT @ TIME: 17.0 hours : 30.0 minutes : 3.49999999996362 seconds
+BALL 1 => X-Location: 158.28 Y-Location: 158.28 X-Velocity: 3.52 Y-Velocity: 3.52
+
+PROGRESS REPORT @ TIME: 18.0 hours : 0.0 minutes : 3.599999999962165 seconds
+BALL 1 => X-Location: 161.79 Y-Location: 161.79 X-Velocity: 3.48 Y-Velocity: 3.48
+
+PROGRESS REPORT @ TIME: 18.0 hours : 30.0 minutes : 3.699999999967986 seconds
+BALL 1 => X-Location: 165.28 Y-Location: 165.28 X-Velocity: 3.45 Y-Velocity: 3.45
+
+PROGRESS REPORT @ TIME: 19.0 hours : 0.0 minutes : 3.7999999999738066 seconds
+BALL 1 => X-Location: 168.72 Y-Location: 168.72 X-Velocity: 3.41 Y-Velocity: 3.41
+
+PROGRESS REPORT @ TIME: 19.0 hours : 30.0 minutes : 3.8999999999796273 seconds
+BALL 1 => X-Location: 172.14 Y-Location: 172.14 X-Velocity: 3.38 Y-Velocity: 3.38
+
+PROGRESS REPORT @ TIME: 20.0 hours : 0.0 minutes : 3.999999999985448 seconds
+BALL 1 => X-Location: 175.51 Y-Location: 175.51 X-Velocity: 3.34 Y-Velocity: 3.34
+
+PROGRESS REPORT @ TIME: 20.0 hours : 30.0 minutes : 4.099999999991269 seconds
+BALL 1 => X-Location: 178.86 Y-Location: 178.86 X-Velocity: 3.31 Y-Velocity: 3.31
+
+PROGRESS REPORT @ TIME: 21.0 hours : 0.0 minutes : 4.19999999999709 seconds
+BALL 1 => X-Location: 182.17 Y-Location: 182.17 X-Velocity: 3.28 Y-Velocity: 3.28
+
+PROGRESS REPORT @ TIME: 21.0 hours : 30.0 minutes : 4.30000000000291 seconds
+BALL 1 => X-Location: 185.45 Y-Location: 185.45 X-Velocity: 3.25 Y-Velocity: 3.25
+
+PROGRESS REPORT @ TIME: 22.0 hours : 0.0 minutes : 4.400000000008731 seconds
+BALL 1 => X-Location: 188.69 Y-Location: 188.69 X-Velocity: 3.21 Y-Velocity: 3.21
+
+PROGRESS REPORT @ TIME: 22.0 hours : 30.0 minutes : 4.500000000014552 seconds
+BALL 1 => X-Location: 191.91 Y-Location: 191.91 X-Velocity: 3.18 Y-Velocity: 3.18
+
+PROGRESS REPORT @ TIME: 23.0 hours : 0.0 minutes : 4.600000000020373 seconds
+BALL 1 => X-Location: 195.09 Y-Location: 195.09 X-Velocity: 3.15 Y-Velocity: 3.15
+
+PROGRESS REPORT @ TIME: 23.0 hours : 30.0 minutes : 4.7000000000261934 seconds
+BALL 1 => X-Location: 198.24 Y-Location: 198.24 X-Velocity: 3.12 Y-Velocity: 3.12
+
+PROGRESS REPORT @ TIME: 24.0 hours : 0.0 minutes : 4.800000000032014 seconds
+BALL 1 => X-Location: 201.35 Y-Location: 201.35 X-Velocity: 3.09 Y-Velocity: 3.09
+
+PROGRESS REPORT @ TIME: 24.0 hours : 30.0 minutes : 4.900000000037835 seconds
+BALL 1 => X-Location: 204.44 Y-Location: 204.44 X-Velocity: 3.06 Y-Velocity: 3.06
+
+PROGRESS REPORT @ TIME: 25.0 hours : 0.0 minutes : 5.000000000043656 seconds
+BALL 1 => X-Location: 207.50 Y-Location: 207.50 X-Velocity: 3.03 Y-Velocity: 3.03
+
+PROGRESS REPORT @ TIME: 25.0 hours : 30.0 minutes : 5.1000000000494765 seconds
+BALL 1 => X-Location: 210.52 Y-Location: 210.52 X-Velocity: 2.99 Y-Velocity: 2.99
+
+PROGRESS REPORT @ TIME: 26.0 hours : 0.0 minutes : 5.200000000055297 seconds
+BALL 1 => X-Location: 213.52 Y-Location: 213.52 X-Velocity: 2.96 Y-Velocity: 2.96
+
+PROGRESS REPORT @ TIME: 26.0 hours : 30.0 minutes : 5.300000000061118 seconds
+BALL 1 => X-Location: 216.48 Y-Location: 216.48 X-Velocity: 2.94 Y-Velocity: 2.94
+
+PROGRESS REPORT @ TIME: 27.0 hours : 0.0 minutes : 5.400000000066939 seconds
+BALL 1 => X-Location: 219.42 Y-Location: 219.42 X-Velocity: 2.91 Y-Velocity: 2.91
+
+PROGRESS REPORT @ TIME: 27.0 hours : 30.0 minutes : 5.50000000007276 seconds
+BALL 1 => X-Location: 222.32 Y-Location: 222.32 X-Velocity: 2.88 Y-Velocity: 2.88
+
+PROGRESS REPORT @ TIME: 28.0 hours : 0.0 minutes : 5.60000000007858 seconds
+BALL 1 => X-Location: 225.20 Y-Location: 225.20 X-Velocity: 2.85 Y-Velocity: 2.85
+
+PROGRESS REPORT @ TIME: 28.0 hours : 30.0 minutes : 5.700000000084401 seconds
+BALL 1 => X-Location: 228.05 Y-Location: 228.05 X-Velocity: 2.82 Y-Velocity: 2.82
+
+PROGRESS REPORT @ TIME: 29.0 hours : 0.0 minutes : 5.800000000090222 seconds
+BALL 1 => X-Location: 230.87 Y-Location: 230.87 X-Velocity: 2.79 Y-Velocity: 2.79
+
+PROGRESS REPORT @ TIME: 29.0 hours : 30.0 minutes : 5.900000000096043 seconds
+BALL 1 => X-Location: 233.66 Y-Location: 233.66 X-Velocity: 2.76 Y-Velocity: 2.76
+
+PROGRESS REPORT @ TIME: 30.0 hours : 0.0 minutes : 6.000000000101863 seconds
+BALL 1 => X-Location: 236.42 Y-Location: 236.42 X-Velocity: 2.74 Y-Velocity: 2.74
+
+PROGRESS REPORT @ TIME: 30.0 hours : 30.0 minutes : 6.100000000107684 seconds
+BALL 1 => X-Location: 239.16 Y-Location: 239.16 X-Velocity: 2.71 Y-Velocity: 2.71
+
+PROGRESS REPORT @ TIME: 31.0 hours : 0.0 minutes : 6.200000000113505 seconds
+BALL 1 => X-Location: 241.87 Y-Location: 241.87 X-Velocity: 2.68 Y-Velocity: 2.68
+
+PROGRESS REPORT @ TIME: 31.0 hours : 30.0 minutes : 6.300000000119326 seconds
+BALL 1 => X-Location: 244.55 Y-Location: 244.55 X-Velocity: 2.65 Y-Velocity: 2.65
+
+PROGRESS REPORT @ TIME: 32.0 hours : 0.0 minutes : 6.4000000001251465 seconds
+BALL 1 => X-Location: 247.20 Y-Location: 247.20 X-Velocity: 2.63 Y-Velocity: 2.63
+
+PROGRESS REPORT @ TIME: 32.0 hours : 30.0 minutes : 6.500000000130967 seconds
+BALL 1 => X-Location: 249.83 Y-Location: 249.83 X-Velocity: 2.60 Y-Velocity: 2.60
+
+PROGRESS REPORT @ TIME: 33.0 hours : 0.0 minutes : 6.600000000136788 seconds
+BALL 1 => X-Location: 252.43 Y-Location: 252.43 X-Velocity: 2.58 Y-Velocity: 2.58
+
+*************************************************
+NO COLLISION POSSIBLE
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim time slice value of zero...
+======================================  
+INITIAL REPORT
+X-Location: 10.00 Y-Location: 10.00 X-Velocity: 5.00 Y-Velocity: 5.00
+*************************************************
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 0.0 seconds
+BALL 1 => X-Location: 15.00 Y-Location: 15.00 X-Velocity: 4.95 Y-Velocity: 4.95
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 0.0 seconds
+BALL 1 => X-Location: 19.95 Y-Location: 19.95 X-Velocity: 4.90 Y-Velocity: 4.90
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 0.0 seconds
+BALL 1 => X-Location: 24.85 Y-Location: 24.85 X-Velocity: 4.85 Y-Velocity: 4.85
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 0.0 seconds
+BALL 1 => X-Location: 29.70 Y-Location: 29.70 X-Velocity: 4.80 Y-Velocity: 4.80
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 0.0 seconds
+BALL 1 => X-Location: 34.50 Y-Location: 34.50 X-Velocity: 4.75 Y-Velocity: 4.75
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 0.0 seconds
+BALL 1 => X-Location: 39.26 Y-Location: 39.26 X-Velocity: 4.71 Y-Velocity: 4.71
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 0.0 seconds
+BALL 1 => X-Location: 43.97 Y-Location: 43.97 X-Velocity: 4.66 Y-Velocity: 4.66
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 0.0 seconds
+BALL 1 => X-Location: 48.63 Y-Location: 48.63 X-Velocity: 4.61 Y-Velocity: 4.61
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 0.0 seconds
+BALL 1 => X-Location: 53.24 Y-Location: 53.24 X-Velocity: 4.57 Y-Velocity: 4.57
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 0.0 seconds
+BALL 1 => X-Location: 57.81 Y-Location: 57.81 X-Velocity: 4.52 Y-Velocity: 4.52
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 0.0 seconds
+BALL 1 => X-Location: 62.33 Y-Location: 62.33 X-Velocity: 4.48 Y-Velocity: 4.48
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 0.0 seconds
+BALL 1 => X-Location: 66.81 Y-Location: 66.81 X-Velocity: 4.43 Y-Velocity: 4.43
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 0.0 seconds
+BALL 1 => X-Location: 71.24 Y-Location: 71.24 X-Velocity: 4.39 Y-Velocity: 4.39
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 0.0 seconds
+BALL 1 => X-Location: 75.63 Y-Location: 75.63 X-Velocity: 4.34 Y-Velocity: 4.34
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 0.0 seconds
+BALL 1 => X-Location: 79.97 Y-Location: 79.97 X-Velocity: 4.30 Y-Velocity: 4.30
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 0.0 seconds
+BALL 1 => X-Location: 84.27 Y-Location: 84.27 X-Velocity: 4.26 Y-Velocity: 4.26
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 0.0 seconds
+BALL 1 => X-Location: 88.53 Y-Location: 88.53 X-Velocity: 4.21 Y-Velocity: 4.21
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 0.0 seconds
+BALL 1 => X-Location: 92.74 Y-Location: 92.74 X-Velocity: 4.17 Y-Velocity: 4.17
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 0.0 seconds
+BALL 1 => X-Location: 96.92 Y-Location: 96.92 X-Velocity: 4.13 Y-Velocity: 4.13
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 0.0 seconds
+BALL 1 => X-Location: 101.05 Y-Location: 101.05 X-Velocity: 4.09 Y-Velocity: 4.09
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 0.0 seconds
+BALL 1 => X-Location: 105.14 Y-Location: 105.14 X-Velocity: 4.05 Y-Velocity: 4.05
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 0.0 seconds
+BALL 1 => X-Location: 109.18 Y-Location: 109.18 X-Velocity: 4.01 Y-Velocity: 4.01
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 0.0 seconds
+BALL 1 => X-Location: 113.19 Y-Location: 113.19 X-Velocity: 3.97 Y-Velocity: 3.97
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 0.0 seconds
+BALL 1 => X-Location: 117.16 Y-Location: 117.16 X-Velocity: 3.93 Y-Velocity: 3.93
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 0.0 seconds
+BALL 1 => X-Location: 121.09 Y-Location: 121.09 X-Velocity: 3.89 Y-Velocity: 3.89
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 0.0 seconds
+BALL 1 => X-Location: 124.98 Y-Location: 124.98 X-Velocity: 3.85 Y-Velocity: 3.85
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 0.0 seconds
+BALL 1 => X-Location: 128.83 Y-Location: 128.83 X-Velocity: 3.81 Y-Velocity: 3.81
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 0.0 seconds
+BALL 1 => X-Location: 132.64 Y-Location: 132.64 X-Velocity: 3.77 Y-Velocity: 3.77
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 0.0 seconds
+BALL 1 => X-Location: 136.41 Y-Location: 136.41 X-Velocity: 3.74 Y-Velocity: 3.74
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 0.0 seconds
+BALL 1 => X-Location: 140.15 Y-Location: 140.15 X-Velocity: 3.70 Y-Velocity: 3.70
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 0.0 seconds
+BALL 1 => X-Location: 143.85 Y-Location: 143.85 X-Velocity: 3.66 Y-Velocity: 3.66
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 0.0 seconds
+BALL 1 => X-Location: 147.51 Y-Location: 147.51 X-Velocity: 3.62 Y-Velocity: 3.62
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 0.0 seconds
+BALL 1 => X-Location: 151.13 Y-Location: 151.13 X-Velocity: 3.59 Y-Velocity: 3.59
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 0.0 seconds
+BALL 1 => X-Location: 154.72 Y-Location: 154.72 X-Velocity: 3.55 Y-Velocity: 3.55
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 0.0 seconds
+BALL 1 => X-Location: 158.28 Y-Location: 158.28 X-Velocity: 3.52 Y-Velocity: 3.52
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 0.0 seconds
+BALL 1 => X-Location: 161.79 Y-Location: 161.79 X-Velocity: 3.48 Y-Velocity: 3.48
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 0.0 seconds
+BALL 1 => X-Location: 165.28 Y-Location: 165.28 X-Velocity: 3.45 Y-Velocity: 3.45
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 0.0 seconds
+BALL 1 => X-Location: 168.72 Y-Location: 168.72 X-Velocity: 3.41 Y-Velocity: 3.41
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 0.0 seconds
+BALL 1 => X-Location: 172.14 Y-Location: 172.14 X-Velocity: 3.38 Y-Velocity: 3.38
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 0.0 seconds
+BALL 1 => X-Location: 175.51 Y-Location: 175.51 X-Velocity: 3.34 Y-Velocity: 3.34
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 0.0 seconds
+BALL 1 => X-Location: 178.86 Y-Location: 178.86 X-Velocity: 3.31 Y-Velocity: 3.31
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 0.0 seconds
+BALL 1 => X-Location: 182.17 Y-Location: 182.17 X-Velocity: 3.28 Y-Velocity: 3.28
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 0.0 seconds
+BALL 1 => X-Location: 185.45 Y-Location: 185.45 X-Velocity: 3.25 Y-Velocity: 3.25
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 0.0 seconds
+BALL 1 => X-Location: 188.69 Y-Location: 188.69 X-Velocity: 3.21 Y-Velocity: 3.21
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 0.0 seconds
+BALL 1 => X-Location: 191.91 Y-Location: 191.91 X-Velocity: 3.18 Y-Velocity: 3.18
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 0.0 seconds
+BALL 1 => X-Location: 195.09 Y-Location: 195.09 X-Velocity: 3.15 Y-Velocity: 3.15
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 0.0 seconds
+BALL 1 => X-Location: 198.24 Y-Location: 198.24 X-Velocity: 3.12 Y-Velocity: 3.12
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 0.0 seconds
+BALL 1 => X-Location: 201.35 Y-Location: 201.35 X-Velocity: 3.09 Y-Velocity: 3.09
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 0.0 seconds
+BALL 1 => X-Location: 204.44 Y-Location: 204.44 X-Velocity: 3.06 Y-Velocity: 3.06
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 0.0 seconds
+BALL 1 => X-Location: 207.50 Y-Location: 207.50 X-Velocity: 3.03 Y-Velocity: 3.03
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 0.0 seconds
+BALL 1 => X-Location: 210.52 Y-Location: 210.52 X-Velocity: 2.99 Y-Velocity: 2.99
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 0.0 seconds
+BALL 1 => X-Location: 213.52 Y-Location: 213.52 X-Velocity: 2.96 Y-Velocity: 2.96
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 0.0 seconds
+BALL 1 => X-Location: 216.48 Y-Location: 216.48 X-Velocity: 2.94 Y-Velocity: 2.94
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 0.0 seconds
+BALL 1 => X-Location: 219.42 Y-Location: 219.42 X-Velocity: 2.91 Y-Velocity: 2.91
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 0.0 seconds
+BALL 1 => X-Location: 222.32 Y-Location: 222.32 X-Velocity: 2.88 Y-Velocity: 2.88
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 0.0 seconds
+BALL 1 => X-Location: 225.20 Y-Location: 225.20 X-Velocity: 2.85 Y-Velocity: 2.85
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 0.0 seconds
+BALL 1 => X-Location: 228.05 Y-Location: 228.05 X-Velocity: 2.82 Y-Velocity: 2.82
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 0.0 seconds
+BALL 1 => X-Location: 230.87 Y-Location: 230.87 X-Velocity: 2.79 Y-Velocity: 2.79
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 0.0 seconds
+BALL 1 => X-Location: 233.66 Y-Location: 233.66 X-Velocity: 2.76 Y-Velocity: 2.76
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 0.0 seconds
+BALL 1 => X-Location: 236.42 Y-Location: 236.42 X-Velocity: 2.74 Y-Velocity: 2.74
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 0.0 seconds
+BALL 1 => X-Location: 239.16 Y-Location: 239.16 X-Velocity: 2.71 Y-Velocity: 2.71
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 0.0 seconds
+BALL 1 => X-Location: 241.87 Y-Location: 241.87 X-Velocity: 2.68 Y-Velocity: 2.68
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 0.0 seconds
+BALL 1 => X-Location: 244.55 Y-Location: 244.55 X-Velocity: 2.65 Y-Velocity: 2.65
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 0.0 seconds
+BALL 1 => X-Location: 247.20 Y-Location: 247.20 X-Velocity: 2.63 Y-Velocity: 2.63
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 0.0 seconds
+BALL 1 => X-Location: 249.83 Y-Location: 249.83 X-Velocity: 2.60 Y-Velocity: 2.60
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 0.0 seconds
+BALL 1 => X-Location: 252.43 Y-Location: 252.43 X-Velocity: 2.58 Y-Velocity: 2.58
+
+*************************************************
+NO COLLISION POSSIBLE
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim check for collision...
+======================================  
+INITIAL REPORT
+X-Location: 10.00 Y-Location: 10.00 X-Velocity: 1.00 Y-Velocity: 1.00
+X-Location: 20.00 Y-Location: 20.00 X-Velocity: -1.00 Y-Velocity: -1.00
+*************************************************
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 1.0 seconds
+BALL 1 => X-Location: 11.00 Y-Location: 11.00 X-Velocity: 0.99 Y-Velocity: 0.99
+BALL 2 => X-Location: 19.00 Y-Location: 19.00 X-Velocity: -0.99 Y-Velocity: -0.99
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 2.0 seconds
+BALL 1 => X-Location: 11.99 Y-Location: 11.99 X-Velocity: 0.98 Y-Velocity: 0.98
+BALL 2 => X-Location: 18.01 Y-Location: 18.01 X-Velocity: -0.98 Y-Velocity: -0.98
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 3.0 seconds
+BALL 1 => X-Location: 12.97 Y-Location: 12.97 X-Velocity: 0.97 Y-Velocity: 0.97
+BALL 2 => X-Location: 17.03 Y-Location: 17.03 X-Velocity: -0.97 Y-Velocity: -0.97
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 4.0 seconds
+BALL 1 => X-Location: 13.94 Y-Location: 13.94 X-Velocity: 0.96 Y-Velocity: 0.96
+BALL 2 => X-Location: 16.06 Y-Location: 16.06 X-Velocity: -0.96 Y-Velocity: -0.96
+
+*************************************************
+COLLISION @ TIME 0.0 hours : 0.0 minutes : 4.0 seconds 
+ @ POSITION X:13.940399000000001, Y:13.940399000000001
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim valid ball should come to rest...
+======================================  
+INITIAL REPORT
+X-Location: 10.00 Y-Location: 10.00 X-Velocity: 1.00 Y-Velocity: 1.00
+*************************************************
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 1.0 seconds
+BALL 1 => X-Location: 11.00 Y-Location: 11.00 X-Velocity: 0.99 Y-Velocity: 0.99
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 2.0 seconds
+BALL 1 => X-Location: 11.99 Y-Location: 11.99 X-Velocity: 0.98 Y-Velocity: 0.98
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 3.0 seconds
+BALL 1 => X-Location: 12.97 Y-Location: 12.97 X-Velocity: 0.97 Y-Velocity: 0.97
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 4.0 seconds
+BALL 1 => X-Location: 13.94 Y-Location: 13.94 X-Velocity: 0.96 Y-Velocity: 0.96
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 5.0 seconds
+BALL 1 => X-Location: 14.90 Y-Location: 14.90 X-Velocity: 0.95 Y-Velocity: 0.95
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 6.0 seconds
+BALL 1 => X-Location: 15.85 Y-Location: 15.85 X-Velocity: 0.94 Y-Velocity: 0.94
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 7.0 seconds
+BALL 1 => X-Location: 16.79 Y-Location: 16.79 X-Velocity: 0.93 Y-Velocity: 0.93
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 8.0 seconds
+BALL 1 => X-Location: 17.73 Y-Location: 17.73 X-Velocity: 0.92 Y-Velocity: 0.92
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 9.0 seconds
+BALL 1 => X-Location: 18.65 Y-Location: 18.65 X-Velocity: 0.91 Y-Velocity: 0.91
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 10.0 seconds
+BALL 1 => X-Location: 19.56 Y-Location: 19.56 X-Velocity: 0.90 Y-Velocity: 0.90
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 11.0 seconds
+BALL 1 => X-Location: 20.47 Y-Location: 20.47 X-Velocity: 0.90 Y-Velocity: 0.90
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 12.0 seconds
+BALL 1 => X-Location: 21.36 Y-Location: 21.36 X-Velocity: 0.89 Y-Velocity: 0.89
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 13.0 seconds
+BALL 1 => X-Location: 22.25 Y-Location: 22.25 X-Velocity: 0.88 Y-Velocity: 0.88
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 14.0 seconds
+BALL 1 => X-Location: 23.13 Y-Location: 23.13 X-Velocity: 0.87 Y-Velocity: 0.87
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 15.0 seconds
+BALL 1 => X-Location: 23.99 Y-Location: 23.99 X-Velocity: 0.86 Y-Velocity: 0.86
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 16.0 seconds
+BALL 1 => X-Location: 24.85 Y-Location: 24.85 X-Velocity: 0.85 Y-Velocity: 0.85
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 17.0 seconds
+BALL 1 => X-Location: 25.71 Y-Location: 25.71 X-Velocity: 0.84 Y-Velocity: 0.84
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 18.0 seconds
+BALL 1 => X-Location: 26.55 Y-Location: 26.55 X-Velocity: 0.83 Y-Velocity: 0.83
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 19.0 seconds
+BALL 1 => X-Location: 27.38 Y-Location: 27.38 X-Velocity: 0.83 Y-Velocity: 0.83
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 20.0 seconds
+BALL 1 => X-Location: 28.21 Y-Location: 28.21 X-Velocity: 0.82 Y-Velocity: 0.82
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 21.0 seconds
+BALL 1 => X-Location: 29.03 Y-Location: 29.03 X-Velocity: 0.81 Y-Velocity: 0.81
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 22.0 seconds
+BALL 1 => X-Location: 29.84 Y-Location: 29.84 X-Velocity: 0.80 Y-Velocity: 0.80
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 23.0 seconds
+BALL 1 => X-Location: 30.64 Y-Location: 30.64 X-Velocity: 0.79 Y-Velocity: 0.79
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 24.0 seconds
+BALL 1 => X-Location: 31.43 Y-Location: 31.43 X-Velocity: 0.79 Y-Velocity: 0.79
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 25.0 seconds
+BALL 1 => X-Location: 32.22 Y-Location: 32.22 X-Velocity: 0.78 Y-Velocity: 0.78
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 26.0 seconds
+BALL 1 => X-Location: 33.00 Y-Location: 33.00 X-Velocity: 0.77 Y-Velocity: 0.77
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 27.0 seconds
+BALL 1 => X-Location: 33.77 Y-Location: 33.77 X-Velocity: 0.76 Y-Velocity: 0.76
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 28.0 seconds
+BALL 1 => X-Location: 34.53 Y-Location: 34.53 X-Velocity: 0.75 Y-Velocity: 0.75
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 29.0 seconds
+BALL 1 => X-Location: 35.28 Y-Location: 35.28 X-Velocity: 0.75 Y-Velocity: 0.75
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 30.0 seconds
+BALL 1 => X-Location: 36.03 Y-Location: 36.03 X-Velocity: 0.74 Y-Velocity: 0.74
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 31.0 seconds
+BALL 1 => X-Location: 36.77 Y-Location: 36.77 X-Velocity: 0.73 Y-Velocity: 0.73
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 32.0 seconds
+BALL 1 => X-Location: 37.50 Y-Location: 37.50 X-Velocity: 0.72 Y-Velocity: 0.72
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 33.0 seconds
+BALL 1 => X-Location: 38.23 Y-Location: 38.23 X-Velocity: 0.72 Y-Velocity: 0.72
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 34.0 seconds
+BALL 1 => X-Location: 38.94 Y-Location: 38.94 X-Velocity: 0.71 Y-Velocity: 0.71
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 35.0 seconds
+BALL 1 => X-Location: 39.66 Y-Location: 39.66 X-Velocity: 0.70 Y-Velocity: 0.70
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 36.0 seconds
+BALL 1 => X-Location: 40.36 Y-Location: 40.36 X-Velocity: 0.70 Y-Velocity: 0.70
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 37.0 seconds
+BALL 1 => X-Location: 41.06 Y-Location: 41.06 X-Velocity: 0.69 Y-Velocity: 0.69
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 38.0 seconds
+BALL 1 => X-Location: 41.74 Y-Location: 41.74 X-Velocity: 0.68 Y-Velocity: 0.68
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 39.0 seconds
+BALL 1 => X-Location: 42.43 Y-Location: 42.43 X-Velocity: 0.68 Y-Velocity: 0.68
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 40.0 seconds
+BALL 1 => X-Location: 43.10 Y-Location: 43.10 X-Velocity: 0.67 Y-Velocity: 0.67
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 41.0 seconds
+BALL 1 => X-Location: 43.77 Y-Location: 43.77 X-Velocity: 0.66 Y-Velocity: 0.66
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 42.0 seconds
+BALL 1 => X-Location: 44.43 Y-Location: 44.43 X-Velocity: 0.66 Y-Velocity: 0.66
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 43.0 seconds
+BALL 1 => X-Location: 45.09 Y-Location: 45.09 X-Velocity: 0.65 Y-Velocity: 0.65
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 44.0 seconds
+BALL 1 => X-Location: 45.74 Y-Location: 45.74 X-Velocity: 0.64 Y-Velocity: 0.64
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 45.0 seconds
+BALL 1 => X-Location: 46.38 Y-Location: 46.38 X-Velocity: 0.64 Y-Velocity: 0.64
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 46.0 seconds
+BALL 1 => X-Location: 47.02 Y-Location: 47.02 X-Velocity: 0.63 Y-Velocity: 0.63
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 47.0 seconds
+BALL 1 => X-Location: 47.65 Y-Location: 47.65 X-Velocity: 0.62 Y-Velocity: 0.62
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 48.0 seconds
+BALL 1 => X-Location: 48.27 Y-Location: 48.27 X-Velocity: 0.62 Y-Velocity: 0.62
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 49.0 seconds
+BALL 1 => X-Location: 48.89 Y-Location: 48.89 X-Velocity: 0.61 Y-Velocity: 0.61
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 50.0 seconds
+BALL 1 => X-Location: 49.50 Y-Location: 49.50 X-Velocity: 0.61 Y-Velocity: 0.61
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 51.0 seconds
+BALL 1 => X-Location: 50.10 Y-Location: 50.10 X-Velocity: 0.60 Y-Velocity: 0.60
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 52.0 seconds
+BALL 1 => X-Location: 50.70 Y-Location: 50.70 X-Velocity: 0.59 Y-Velocity: 0.59
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 53.0 seconds
+BALL 1 => X-Location: 51.30 Y-Location: 51.30 X-Velocity: 0.59 Y-Velocity: 0.59
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 54.0 seconds
+BALL 1 => X-Location: 51.88 Y-Location: 51.88 X-Velocity: 0.58 Y-Velocity: 0.58
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 55.0 seconds
+BALL 1 => X-Location: 52.46 Y-Location: 52.46 X-Velocity: 0.58 Y-Velocity: 0.58
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 56.0 seconds
+BALL 1 => X-Location: 53.04 Y-Location: 53.04 X-Velocity: 0.57 Y-Velocity: 0.57
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 57.0 seconds
+BALL 1 => X-Location: 53.61 Y-Location: 53.61 X-Velocity: 0.56 Y-Velocity: 0.56
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 58.0 seconds
+BALL 1 => X-Location: 54.17 Y-Location: 54.17 X-Velocity: 0.56 Y-Velocity: 0.56
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 59.0 seconds
+BALL 1 => X-Location: 54.73 Y-Location: 54.73 X-Velocity: 0.55 Y-Velocity: 0.55
+
+PROGRESS REPORT @ TIME: 0.0 hours : 1.0 minutes : 0.0 seconds
+BALL 1 => X-Location: 55.28 Y-Location: 55.28 X-Velocity: 0.55 Y-Velocity: 0.55
+
+PROGRESS REPORT @ TIME: 0.0 hours : 1.0 minutes : 1.0 seconds
+BALL 1 => X-Location: 55.83 Y-Location: 55.83 X-Velocity: 0.54 Y-Velocity: 0.54
+
+PROGRESS REPORT @ TIME: 0.0 hours : 1.0 minutes : 2.0 seconds
+BALL 1 => X-Location: 56.37 Y-Location: 56.37 X-Velocity: 0.54 Y-Velocity: 0.54
+
+PROGRESS REPORT @ TIME: 0.0 hours : 1.0 minutes : 3.0 seconds
+BALL 1 => X-Location: 56.91 Y-Location: 56.91 X-Velocity: 0.53 Y-Velocity: 0.53
+
+PROGRESS REPORT @ TIME: 0.0 hours : 1.0 minutes : 4.0 seconds
+BALL 1 => X-Location: 57.44 Y-Location: 57.44 X-Velocity: 0.53 Y-Velocity: 0.53
+
+PROGRESS REPORT @ TIME: 0.0 hours : 1.0 minutes : 5.0 seconds
+BALL 1 => X-Location: 57.97 Y-Location: 57.97 X-Velocity: 0.52 Y-Velocity: 0.52
+
+PROGRESS REPORT @ TIME: 0.0 hours : 1.0 minutes : 6.0 seconds
+BALL 1 => X-Location: 58.49 Y-Location: 58.49 X-Velocity: 0.52 Y-Velocity: 0.52
+
+PROGRESS REPORT @ TIME: 0.0 hours : 1.0 minutes : 7.0 seconds
+BALL 1 => X-Location: 59.00 Y-Location: 59.00 X-Velocity: 0.51 Y-Velocity: 0.51
+
+PROGRESS REPORT @ TIME: 0.0 hours : 1.0 minutes : 8.0 seconds
+BALL 1 => X-Location: 59.51 Y-Location: 59.51 X-Velocity: 0.50 Y-Velocity: 0.50
+
+PROGRESS REPORT @ TIME: 0.0 hours : 1.0 minutes : 9.0 seconds
+BALL 1 => X-Location: 60.02 Y-Location: 60.02 X-Velocity: 0.50 Y-Velocity: 0.50
+
+PROGRESS REPORT @ TIME: 0.0 hours : 1.0 minutes : 10.0 seconds
+BALL 1 => X-Location: 60.52 Y-Location: 60.52 X-Velocity: 0.49 Y-Velocity: 0.49
+
+PROGRESS REPORT @ TIME: 0.0 hours : 1.0 minutes : 11.0 seconds
+BALL 1 => X-Location: 61.01 Y-Location: 61.01 X-Velocity: 0.49 Y-Velocity: 0.49
+
+PROGRESS REPORT @ TIME: 0.0 hours : 1.0 minutes : 12.0 seconds
+BALL 1 => X-Location: 61.50 Y-Location: 61.50 X-Velocity: 0.48 Y-Velocity: 0.48
+
+PROGRESS REPORT @ TIME: 0.0 hours : 1.0 minutes : 13.0 seconds
+BALL 1 => X-Location: 61.99 Y-Location: 61.99 X-Velocity: 0.48 Y-Velocity: 0.48
+
+PROGRESS REPORT @ TIME: 0.0 hours : 1.0 minutes : 14.0 seconds
+BALL 1 => X-Location: 62.47 Y-Location: 62.47 X-Velocity: 0.48 Y-Velocity: 0.48
+
+PROGRESS REPORT @ TIME: 0.0 hours : 1.0 minutes : 15.0 seconds
+BALL 1 => X-Location: 62.94 Y-Location: 62.94 X-Velocity: 0.47 Y-Velocity: 0.47
+
+PROGRESS REPORT @ TIME: 0.0 hours : 1.0 minutes : 16.0 seconds
+BALL 1 => X-Location: 63.41 Y-Location: 63.41 X-Velocity: 0.47 Y-Velocity: 0.47
+
+PROGRESS REPORT @ TIME: 0.0 hours : 1.0 minutes : 17.0 seconds
+BALL 1 => X-Location: 63.88 Y-Location: 63.88 X-Velocity: 0.46 Y-Velocity: 0.46
+
+PROGRESS REPORT @ TIME: 0.0 hours : 1.0 minutes : 18.0 seconds
+BALL 1 => X-Location: 64.34 Y-Location: 64.34 X-Velocity: 0.46 Y-Velocity: 0.46
+
+PROGRESS REPORT @ TIME: 0.0 hours : 1.0 minutes : 19.0 seconds
+BALL 1 => X-Location: 64.80 Y-Location: 64.80 X-Velocity: 0.45 Y-Velocity: 0.45
+
+PROGRESS REPORT @ TIME: 0.0 hours : 1.0 minutes : 20.0 seconds
+BALL 1 => X-Location: 65.25 Y-Location: 65.25 X-Velocity: 0.45 Y-Velocity: 0.45
+
+PROGRESS REPORT @ TIME: 0.0 hours : 1.0 minutes : 21.0 seconds
+BALL 1 => X-Location: 65.70 Y-Location: 65.70 X-Velocity: 0.44 Y-Velocity: 0.44
+
+PROGRESS REPORT @ TIME: 0.0 hours : 1.0 minutes : 22.0 seconds
+BALL 1 => X-Location: 66.14 Y-Location: 66.14 X-Velocity: 0.44 Y-Velocity: 0.44
+
+PROGRESS REPORT @ TIME: 0.0 hours : 1.0 minutes : 23.0 seconds
+BALL 1 => X-Location: 66.58 Y-Location: 66.58 X-Velocity: 0.43 Y-Velocity: 0.43
+
+PROGRESS REPORT @ TIME: 0.0 hours : 1.0 minutes : 24.0 seconds
+BALL 1 => X-Location: 67.01 Y-Location: 67.01 X-Velocity: 0.43 Y-Velocity: 0.43
+
+PROGRESS REPORT @ TIME: 0.0 hours : 1.0 minutes : 25.0 seconds
+BALL 1 => X-Location: 67.44 Y-Location: 67.44 X-Velocity: 0.43 Y-Velocity: 0.43
+
+PROGRESS REPORT @ TIME: 0.0 hours : 1.0 minutes : 26.0 seconds
+BALL 1 => X-Location: 67.87 Y-Location: 67.87 X-Velocity: 0.42 Y-Velocity: 0.42
+
+PROGRESS REPORT @ TIME: 0.0 hours : 1.0 minutes : 27.0 seconds
+BALL 1 => X-Location: 68.29 Y-Location: 68.29 X-Velocity: 0.42 Y-Velocity: 0.42
+
+PROGRESS REPORT @ TIME: 0.0 hours : 1.0 minutes : 28.0 seconds
+BALL 1 => X-Location: 68.71 Y-Location: 68.71 X-Velocity: 0.41 Y-Velocity: 0.41
+
+PROGRESS REPORT @ TIME: 0.0 hours : 1.0 minutes : 29.0 seconds
+BALL 1 => X-Location: 69.12 Y-Location: 69.12 X-Velocity: 0.41 Y-Velocity: 0.41
+
+PROGRESS REPORT @ TIME: 0.0 hours : 1.0 minutes : 30.0 seconds
+BALL 1 => X-Location: 69.53 Y-Location: 69.53 X-Velocity: 0.40 Y-Velocity: 0.40
+
+PROGRESS REPORT @ TIME: 0.0 hours : 1.0 minutes : 31.0 seconds
+BALL 1 => X-Location: 69.93 Y-Location: 69.93 X-Velocity: 0.40 Y-Velocity: 0.40
+
+PROGRESS REPORT @ TIME: 0.0 hours : 1.0 minutes : 32.0 seconds
+BALL 1 => X-Location: 70.33 Y-Location: 70.33 X-Velocity: 0.40 Y-Velocity: 0.40
+
+PROGRESS REPORT @ TIME: 0.0 hours : 1.0 minutes : 33.0 seconds
+BALL 1 => X-Location: 70.73 Y-Location: 70.73 X-Velocity: 0.39 Y-Velocity: 0.39
+
+PROGRESS REPORT @ TIME: 0.0 hours : 1.0 minutes : 34.0 seconds
+BALL 1 => X-Location: 71.12 Y-Location: 71.12 X-Velocity: 0.39 Y-Velocity: 0.39
+
+PROGRESS REPORT @ TIME: 0.0 hours : 1.0 minutes : 35.0 seconds
+BALL 1 => X-Location: 71.51 Y-Location: 71.51 X-Velocity: 0.38 Y-Velocity: 0.38
+
+PROGRESS REPORT @ TIME: 0.0 hours : 1.0 minutes : 36.0 seconds
+BALL 1 => X-Location: 71.90 Y-Location: 71.90 X-Velocity: 0.38 Y-Velocity: 0.38
+
+PROGRESS REPORT @ TIME: 0.0 hours : 1.0 minutes : 37.0 seconds
+BALL 1 => X-Location: 72.28 Y-Location: 72.28 X-Velocity: 0.38 Y-Velocity: 0.38
+
+PROGRESS REPORT @ TIME: 0.0 hours : 1.0 minutes : 38.0 seconds
+BALL 1 => X-Location: 72.65 Y-Location: 72.65 X-Velocity: 0.37 Y-Velocity: 0.37
+
+PROGRESS REPORT @ TIME: 0.0 hours : 1.0 minutes : 39.0 seconds
+BALL 1 => X-Location: 73.03 Y-Location: 73.03 X-Velocity: 0.37 Y-Velocity: 0.37
+
+PROGRESS REPORT @ TIME: 0.0 hours : 1.0 minutes : 40.0 seconds
+BALL 1 => X-Location: 73.40 Y-Location: 73.40 X-Velocity: 0.37 Y-Velocity: 0.37
+
+PROGRESS REPORT @ TIME: 0.0 hours : 1.0 minutes : 41.0 seconds
+BALL 1 => X-Location: 73.76 Y-Location: 73.76 X-Velocity: 0.36 Y-Velocity: 0.36
+
+PROGRESS REPORT @ TIME: 0.0 hours : 1.0 minutes : 42.0 seconds
+BALL 1 => X-Location: 74.13 Y-Location: 74.13 X-Velocity: 0.36 Y-Velocity: 0.36
+
+PROGRESS REPORT @ TIME: 0.0 hours : 1.0 minutes : 43.0 seconds
+BALL 1 => X-Location: 74.48 Y-Location: 74.48 X-Velocity: 0.36 Y-Velocity: 0.36
+
+PROGRESS REPORT @ TIME: 0.0 hours : 1.0 minutes : 44.0 seconds
+BALL 1 => X-Location: 74.84 Y-Location: 74.84 X-Velocity: 0.35 Y-Velocity: 0.35
+
+PROGRESS REPORT @ TIME: 0.0 hours : 1.0 minutes : 45.0 seconds
+BALL 1 => X-Location: 75.19 Y-Location: 75.19 X-Velocity: 0.35 Y-Velocity: 0.35
+
+PROGRESS REPORT @ TIME: 0.0 hours : 1.0 minutes : 46.0 seconds
+BALL 1 => X-Location: 75.54 Y-Location: 75.54 X-Velocity: 0.34 Y-Velocity: 0.34
+
+PROGRESS REPORT @ TIME: 0.0 hours : 1.0 minutes : 47.0 seconds
+BALL 1 => X-Location: 75.88 Y-Location: 75.88 X-Velocity: 0.34 Y-Velocity: 0.34
+
+PROGRESS REPORT @ TIME: 0.0 hours : 1.0 minutes : 48.0 seconds
+BALL 1 => X-Location: 76.22 Y-Location: 76.22 X-Velocity: 0.34 Y-Velocity: 0.34
+
+PROGRESS REPORT @ TIME: 0.0 hours : 1.0 minutes : 49.0 seconds
+BALL 1 => X-Location: 76.56 Y-Location: 76.56 X-Velocity: 0.33 Y-Velocity: 0.33
+
+PROGRESS REPORT @ TIME: 0.0 hours : 1.0 minutes : 50.0 seconds
+BALL 1 => X-Location: 76.90 Y-Location: 76.90 X-Velocity: 0.33 Y-Velocity: 0.33
+
+PROGRESS REPORT @ TIME: 0.0 hours : 1.0 minutes : 51.0 seconds
+BALL 1 => X-Location: 77.23 Y-Location: 77.23 X-Velocity: 0.33 Y-Velocity: 0.33
+
+PROGRESS REPORT @ TIME: 0.0 hours : 1.0 minutes : 52.0 seconds
+BALL 1 => X-Location: 77.56 Y-Location: 77.56 X-Velocity: 0.32 Y-Velocity: 0.32
+
+PROGRESS REPORT @ TIME: 0.0 hours : 1.0 minutes : 53.0 seconds
+BALL 1 => X-Location: 77.88 Y-Location: 77.88 X-Velocity: 0.32 Y-Velocity: 0.32
+
+PROGRESS REPORT @ TIME: 0.0 hours : 1.0 minutes : 54.0 seconds
+BALL 1 => X-Location: 78.20 Y-Location: 78.20 X-Velocity: 0.32 Y-Velocity: 0.32
+
+PROGRESS REPORT @ TIME: 0.0 hours : 1.0 minutes : 55.0 seconds
+BALL 1 => X-Location: 78.52 Y-Location: 78.52 X-Velocity: 0.31 Y-Velocity: 0.31
+
+PROGRESS REPORT @ TIME: 0.0 hours : 1.0 minutes : 56.0 seconds
+BALL 1 => X-Location: 78.83 Y-Location: 78.83 X-Velocity: 0.31 Y-Velocity: 0.31
+
+PROGRESS REPORT @ TIME: 0.0 hours : 1.0 minutes : 57.0 seconds
+BALL 1 => X-Location: 79.15 Y-Location: 79.15 X-Velocity: 0.31 Y-Velocity: 0.31
+
+PROGRESS REPORT @ TIME: 0.0 hours : 1.0 minutes : 58.0 seconds
+BALL 1 => X-Location: 79.45 Y-Location: 79.45 X-Velocity: 0.31 Y-Velocity: 0.31
+
+PROGRESS REPORT @ TIME: 0.0 hours : 1.0 minutes : 59.0 seconds
+BALL 1 => X-Location: 79.76 Y-Location: 79.76 X-Velocity: 0.30 Y-Velocity: 0.30
+
+PROGRESS REPORT @ TIME: 0.0 hours : 2.0 minutes : 0.0 seconds
+BALL 1 => X-Location: 80.06 Y-Location: 80.06 X-Velocity: 0.30 Y-Velocity: 0.30
+
+PROGRESS REPORT @ TIME: 0.0 hours : 2.0 minutes : 1.0 seconds
+BALL 1 => X-Location: 80.36 Y-Location: 80.36 X-Velocity: 0.30 Y-Velocity: 0.30
+
+PROGRESS REPORT @ TIME: 0.0 hours : 2.0 minutes : 2.0 seconds
+BALL 1 => X-Location: 80.66 Y-Location: 80.66 X-Velocity: 0.29 Y-Velocity: 0.29
+
+PROGRESS REPORT @ TIME: 0.0 hours : 2.0 minutes : 3.0 seconds
+BALL 1 => X-Location: 80.95 Y-Location: 80.95 X-Velocity: 0.29 Y-Velocity: 0.29
+
+PROGRESS REPORT @ TIME: 0.0 hours : 2.0 minutes : 4.0 seconds
+BALL 1 => X-Location: 81.24 Y-Location: 81.24 X-Velocity: 0.29 Y-Velocity: 0.29
+
+PROGRESS REPORT @ TIME: 0.0 hours : 2.0 minutes : 5.0 seconds
+BALL 1 => X-Location: 81.53 Y-Location: 81.53 X-Velocity: 0.28 Y-Velocity: 0.28
+
+PROGRESS REPORT @ TIME: 0.0 hours : 2.0 minutes : 6.0 seconds
+BALL 1 => X-Location: 81.81 Y-Location: 81.81 X-Velocity: 0.28 Y-Velocity: 0.28
+
+PROGRESS REPORT @ TIME: 0.0 hours : 2.0 minutes : 7.0 seconds
+BALL 1 => X-Location: 82.10 Y-Location: 82.10 X-Velocity: 0.28 Y-Velocity: 0.28
+
+PROGRESS REPORT @ TIME: 0.0 hours : 2.0 minutes : 8.0 seconds
+BALL 1 => X-Location: 82.37 Y-Location: 82.37 X-Velocity: 0.28 Y-Velocity: 0.28
+
+PROGRESS REPORT @ TIME: 0.0 hours : 2.0 minutes : 9.0 seconds
+BALL 1 => X-Location: 82.65 Y-Location: 82.65 X-Velocity: 0.27 Y-Velocity: 0.27
+
+PROGRESS REPORT @ TIME: 0.0 hours : 2.0 minutes : 10.0 seconds
+BALL 1 => X-Location: 82.92 Y-Location: 82.92 X-Velocity: 0.27 Y-Velocity: 0.27
+
+PROGRESS REPORT @ TIME: 0.0 hours : 2.0 minutes : 11.0 seconds
+BALL 1 => X-Location: 83.20 Y-Location: 83.20 X-Velocity: 0.27 Y-Velocity: 0.27
+
+PROGRESS REPORT @ TIME: 0.0 hours : 2.0 minutes : 12.0 seconds
+BALL 1 => X-Location: 83.46 Y-Location: 83.46 X-Velocity: 0.27 Y-Velocity: 0.27
+
+PROGRESS REPORT @ TIME: 0.0 hours : 2.0 minutes : 13.0 seconds
+BALL 1 => X-Location: 83.73 Y-Location: 83.73 X-Velocity: 0.26 Y-Velocity: 0.26
+
+PROGRESS REPORT @ TIME: 0.0 hours : 2.0 minutes : 14.0 seconds
+BALL 1 => X-Location: 83.99 Y-Location: 83.99 X-Velocity: 0.26 Y-Velocity: 0.26
+
+PROGRESS REPORT @ TIME: 0.0 hours : 2.0 minutes : 15.0 seconds
+BALL 1 => X-Location: 84.25 Y-Location: 84.25 X-Velocity: 0.26 Y-Velocity: 0.26
+
+PROGRESS REPORT @ TIME: 0.0 hours : 2.0 minutes : 16.0 seconds
+BALL 1 => X-Location: 84.51 Y-Location: 84.51 X-Velocity: 0.25 Y-Velocity: 0.25
+
+PROGRESS REPORT @ TIME: 0.0 hours : 2.0 minutes : 17.0 seconds
+BALL 1 => X-Location: 84.76 Y-Location: 84.76 X-Velocity: 0.25 Y-Velocity: 0.25
+
+PROGRESS REPORT @ TIME: 0.0 hours : 2.0 minutes : 18.0 seconds
+BALL 1 => X-Location: 85.02 Y-Location: 85.02 X-Velocity: 0.25 Y-Velocity: 0.25
+
+PROGRESS REPORT @ TIME: 0.0 hours : 2.0 minutes : 19.0 seconds
+BALL 1 => X-Location: 85.27 Y-Location: 85.27 X-Velocity: 0.25 Y-Velocity: 0.25
+
+PROGRESS REPORT @ TIME: 0.0 hours : 2.0 minutes : 20.0 seconds
+BALL 1 => X-Location: 85.51 Y-Location: 85.51 X-Velocity: 0.24 Y-Velocity: 0.24
+
+PROGRESS REPORT @ TIME: 0.0 hours : 2.0 minutes : 21.0 seconds
+BALL 1 => X-Location: 85.76 Y-Location: 85.76 X-Velocity: 0.24 Y-Velocity: 0.24
+
+PROGRESS REPORT @ TIME: 0.0 hours : 2.0 minutes : 22.0 seconds
+BALL 1 => X-Location: 86.00 Y-Location: 86.00 X-Velocity: 0.24 Y-Velocity: 0.24
+
+PROGRESS REPORT @ TIME: 0.0 hours : 2.0 minutes : 23.0 seconds
+BALL 1 => X-Location: 86.24 Y-Location: 86.24 X-Velocity: 0.24 Y-Velocity: 0.24
+
+PROGRESS REPORT @ TIME: 0.0 hours : 2.0 minutes : 24.0 seconds
+BALL 1 => X-Location: 86.48 Y-Location: 86.48 X-Velocity: 0.24 Y-Velocity: 0.24
+
+PROGRESS REPORT @ TIME: 0.0 hours : 2.0 minutes : 25.0 seconds
+BALL 1 => X-Location: 86.71 Y-Location: 86.71 X-Velocity: 0.23 Y-Velocity: 0.23
+
+PROGRESS REPORT @ TIME: 0.0 hours : 2.0 minutes : 26.0 seconds
+BALL 1 => X-Location: 86.95 Y-Location: 86.95 X-Velocity: 0.23 Y-Velocity: 0.23
+
+PROGRESS REPORT @ TIME: 0.0 hours : 2.0 minutes : 27.0 seconds
+BALL 1 => X-Location: 87.18 Y-Location: 87.18 X-Velocity: 0.23 Y-Velocity: 0.23
+
+PROGRESS REPORT @ TIME: 0.0 hours : 2.0 minutes : 28.0 seconds
+BALL 1 => X-Location: 87.41 Y-Location: 87.41 X-Velocity: 0.23 Y-Velocity: 0.23
+
+PROGRESS REPORT @ TIME: 0.0 hours : 2.0 minutes : 29.0 seconds
+BALL 1 => X-Location: 87.63 Y-Location: 87.63 X-Velocity: 0.22 Y-Velocity: 0.22
+
+PROGRESS REPORT @ TIME: 0.0 hours : 2.0 minutes : 30.0 seconds
+BALL 1 => X-Location: 87.85 Y-Location: 87.85 X-Velocity: 0.22 Y-Velocity: 0.22
+
+PROGRESS REPORT @ TIME: 0.0 hours : 2.0 minutes : 31.0 seconds
+BALL 1 => X-Location: 88.08 Y-Location: 88.08 X-Velocity: 0.22 Y-Velocity: 0.22
+
+PROGRESS REPORT @ TIME: 0.0 hours : 2.0 minutes : 32.0 seconds
+BALL 1 => X-Location: 88.30 Y-Location: 88.30 X-Velocity: 0.22 Y-Velocity: 0.22
+
+PROGRESS REPORT @ TIME: 0.0 hours : 2.0 minutes : 33.0 seconds
+BALL 1 => X-Location: 88.51 Y-Location: 88.51 X-Velocity: 0.21 Y-Velocity: 0.21
+
+PROGRESS REPORT @ TIME: 0.0 hours : 2.0 minutes : 34.0 seconds
+BALL 1 => X-Location: 88.73 Y-Location: 88.73 X-Velocity: 0.21 Y-Velocity: 0.21
+
+PROGRESS REPORT @ TIME: 0.0 hours : 2.0 minutes : 35.0 seconds
+BALL 1 => X-Location: 88.94 Y-Location: 88.94 X-Velocity: 0.21 Y-Velocity: 0.21
+
+PROGRESS REPORT @ TIME: 0.0 hours : 2.0 minutes : 36.0 seconds
+BALL 1 => X-Location: 89.15 Y-Location: 89.15 X-Velocity: 0.21 Y-Velocity: 0.21
+
+PROGRESS REPORT @ TIME: 0.0 hours : 2.0 minutes : 37.0 seconds
+BALL 1 => X-Location: 89.36 Y-Location: 89.36 X-Velocity: 0.21 Y-Velocity: 0.21
+
+PROGRESS REPORT @ TIME: 0.0 hours : 2.0 minutes : 38.0 seconds
+BALL 1 => X-Location: 89.57 Y-Location: 89.57 X-Velocity: 0.20 Y-Velocity: 0.20
+
+PROGRESS REPORT @ TIME: 0.0 hours : 2.0 minutes : 39.0 seconds
+BALL 1 => X-Location: 89.77 Y-Location: 89.77 X-Velocity: 0.20 Y-Velocity: 0.20
+
+PROGRESS REPORT @ TIME: 0.0 hours : 2.0 minutes : 40.0 seconds
+BALL 1 => X-Location: 89.97 Y-Location: 89.97 X-Velocity: 0.20 Y-Velocity: 0.20
+
+PROGRESS REPORT @ TIME: 0.0 hours : 2.0 minutes : 41.0 seconds
+BALL 1 => X-Location: 90.17 Y-Location: 90.17 X-Velocity: 0.20 Y-Velocity: 0.20
+
+PROGRESS REPORT @ TIME: 0.0 hours : 2.0 minutes : 42.0 seconds
+BALL 1 => X-Location: 90.37 Y-Location: 90.37 X-Velocity: 0.20 Y-Velocity: 0.20
+
+PROGRESS REPORT @ TIME: 0.0 hours : 2.0 minutes : 43.0 seconds
+BALL 1 => X-Location: 90.57 Y-Location: 90.57 X-Velocity: 0.19 Y-Velocity: 0.19
+
+PROGRESS REPORT @ TIME: 0.0 hours : 2.0 minutes : 44.0 seconds
+BALL 1 => X-Location: 90.76 Y-Location: 90.76 X-Velocity: 0.19 Y-Velocity: 0.19
+
+PROGRESS REPORT @ TIME: 0.0 hours : 2.0 minutes : 45.0 seconds
+BALL 1 => X-Location: 90.95 Y-Location: 90.95 X-Velocity: 0.19 Y-Velocity: 0.19
+
+PROGRESS REPORT @ TIME: 0.0 hours : 2.0 minutes : 46.0 seconds
+BALL 1 => X-Location: 91.14 Y-Location: 91.14 X-Velocity: 0.19 Y-Velocity: 0.19
+
+PROGRESS REPORT @ TIME: 0.0 hours : 2.0 minutes : 47.0 seconds
+BALL 1 => X-Location: 91.33 Y-Location: 91.33 X-Velocity: 0.19 Y-Velocity: 0.19
+
+PROGRESS REPORT @ TIME: 0.0 hours : 2.0 minutes : 48.0 seconds
+BALL 1 => X-Location: 91.52 Y-Location: 91.52 X-Velocity: 0.18 Y-Velocity: 0.18
+
+PROGRESS REPORT @ TIME: 0.0 hours : 2.0 minutes : 49.0 seconds
+BALL 1 => X-Location: 91.70 Y-Location: 91.70 X-Velocity: 0.18 Y-Velocity: 0.18
+
+PROGRESS REPORT @ TIME: 0.0 hours : 2.0 minutes : 50.0 seconds
+BALL 1 => X-Location: 91.89 Y-Location: 91.89 X-Velocity: 0.18 Y-Velocity: 0.18
+
+PROGRESS REPORT @ TIME: 0.0 hours : 2.0 minutes : 51.0 seconds
+BALL 1 => X-Location: 92.07 Y-Location: 92.07 X-Velocity: 0.18 Y-Velocity: 0.18
+
+PROGRESS REPORT @ TIME: 0.0 hours : 2.0 minutes : 52.0 seconds
+BALL 1 => X-Location: 92.25 Y-Location: 92.25 X-Velocity: 0.18 Y-Velocity: 0.18
+
+PROGRESS REPORT @ TIME: 0.0 hours : 2.0 minutes : 53.0 seconds
+BALL 1 => X-Location: 92.43 Y-Location: 92.43 X-Velocity: 0.18 Y-Velocity: 0.18
+
+PROGRESS REPORT @ TIME: 0.0 hours : 2.0 minutes : 54.0 seconds
+BALL 1 => X-Location: 92.60 Y-Location: 92.60 X-Velocity: 0.17 Y-Velocity: 0.17
+
+PROGRESS REPORT @ TIME: 0.0 hours : 2.0 minutes : 55.0 seconds
+BALL 1 => X-Location: 92.78 Y-Location: 92.78 X-Velocity: 0.17 Y-Velocity: 0.17
+
+PROGRESS REPORT @ TIME: 0.0 hours : 2.0 minutes : 56.0 seconds
+BALL 1 => X-Location: 92.95 Y-Location: 92.95 X-Velocity: 0.17 Y-Velocity: 0.17
+
+PROGRESS REPORT @ TIME: 0.0 hours : 2.0 minutes : 57.0 seconds
+BALL 1 => X-Location: 93.12 Y-Location: 93.12 X-Velocity: 0.17 Y-Velocity: 0.17
+
+PROGRESS REPORT @ TIME: 0.0 hours : 2.0 minutes : 58.0 seconds
+BALL 1 => X-Location: 93.29 Y-Location: 93.29 X-Velocity: 0.17 Y-Velocity: 0.17
+
+PROGRESS REPORT @ TIME: 0.0 hours : 2.0 minutes : 59.0 seconds
+BALL 1 => X-Location: 93.45 Y-Location: 93.45 X-Velocity: 0.17 Y-Velocity: 0.17
+
+PROGRESS REPORT @ TIME: 0.0 hours : 3.0 minutes : 0.0 seconds
+BALL 1 => X-Location: 93.62 Y-Location: 93.62 X-Velocity: 0.16 Y-Velocity: 0.16
+
+PROGRESS REPORT @ TIME: 0.0 hours : 3.0 minutes : 1.0 seconds
+BALL 1 => X-Location: 93.78 Y-Location: 93.78 X-Velocity: 0.16 Y-Velocity: 0.16
+
+PROGRESS REPORT @ TIME: 0.0 hours : 3.0 minutes : 2.0 seconds
+BALL 1 => X-Location: 93.95 Y-Location: 93.95 X-Velocity: 0.16 Y-Velocity: 0.16
+
+PROGRESS REPORT @ TIME: 0.0 hours : 3.0 minutes : 3.0 seconds
+BALL 1 => X-Location: 94.11 Y-Location: 94.11 X-Velocity: 0.16 Y-Velocity: 0.16
+
+PROGRESS REPORT @ TIME: 0.0 hours : 3.0 minutes : 4.0 seconds
+BALL 1 => X-Location: 94.26 Y-Location: 94.26 X-Velocity: 0.16 Y-Velocity: 0.16
+
+PROGRESS REPORT @ TIME: 0.0 hours : 3.0 minutes : 5.0 seconds
+BALL 1 => X-Location: 94.42 Y-Location: 94.42 X-Velocity: 0.16 Y-Velocity: 0.16
+
+PROGRESS REPORT @ TIME: 0.0 hours : 3.0 minutes : 6.0 seconds
+BALL 1 => X-Location: 94.58 Y-Location: 94.58 X-Velocity: 0.15 Y-Velocity: 0.15
+
+PROGRESS REPORT @ TIME: 0.0 hours : 3.0 minutes : 7.0 seconds
+BALL 1 => X-Location: 94.73 Y-Location: 94.73 X-Velocity: 0.15 Y-Velocity: 0.15
+
+PROGRESS REPORT @ TIME: 0.0 hours : 3.0 minutes : 8.0 seconds
+BALL 1 => X-Location: 94.88 Y-Location: 94.88 X-Velocity: 0.15 Y-Velocity: 0.15
+
+PROGRESS REPORT @ TIME: 0.0 hours : 3.0 minutes : 9.0 seconds
+BALL 1 => X-Location: 95.04 Y-Location: 95.04 X-Velocity: 0.15 Y-Velocity: 0.15
+
+PROGRESS REPORT @ TIME: 0.0 hours : 3.0 minutes : 10.0 seconds
+BALL 1 => X-Location: 95.19 Y-Location: 95.19 X-Velocity: 0.15 Y-Velocity: 0.15
+
+PROGRESS REPORT @ TIME: 0.0 hours : 3.0 minutes : 11.0 seconds
+BALL 1 => X-Location: 95.33 Y-Location: 95.33 X-Velocity: 0.15 Y-Velocity: 0.15
+
+PROGRESS REPORT @ TIME: 0.0 hours : 3.0 minutes : 12.0 seconds
+BALL 1 => X-Location: 95.48 Y-Location: 95.48 X-Velocity: 0.15 Y-Velocity: 0.15
+
+PROGRESS REPORT @ TIME: 0.0 hours : 3.0 minutes : 13.0 seconds
+BALL 1 => X-Location: 95.63 Y-Location: 95.63 X-Velocity: 0.14 Y-Velocity: 0.14
+
+PROGRESS REPORT @ TIME: 0.0 hours : 3.0 minutes : 14.0 seconds
+BALL 1 => X-Location: 95.77 Y-Location: 95.77 X-Velocity: 0.14 Y-Velocity: 0.14
+
+PROGRESS REPORT @ TIME: 0.0 hours : 3.0 minutes : 15.0 seconds
+BALL 1 => X-Location: 95.91 Y-Location: 95.91 X-Velocity: 0.14 Y-Velocity: 0.14
+
+PROGRESS REPORT @ TIME: 0.0 hours : 3.0 minutes : 16.0 seconds
+BALL 1 => X-Location: 96.05 Y-Location: 96.05 X-Velocity: 0.14 Y-Velocity: 0.14
+
+PROGRESS REPORT @ TIME: 0.0 hours : 3.0 minutes : 17.0 seconds
+BALL 1 => X-Location: 96.19 Y-Location: 96.19 X-Velocity: 0.14 Y-Velocity: 0.14
+
+PROGRESS REPORT @ TIME: 0.0 hours : 3.0 minutes : 18.0 seconds
+BALL 1 => X-Location: 96.33 Y-Location: 96.33 X-Velocity: 0.14 Y-Velocity: 0.14
+
+PROGRESS REPORT @ TIME: 0.0 hours : 3.0 minutes : 19.0 seconds
+BALL 1 => X-Location: 96.47 Y-Location: 96.47 X-Velocity: 0.14 Y-Velocity: 0.14
+
+PROGRESS REPORT @ TIME: 0.0 hours : 3.0 minutes : 20.0 seconds
+BALL 1 => X-Location: 96.60 Y-Location: 96.60 X-Velocity: 0.13 Y-Velocity: 0.13
+
+PROGRESS REPORT @ TIME: 0.0 hours : 3.0 minutes : 21.0 seconds
+BALL 1 => X-Location: 96.74 Y-Location: 96.74 X-Velocity: 0.13 Y-Velocity: 0.13
+
+PROGRESS REPORT @ TIME: 0.0 hours : 3.0 minutes : 22.0 seconds
+BALL 1 => X-Location: 96.87 Y-Location: 96.87 X-Velocity: 0.13 Y-Velocity: 0.13
+
+PROGRESS REPORT @ TIME: 0.0 hours : 3.0 minutes : 23.0 seconds
+BALL 1 => X-Location: 97.00 Y-Location: 97.00 X-Velocity: 0.13 Y-Velocity: 0.13
+
+PROGRESS REPORT @ TIME: 0.0 hours : 3.0 minutes : 24.0 seconds
+BALL 1 => X-Location: 97.13 Y-Location: 97.13 X-Velocity: 0.13 Y-Velocity: 0.13
+
+PROGRESS REPORT @ TIME: 0.0 hours : 3.0 minutes : 25.0 seconds
+BALL 1 => X-Location: 97.26 Y-Location: 97.26 X-Velocity: 0.13 Y-Velocity: 0.13
+
+PROGRESS REPORT @ TIME: 0.0 hours : 3.0 minutes : 26.0 seconds
+BALL 1 => X-Location: 97.39 Y-Location: 97.39 X-Velocity: 0.13 Y-Velocity: 0.13
+
+PROGRESS REPORT @ TIME: 0.0 hours : 3.0 minutes : 27.0 seconds
+BALL 1 => X-Location: 97.51 Y-Location: 97.51 X-Velocity: 0.12 Y-Velocity: 0.12
+
+PROGRESS REPORT @ TIME: 0.0 hours : 3.0 minutes : 28.0 seconds
+BALL 1 => X-Location: 97.64 Y-Location: 97.64 X-Velocity: 0.12 Y-Velocity: 0.12
+
+PROGRESS REPORT @ TIME: 0.0 hours : 3.0 minutes : 29.0 seconds
+BALL 1 => X-Location: 97.76 Y-Location: 97.76 X-Velocity: 0.12 Y-Velocity: 0.12
+
+PROGRESS REPORT @ TIME: 0.0 hours : 3.0 minutes : 30.0 seconds
+BALL 1 => X-Location: 97.88 Y-Location: 97.88 X-Velocity: 0.12 Y-Velocity: 0.12
+
+PROGRESS REPORT @ TIME: 0.0 hours : 3.0 minutes : 31.0 seconds
+BALL 1 => X-Location: 98.00 Y-Location: 98.00 X-Velocity: 0.12 Y-Velocity: 0.12
+
+PROGRESS REPORT @ TIME: 0.0 hours : 3.0 minutes : 32.0 seconds
+BALL 1 => X-Location: 98.12 Y-Location: 98.12 X-Velocity: 0.12 Y-Velocity: 0.12
+
+PROGRESS REPORT @ TIME: 0.0 hours : 3.0 minutes : 33.0 seconds
+BALL 1 => X-Location: 98.24 Y-Location: 98.24 X-Velocity: 0.12 Y-Velocity: 0.12
+
+PROGRESS REPORT @ TIME: 0.0 hours : 3.0 minutes : 34.0 seconds
+BALL 1 => X-Location: 98.36 Y-Location: 98.36 X-Velocity: 0.12 Y-Velocity: 0.12
+
+PROGRESS REPORT @ TIME: 0.0 hours : 3.0 minutes : 35.0 seconds
+BALL 1 => X-Location: 98.48 Y-Location: 98.48 X-Velocity: 0.12 Y-Velocity: 0.12
+
+PROGRESS REPORT @ TIME: 0.0 hours : 3.0 minutes : 36.0 seconds
+BALL 1 => X-Location: 98.59 Y-Location: 98.59 X-Velocity: 0.11 Y-Velocity: 0.11
+
+PROGRESS REPORT @ TIME: 0.0 hours : 3.0 minutes : 37.0 seconds
+BALL 1 => X-Location: 98.71 Y-Location: 98.71 X-Velocity: 0.11 Y-Velocity: 0.11
+
+PROGRESS REPORT @ TIME: 0.0 hours : 3.0 minutes : 38.0 seconds
+BALL 1 => X-Location: 98.82 Y-Location: 98.82 X-Velocity: 0.11 Y-Velocity: 0.11
+
+PROGRESS REPORT @ TIME: 0.0 hours : 3.0 minutes : 39.0 seconds
+BALL 1 => X-Location: 98.93 Y-Location: 98.93 X-Velocity: 0.11 Y-Velocity: 0.11
+
+PROGRESS REPORT @ TIME: 0.0 hours : 3.0 minutes : 40.0 seconds
+BALL 1 => X-Location: 99.04 Y-Location: 99.04 X-Velocity: 0.11 Y-Velocity: 0.11
+
+PROGRESS REPORT @ TIME: 0.0 hours : 3.0 minutes : 41.0 seconds
+BALL 1 => X-Location: 99.15 Y-Location: 99.15 X-Velocity: 0.11 Y-Velocity: 0.11
+
+PROGRESS REPORT @ TIME: 0.0 hours : 3.0 minutes : 42.0 seconds
+BALL 1 => X-Location: 99.26 Y-Location: 99.26 X-Velocity: 0.11 Y-Velocity: 0.11
+
+PROGRESS REPORT @ TIME: 0.0 hours : 3.0 minutes : 43.0 seconds
+BALL 1 => X-Location: 99.37 Y-Location: 99.37 X-Velocity: 0.11 Y-Velocity: 0.11
+
+PROGRESS REPORT @ TIME: 0.0 hours : 3.0 minutes : 44.0 seconds
+BALL 1 => X-Location: 99.47 Y-Location: 99.47 X-Velocity: 0.11 Y-Velocity: 0.11
+
+PROGRESS REPORT @ TIME: 0.0 hours : 3.0 minutes : 45.0 seconds
+BALL 1 => X-Location: 99.58 Y-Location: 99.58 X-Velocity: 0.10 Y-Velocity: 0.10
+
+PROGRESS REPORT @ TIME: 0.0 hours : 3.0 minutes : 46.0 seconds
+BALL 1 => X-Location: 99.68 Y-Location: 99.68 X-Velocity: 0.10 Y-Velocity: 0.10
+
+PROGRESS REPORT @ TIME: 0.0 hours : 3.0 minutes : 47.0 seconds
+BALL 1 => X-Location: 99.79 Y-Location: 99.79 X-Velocity: 0.10 Y-Velocity: 0.10
+
+PROGRESS REPORT @ TIME: 0.0 hours : 3.0 minutes : 48.0 seconds
+BALL 1 => X-Location: 99.89 Y-Location: 99.89 X-Velocity: 0.10 Y-Velocity: 0.10
+
+PROGRESS REPORT @ TIME: 0.0 hours : 3.0 minutes : 49.0 seconds
+BALL 1 => X-Location: 99.99 Y-Location: 99.99 X-Velocity: 0.10 Y-Velocity: 0.10
+
+PROGRESS REPORT @ TIME: 0.0 hours : 3.0 minutes : 50.0 seconds
+BALL 1 => X-Location: 100.09 Y-Location: 100.09 X-Velocity: 0.10 Y-Velocity: 0.10
+
+PROGRESS REPORT @ TIME: 0.0 hours : 3.0 minutes : 51.0 seconds
+BALL 1 => X-Location: 100.19 Y-Location: 100.19 X-Velocity: 0.10 Y-Velocity: 0.10
+
+PROGRESS REPORT @ TIME: 0.0 hours : 3.0 minutes : 52.0 seconds
+BALL 1 => X-Location: 100.29 Y-Location: 100.29 X-Velocity: 0.10 Y-Velocity: 0.10
+
+PROGRESS REPORT @ TIME: 0.0 hours : 3.0 minutes : 53.0 seconds
+BALL 1 => X-Location: 100.38 Y-Location: 100.38 X-Velocity: 0.10 Y-Velocity: 0.10
+
+PROGRESS REPORT @ TIME: 0.0 hours : 3.0 minutes : 54.0 seconds
+BALL 1 => X-Location: 100.48 Y-Location: 100.48 X-Velocity: 0.10 Y-Velocity: 0.10
+
+PROGRESS REPORT @ TIME: 0.0 hours : 3.0 minutes : 55.0 seconds
+BALL 1 => X-Location: 100.58 Y-Location: 100.58 X-Velocity: 0.09 Y-Velocity: 0.09
+
+PROGRESS REPORT @ TIME: 0.0 hours : 3.0 minutes : 56.0 seconds
+BALL 1 => X-Location: 100.67 Y-Location: 100.67 X-Velocity: 0.09 Y-Velocity: 0.09
+
+PROGRESS REPORT @ TIME: 0.0 hours : 3.0 minutes : 57.0 seconds
+BALL 1 => X-Location: 100.76 Y-Location: 100.76 X-Velocity: 0.09 Y-Velocity: 0.09
+
+PROGRESS REPORT @ TIME: 0.0 hours : 3.0 minutes : 58.0 seconds
+BALL 1 => X-Location: 100.86 Y-Location: 100.86 X-Velocity: 0.09 Y-Velocity: 0.09
+
+PROGRESS REPORT @ TIME: 0.0 hours : 3.0 minutes : 59.0 seconds
+BALL 1 => X-Location: 100.95 Y-Location: 100.95 X-Velocity: 0.09 Y-Velocity: 0.09
+
+PROGRESS REPORT @ TIME: 0.0 hours : 4.0 minutes : 0.0 seconds
+BALL 1 => X-Location: 101.04 Y-Location: 101.04 X-Velocity: 0.09 Y-Velocity: 0.09
+
+PROGRESS REPORT @ TIME: 0.0 hours : 4.0 minutes : 1.0 seconds
+BALL 1 => X-Location: 101.13 Y-Location: 101.13 X-Velocity: 0.09 Y-Velocity: 0.09
+
+PROGRESS REPORT @ TIME: 0.0 hours : 4.0 minutes : 2.0 seconds
+BALL 1 => X-Location: 101.22 Y-Location: 101.22 X-Velocity: 0.09 Y-Velocity: 0.09
+
+PROGRESS REPORT @ TIME: 0.0 hours : 4.0 minutes : 3.0 seconds
+BALL 1 => X-Location: 101.30 Y-Location: 101.30 X-Velocity: 0.09 Y-Velocity: 0.09
+
+PROGRESS REPORT @ TIME: 0.0 hours : 4.0 minutes : 4.0 seconds
+BALL 1 => X-Location: 101.39 Y-Location: 101.39 X-Velocity: 0.09 Y-Velocity: 0.09
+
+PROGRESS REPORT @ TIME: 0.0 hours : 4.0 minutes : 5.0 seconds
+BALL 1 => X-Location: 101.48 Y-Location: 101.48 X-Velocity: 0.09 Y-Velocity: 0.09
+
+PROGRESS REPORT @ TIME: 0.0 hours : 4.0 minutes : 6.0 seconds
+BALL 1 => X-Location: 101.56 Y-Location: 101.56 X-Velocity: 0.08 Y-Velocity: 0.08
+
+PROGRESS REPORT @ TIME: 0.0 hours : 4.0 minutes : 7.0 seconds
+BALL 1 => X-Location: 101.65 Y-Location: 101.65 X-Velocity: 0.08 Y-Velocity: 0.08
+
+PROGRESS REPORT @ TIME: 0.0 hours : 4.0 minutes : 8.0 seconds
+BALL 1 => X-Location: 101.73 Y-Location: 101.73 X-Velocity: 0.00 Y-Velocity: 0.00
+
+*************************************************
+NO COLLISION POSSIBLE
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim valid ball should go out of bounds...
+======================================  
+java.lang.NumberFormatException: Ball's X velocity sends ball off the field
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim valid ball set six balls subsecond time slice...
+======================================  
+INITIAL REPORT
+X-Location: 200.00 Y-Location: 200.00 X-Velocity: 10.00 Y-Velocity: 10.00
+X-Location: 100.00 Y-Location: 100.00 X-Velocity: -100.00 Y-Velocity: -100.00
+X-Location: 150.00 Y-Location: 150.00 X-Velocity: 200.00 Y-Velocity: 200.00
+X-Location: 175.00 Y-Location: 175.00 X-Velocity: -110.00 Y-Velocity: -110.00
+X-Location: 20.00 Y-Location: 20.00 X-Velocity: 1.00 Y-Velocity: 1.00
+X-Location: 50.00 Y-Location: 50.00 X-Velocity: -5.00 Y-Velocity: -5.00
+*************************************************
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 0.1 seconds
+BALL 1 => X-Location: 210.00 Y-Location: 210.00 X-Velocity: 9.90 Y-Velocity: 9.90
+BALL 2 => X-Location: 0.00 Y-Location: 0.00 X-Velocity: -99.00 Y-Velocity: -99.00
+BALL 3 => X-Location: 350.00 Y-Location: 350.00 X-Velocity: 198.00 Y-Velocity: 198.00
+BALL 4 => X-Location: 65.00 Y-Location: 65.00 X-Velocity: -108.90 Y-Velocity: -108.90
+BALL 5 => X-Location: 21.00 Y-Location: 21.00 X-Velocity: 0.99 Y-Velocity: 0.99
+BALL 6 => X-Location: 45.00 Y-Location: 45.00 X-Velocity: -4.95 Y-Velocity: -4.95
+
+*************************************************
+NO COLLISION POSSIBLE
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim valid ball set five balls 1.234 second time slice...
+======================================  
+INITIAL REPORT
+X-Location: 200.00 Y-Location: 200.00 X-Velocity: 10.00 Y-Velocity: 10.00
+X-Location: 100.00 Y-Location: 100.00 X-Velocity: -100.00 Y-Velocity: -100.00
+X-Location: 175.00 Y-Location: 175.00 X-Velocity: -110.00 Y-Velocity: -110.00
+X-Location: 20.00 Y-Location: 20.00 X-Velocity: 1.00 Y-Velocity: 1.00
+X-Location: 50.00 Y-Location: 50.00 X-Velocity: -5.00 Y-Velocity: -5.00
+*************************************************
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 1.234 seconds
+BALL 1 => X-Location: 210.00 Y-Location: 210.00 X-Velocity: 9.90 Y-Velocity: 9.90
+BALL 2 => X-Location: 0.00 Y-Location: 0.00 X-Velocity: -99.00 Y-Velocity: -99.00
+BALL 3 => X-Location: 65.00 Y-Location: 65.00 X-Velocity: -108.90 Y-Velocity: -108.90
+BALL 4 => X-Location: 21.00 Y-Location: 21.00 X-Velocity: 0.99 Y-Velocity: 0.99
+BALL 5 => X-Location: 45.00 Y-Location: 45.00 X-Velocity: -4.95 Y-Velocity: -4.95
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 2.468 seconds
+BALL 1 => X-Location: 219.90 Y-Location: 219.90 X-Velocity: 9.80 Y-Velocity: 9.80
+BALL 2 => X-Location: -99.00 Y-Location: -99.00 X-Velocity: -98.01 Y-Velocity: -98.01
+BALL 3 => X-Location: -43.90 Y-Location: -43.90 X-Velocity: -107.81 Y-Velocity: -107.81
+BALL 4 => X-Location: 21.99 Y-Location: 21.99 X-Velocity: 0.98 Y-Velocity: 0.98
+BALL 5 => X-Location: 40.05 Y-Location: 40.05 X-Velocity: -4.90 Y-Velocity: -4.90
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 3.702 seconds
+BALL 1 => X-Location: 229.70 Y-Location: 229.70 X-Velocity: 9.70 Y-Velocity: 9.70
+BALL 2 => X-Location: -197.01 Y-Location: -197.01 X-Velocity: -97.03 Y-Velocity: -97.03
+BALL 3 => X-Location: -151.71 Y-Location: -151.71 X-Velocity: -106.73 Y-Velocity: -106.73
+BALL 4 => X-Location: 22.97 Y-Location: 22.97 X-Velocity: 0.97 Y-Velocity: 0.97
+BALL 5 => X-Location: 35.15 Y-Location: 35.15 X-Velocity: -4.85 Y-Velocity: -4.85
+
+PROGRESS REPORT @ TIME: 0.0 hours : 0.0 minutes : 4.936 seconds
+BALL 1 => X-Location: 239.40 Y-Location: 239.40 X-Velocity: 9.61 Y-Velocity: 9.61
+BALL 2 => X-Location: -294.04 Y-Location: -294.04 X-Velocity: -96.06 Y-Velocity: -96.06
+BALL 3 => X-Location: -258.44 Y-Location: -258.44 X-Velocity: -105.67 Y-Velocity: -105.67
+BALL 4 => X-Location: 23.94 Y-Location: 23.94 X-Velocity: 0.96 Y-Velocity: 0.96
+BALL 5 => X-Location: 30.30 Y-Location: 30.30 X-Velocity: -4.80 Y-Velocity: -4.80
+
+*************************************************
+NO COLLISION POSSIBLE
+.                                       
+.                                       
+======================================  
+... Testing SoccerSim valid ball set ten balls 10 second time slice...
+======================================  
+java.lang.NumberFormatException: Ball's X velocity sends ball off the field
+.                                       
+.                                       
+======================================  
+... End of SoccerSim Testing...         
+======================================  
