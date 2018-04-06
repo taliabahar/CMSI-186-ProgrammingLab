@@ -20,33 +20,33 @@
  *
  *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 import java.util.Arrays;
-
+// NEED JAVA DOCS TO BE GOOD
 public class BrobInt {
 
-   public static final BrobInt ZERO     = new BrobInt(  "0" );      /// Constant for "zero"
-   public static final BrobInt ONE      = new BrobInt(  "1" );      /// Constant for "one"
-   public static final BrobInt TWO      = new BrobInt(  "2" );      /// Constant for "two"
-   public static final BrobInt THREE    = new BrobInt(  "3" );      /// Constant for "three"
-   public static final BrobInt FOUR     = new BrobInt(  "4" );      /// Constant for "four"
-   public static final BrobInt FIVE     = new BrobInt(  "5" );      /// Constant for "five"
-   public static final BrobInt SIX      = new BrobInt(  "6" );      /// Constant for "six"
-   public static final BrobInt SEVEN    = new BrobInt(  "7" );      /// Constant for "seven"
-   public static final BrobInt EIGHT    = new BrobInt(  "8" );      /// Constant for "eight"
-   public static final BrobInt NINE     = new BrobInt(  "9" );      /// Constant for "nine"
-   public static final BrobInt TEN      = new BrobInt( "10" );      /// Constant for "ten"
+    public static final BrobInt ZERO     = new BrobInt(  "0" );      /// Constant for "zero"
+    public static final BrobInt ONE      = new BrobInt(  "1" );      /// Constant for "one"
+    public static final BrobInt TWO      = new BrobInt(  "2" );      /// Constant for "two"
+    public static final BrobInt THREE    = new BrobInt(  "3" );      /// Constant for "three"
+    public static final BrobInt FOUR     = new BrobInt(  "4" );      /// Constant for "four"
+    public static final BrobInt FIVE     = new BrobInt(  "5" );      /// Constant for "five"
+    public static final BrobInt SIX      = new BrobInt(  "6" );      /// Constant for "six"
+    public static final BrobInt SEVEN    = new BrobInt(  "7" );      /// Constant for "seven"
+    public static final BrobInt EIGHT    = new BrobInt(  "8" );      /// Constant for "eight"
+    public static final BrobInt NINE     = new BrobInt(  "9" );      /// Constant for "nine"
+    public static final BrobInt TEN      = new BrobInt( "10" );      /// Constant for "ten"
 
-  /// Some constants for other intrinsic data types
-  ///  these can help speed up the math if they fit into the proper memory space
-   public static final BrobInt MAX_INT  = new BrobInt( new Integer( Integer.MAX_VALUE ).toString() );
-   public static final BrobInt MIN_INT  = new BrobInt( new Integer( Integer.MIN_VALUE ).toString() );
-   public static final BrobInt MAX_LONG = new BrobInt( new Long( Long.MAX_VALUE ).toString() );
-   public static final BrobInt MIN_LONG = new BrobInt( new Long( Long.MIN_VALUE ).toString() );
+   /// Some constants for other intrinsic data types
+   ///  these can help speed up the math if they fit into the proper memory space
+    public static final BrobInt MAX_INT  = new BrobInt( new Integer( Integer.MAX_VALUE ).toString() );
+    public static final BrobInt MIN_INT  = new BrobInt( new Integer( Integer.MIN_VALUE ).toString() );
+    public static final BrobInt MAX_LONG = new BrobInt( new Long( Long.MAX_VALUE ).toString() );
+    public static final BrobInt MIN_LONG = new BrobInt( new Long( Long.MIN_VALUE ).toString() );
 
   /// These are the internal fields
-   private String internalValue = "";        // internal String representation of this BrobInt
-   private byte   sign          = 0;         // "0" is positive, "1" is negative
-   private String reversed      = "";        // the backwards version of the internal String representation
-   private byte[] byteVersion   = null;      // byte array for storing the string values; uses the reversed string
+    private String internalValue = "";        // internal String representation of this BrobInt
+    private byte   sign          = 0;         // "0" is positive, "1" is negative
+    private String reversed      = "";        // the backwards version of the internal String representation
+    private byte[] byteVersion   = null;      // byte array for storing the string values; uses the reversed string
 
   /**
    *  Constructor takes a string and assigns it to the internal storage, checks for a sign character
@@ -55,7 +55,31 @@ public class BrobInt {
    *  @param  value  String value to make into a BrobInt
    */
    public BrobInt( String value ) {
-      super();
+        super();
+        internalValue = value;
+        validateDigits();
+        reversed = value.reverser();
+        if (value.charAt(0) == '-') {
+            sign = 1;
+        } else {
+            sign = 0;
+        }
+        int count = 0;
+        if (sign == 1){
+            byteVersion = new byte[value.length()-1];
+            for (int i= value.length()-1; i > 1; i--) {
+                byteVersion[count] = (byte)value.charAt(i);
+                reversed += value.charAt(i);
+                count++;
+            }
+        } else {
+            byteVersion = new byte[value.length()];
+            for (int i=value.length()-1; i > 0; i--) {
+                byteVersion[count] = (byte)value.charAt(i);
+                reversed += value.charAt(i);
+                count++;
+            }
+        }
    }
 
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -65,18 +89,38 @@ public class BrobInt {
    *  note that there is no return false, because of throwing the exception
    *  note also that this must check for the '+' and '-' sign digits
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-   public boolean validateDigits() {
-      throw new UnsupportedOperationException( "\n         Sorry, that operation is not yet implemented." );
-   }
+   public boolean validateDigits() throws IllegalArgumentException{
+       char[] charVersion = new char[byteVersion.length];
+       for (int i=0; i < byteVersion.length; i++) {
+           charVersion[i] = (char)byteVersion[i];
+       }
+       for (char c : charVersion) {
+           if (!Character.isDigit(c))  {
+               throw new IllegalArgumentException( "\n        The entered value is not a valid decimal digit." );
+           }
+       }
+       return true;
+     }
 
+    //  for (byte b : byteVersion) {
+    //      if(b > 99 || b < 0){
+    //          throw new IllegalArgumentException( "\n        The entered value is not a valid decimal digit." );
+    //      }
+    //  }
+    //  return true;
+    // }
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
    *  Method to reverse the value of this BrobInt
    *  @return BrobInt that is the reverse of the value of this BrobInt
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
    public BrobInt reverser() {
-      throw new UnsupportedOperationException( "\n         Sorry, that operation is not yet implemented." );
-   }
-
+       if (this.sign == 1) {
+           return new BrobInt("-" + this.reversed);
+       }
+       else {
+           return new BrobInt(this.reversed);
+       }
+    }
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
    *  Method to reverse the value of a BrobIntk passed as argument
    *  Note: static method
@@ -84,7 +128,12 @@ public class BrobInt {
    *  @return BrobInt that is the reverse of the value of the BrobInt passed as argument
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
    public static BrobInt reverser( BrobInt gint ) {
-      throw new UnsupportedOperationException( "\n         Sorry, that operation is not yet implemented." );
+       if (gint.sign == 1) {
+           return new BrobInt("-" + gint.reversed);
+       }
+       else {
+           return new BrobInt(gint.reversed);
+       }
    }
 
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
