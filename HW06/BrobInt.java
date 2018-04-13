@@ -34,9 +34,9 @@ public class BrobInt {
     public static final BrobInt EIGHT    = new BrobInt(  "8" );      /// Constant for "eight"
     public static final BrobInt NINE     = new BrobInt(  "9" );      /// Constant for "nine"
     public static final BrobInt TEN      = new BrobInt( "10" );      /// Constant for "ten"
-
-   /// Some constants for other intrinsic data types
-   ///  these can help speed up the math if they fit into the proper memory space
+   //
+   // /// Some constants for other intrinsic data types
+   // ///  these can help speed up the math if they fit into the proper memory space
     public static final BrobInt MAX_INT  = new BrobInt( new Integer( Integer.MAX_VALUE ).toString() );
     public static final BrobInt MIN_INT  = new BrobInt( new Integer( Integer.MIN_VALUE ).toString() );
     public static final BrobInt MAX_LONG = new BrobInt( new Long( Long.MAX_VALUE ).toString() );
@@ -54,32 +54,25 @@ public class BrobInt {
    *   for later use
    *  @param  value  String value to make into a BrobInt
    */
-   public BrobInt( String value ) {
-        super();
+   public BrobInt(String value) {
         internalValue = value;
-        validateDigits();
-        reversed = value.reverser();
         if (value.charAt(0) == '-') {
             sign = 1;
+            value = value.replace("-", "");
         } else {
             sign = 0;
+            value = value.replace("+", "");
         }
         int count = 0;
-        if (sign == 1){
-            byteVersion = new byte[value.length()-1];
-            for (int i= value.length()-1; i > 1; i--) {
-                byteVersion[count] = (byte)value.charAt(i);
-                reversed += value.charAt(i);
-                count++;
-            }
-        } else {
-            byteVersion = new byte[value.length()];
-            for (int i=value.length()-1; i > 0; i--) {
-                byteVersion[count] = (byte)value.charAt(i);
-                reversed += value.charAt(i);
-                count++;
-            }
+        int length = value.length();
+        byteVersion = new byte[length];
+        for (int i= value.length()-1; i > 0; i--) {
+                // Characters start at 48
+            byteVersion[count] = (byte)(value.charAt(i) - 48);
+            reversed += value.charAt(i);
+            count++;
         }
+        validateDigits();
    }
 
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -90,25 +83,14 @@ public class BrobInt {
    *  note also that this must check for the '+' and '-' sign digits
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
    public boolean validateDigits() throws IllegalArgumentException{
-       char[] charVersion = new char[byteVersion.length];
-       for (int i=0; i < byteVersion.length; i++) {
-           charVersion[i] = (char)byteVersion[i];
-       }
-       for (char c : charVersion) {
-           if (!Character.isDigit(c))  {
+       for (byte b : byteVersion) {
+           if(b > 99 || b < 0){
                throw new IllegalArgumentException( "\n        The entered value is not a valid decimal digit." );
            }
        }
        return true;
-     }
+   }
 
-    //  for (byte b : byteVersion) {
-    //      if(b > 99 || b < 0){
-    //          throw new IllegalArgumentException( "\n        The entered value is not a valid decimal digit." );
-    //      }
-    //  }
-    //  return true;
-    // }
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
    *  Method to reverse the value of this BrobInt
    *  @return BrobInt that is the reverse of the value of this BrobInt
@@ -142,8 +124,39 @@ public class BrobInt {
    *  @return BrobInt that is the sum of the value of this BrobInt and the one passed in
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
    public BrobInt addByte( BrobInt gint ) {
-      throw new UnsupportedOperationException( "\n         Sorry, that operation is not yet implemented." );
+       String result = "";
+       BrobInt larger = (Math.max(this.byteVersion.length, gint.byteVersion.length) == this.byteVersion.length) ? this : gint;
+       BrobInt smaller = (Math.min(this.byteVersion.length, gint.byteVersion.length) == this.byteVersion.length) ? this : gint;
+       byte[] sum = new byte[larger.byteVersion.length + 1];
+       byte carry = 0;
+       if (gint.sign == this.sign) {
+           for (int i=0; i < larger.byteVersion.length; i++){
+               if( i < smaller.byteVersion.length) {
+                   sum[i] = (byte)((larger.byteVersion[i] + smaller.byteVersion[i] + carry) % 10);
+                   carry = (larger.byteVersion[i] + smaller.byteVersion[i] + carry > 9) ? (byte)1 : (byte)0;
+               } else {
+                   sum[i] = (byte)((larger.byteVersion[i] + carry) % 10);
+                 }
+           }
+        //    for (int i=sum.length-1; i > 0; i--) {
+        //        result += sum[i].toString();
+        //    }
+          result = new String(sum);
+           if (gint.sign == 1) {
+               result += "-";
+           }
+       }
+       else {
+          return this.subtractByte(gint);
+       }
+       return new BrobInt(result);
    }
+
+
+
+    // for loop to turn result in a string and then use reverser on it
+    // return new BrobInt(result);
+
 
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
    *  Method to add the value of a BrobIntk passed as argument to this BrobInt using int array
@@ -152,6 +165,7 @@ public class BrobInt {
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
    public BrobInt addInt( BrobInt gint ) {
       throw new UnsupportedOperationException( "\n         Sorry, that operation is not yet implemented." );
+    //   can get rid of this but change tester and include that in git so he runs my tester
    }
 
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -160,7 +174,26 @@ public class BrobInt {
    *  @return BrobInt that is the difference of the value of this BrobInt and the one passed in
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
    public BrobInt subtractByte( BrobInt gint ) {
-      throw new UnsupportedOperationException( "\n         Sorry, that operation is not yet implemented." );
+      String result = "";
+      BrobInt larger = (Math.max(this.byteVersion.length, gint.byteVersion.length) == this.byteVersion.length) ? this : gint;
+      BrobInt smaller = (Math.min(this.byteVersion.length, gint.byteVersion.length) == this.byteVersion.length) ? this : gint;
+      byte[] difference = new byte[larger.byteVersion.length + 1];
+      byte carry = 0;
+    //   BOTH NEGATIVE
+      if ((gint.sign == 1) && (this.sign == 1)){
+          return this.addByte(gint);
+      }
+    //   BOTH POSITIVE
+    //   if (gint.sign = 0 && this.sign = 0){
+      //
+    //   }
+
+
+// Both negative 1st is larger in absolute value
+// Both negative 1st is smaller in absolute value
+// ONE positive ONE negative
+
+    return new BrobInt(result);
    }
 
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -170,6 +203,7 @@ public class BrobInt {
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
    public BrobInt subtractInt( BrobInt gint ) {
       throw new UnsupportedOperationException( "\n         Sorry, that operation is not yet implemented." );
+      //   can get rid of this but change tester and include that in git so he runs my tester
    }
 
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -262,10 +296,18 @@ public class BrobInt {
    *  @param  args  String array which contains command line arguments
    *  note:  we don't really care about these
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-   public static void main( String[] args ) {
+   public static void main(String[] args) {
       System.out.println( "\n  Hello, world, from the BrobInt program!!\n" );
       System.out.println( "\n   You should run your tests from the BrobIntTester...\n" );
+    //   String input = "-1093";
+      BrobInt bi = new BrobInt("0001563847928379482");
+      System.out.println(bi);
+    //   for(byte b: byteVersion) {
+    // System.out.println(b+ " ");
+    // }
+    // System.out.println(Arrays.toString(byteVersion));
 
-      System.exit( 0 );
+    //   System.out.println(bi.toString());
+    //   System.exit( 0 );
    }
 }
