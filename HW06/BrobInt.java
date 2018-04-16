@@ -19,10 +19,11 @@
  *                                     start work on subtractByte and subtractInt methods
  *
  *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+// package BrobInt;
 import java.util.Arrays;
+
 // NEED JAVA DOCS TO BE GOOD
 public class BrobInt {
-
     public static final BrobInt ZERO     = new BrobInt(  "0" );      /// Constant for "zero"
     public static final BrobInt ONE      = new BrobInt(  "1" );      /// Constant for "one"
     public static final BrobInt TWO      = new BrobInt(  "2" );      /// Constant for "two"
@@ -34,9 +35,9 @@ public class BrobInt {
     public static final BrobInt EIGHT    = new BrobInt(  "8" );      /// Constant for "eight"
     public static final BrobInt NINE     = new BrobInt(  "9" );      /// Constant for "nine"
     public static final BrobInt TEN      = new BrobInt( "10" );      /// Constant for "ten"
-   //
-   // /// Some constants for other intrinsic data types
-   // ///  these can help speed up the math if they fit into the proper memory space
+
+   /// Some constants for other intrinsic data types
+   ///  these can help speed up the math if they fit into the proper memory space
     public static final BrobInt MAX_INT  = new BrobInt( new Integer( Integer.MAX_VALUE ).toString() );
     public static final BrobInt MIN_INT  = new BrobInt( new Integer( Integer.MIN_VALUE ).toString() );
     public static final BrobInt MAX_LONG = new BrobInt( new Long( Long.MAX_VALUE ).toString() );
@@ -66,8 +67,7 @@ public class BrobInt {
         int count = 0;
         int length = value.length();
         byteVersion = new byte[length];
-        for (int i= value.length()-1; i > 0; i--) {
-                // Characters start at 48
+        for (int i= value.length()-1; i >= 0; i--) {
             byteVersion[count] = (byte)(value.charAt(i) - 48);
             reversed += value.charAt(i);
             count++;
@@ -84,7 +84,8 @@ public class BrobInt {
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
    public boolean validateDigits() throws IllegalArgumentException{
        for (byte b : byteVersion) {
-           if(b > 99 || b < 0){
+           if(b > 9 || b < 0){
+               System.out.println(b);
                throw new IllegalArgumentException( "\n        The entered value is not a valid decimal digit." );
            }
        }
@@ -125,8 +126,8 @@ public class BrobInt {
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
    public BrobInt addByte( BrobInt gint ) {
        String result = "";
-       BrobInt larger = (Math.max(this.byteVersion.length, gint.byteVersion.length) == this.byteVersion.length) ? this : gint;
-       BrobInt smaller = (Math.min(this.byteVersion.length, gint.byteVersion.length) == this.byteVersion.length) ? this : gint;
+       BrobInt larger = (Math.max(this.byteVersion.length, gint.byteVersion.length) == this.byteVersion.length) ? this.copy() : gint.copy();
+       BrobInt smaller = (Math.max(this.byteVersion.length, gint.byteVersion.length) == this.byteVersion.length) ? gint.copy() : this.copy();
        byte[] sum = new byte[larger.byteVersion.length + 1];
        byte carry = 0;
        if (gint.sign == this.sign) {
@@ -134,77 +135,130 @@ public class BrobInt {
                if( i < smaller.byteVersion.length) {
                    sum[i] = (byte)((larger.byteVersion[i] + smaller.byteVersion[i] + carry) % 10);
                    carry = (larger.byteVersion[i] + smaller.byteVersion[i] + carry > 9) ? (byte)1 : (byte)0;
-               } else {
+               }
+               else {
                    sum[i] = (byte)((larger.byteVersion[i] + carry) % 10);
-                 }
+                   carry = (larger.byteVersion[i] + carry > 9) ? (byte)1 : (byte)0;
+
+               }
            }
-        //    for (int i=sum.length-1; i > 0; i--) {
-        //        result += sum[i].toString();
-        //    }
-          result = new String(sum);
+           if (carry > 0) {
+               sum[sum.length - 1] = carry;
+           }
+
+           for (int i=sum.length-1; i >= 0; i--) {
+               result += sum[i];
+           }
+           result = result.replaceFirst("^0+(?!$)", "");
            if (gint.sign == 1) {
-               result += "-";
+               result = "-" + result;
            }
+
        }
        else {
           return this.subtractByte(gint);
        }
+
        return new BrobInt(result);
    }
 
+   public int isLarger(BrobInt gint) {
+       if (this.byteVersion.length > gint.byteVersion.length) {
+           return 1;
+       }
+       if (gint.byteVersion.length > this.byteVersion.length) {
+           return -1;
+       }
+       for(int i = this.byteVersion.length-1; i >= 0; i--) {
+           if(this.byteVersion[i] > gint.byteVersion[i]) {
+               return 1;
+           }
+           if(gint.byteVersion[i] > this.byteVersion[i]) {
+               return -1;
+           }
+       }
+       return 0;
 
-
-    // for loop to turn result in a string and then use reverser on it
-    // return new BrobInt(result);
-
-
-  /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-   *  Method to add the value of a BrobIntk passed as argument to this BrobInt using int array
-   *  @param  gint         BrobInt to add to this
-   *  @return BrobInt that is the sum of the value of this BrobInt and the one passed in
-   *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-   public BrobInt addInt( BrobInt gint ) {
-      throw new UnsupportedOperationException( "\n         Sorry, that operation is not yet implemented." );
-    //   can get rid of this but change tester and include that in git so he runs my tester
    }
-
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
    *  Method to subtract the value of a BrobIntk passed as argument to this BrobInt using bytes
    *  @param  gint         BrobInt to subtract from this
    *  @return BrobInt that is the difference of the value of this BrobInt and the one passed in
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
    public BrobInt subtractByte( BrobInt gint ) {
-      String result = "";
-      BrobInt larger = (Math.max(this.byteVersion.length, gint.byteVersion.length) == this.byteVersion.length) ? this : gint;
-      BrobInt smaller = (Math.min(this.byteVersion.length, gint.byteVersion.length) == this.byteVersion.length) ? this : gint;
-      byte[] difference = new byte[larger.byteVersion.length + 1];
-      byte carry = 0;
-    //   BOTH NEGATIVE
-      if ((gint.sign == 1) && (this.sign == 1)){
-          return this.addByte(gint);
-      }
-    //   BOTH POSITIVE
-    //   if (gint.sign = 0 && this.sign = 0){
-      //
-    //   }
+       String result = "";
+       BrobInt s1 = this.copy();
+       BrobInt s2 = gint.copy();
+       int large = this.isLarger(gint);
+       BrobInt larger;
+       BrobInt smaller;
 
+       if(large >= 0) {
+           larger = this.copy();
+           smaller = gint.copy();
+       } else {
+           larger = gint.copy();
+           smaller = this.copy();
+           if (larger.sign == 0) {
+               larger.sign = 1;
+           } else {
+               larger.sign = 0;
+           }
+       }
+       byte[] difference = new byte[larger.byteVersion.length + 1];
+       int check = 0;
+       //  ONLY ARG(2ND) IS NEGATIVE [ 4-(-4) = 4 + 4 = 8]
+       if ((s2.sign == 1) && (s1.sign == 0)){
+           s2.sign = 0;
+           return s1.addByte(s2);
+       }
+       //  ONLY THIS(1ST) IS NEGATIVE [ (-4)-2 = -4 + -2 = -6]
+       if ((s2.sign == 0) && (s1.sign == 1)) {
+           s2.sign = 1;
+           return s1.addByte(s2);
+       }
+       //  BOTH NEGATIVE [(-5)-(-4) = -5 + 4 = -1 ~ TAKES SIGN OF BIGGEST VALUE]
+           for(int i=0; i < larger.byteVersion.length; i++){
+               if( i < smaller.byteVersion.length) {
+                   check = larger.byteVersion[i] - smaller.byteVersion[i];
+                   if (check < 0 ){
+                       larger.byteVersion[i+1] -=  1;
+                       difference[i] = (byte)((check + 10 ));
+                   } else {
+                       difference[i] = (byte)(check);
+                   }
+               } else {
+                   if (larger.byteVersion[i] == -1 && i+1 != larger.byteVersion.length) {
+                       larger.byteVersion[i+1] -= 1;
+                       difference[i] = (byte)(9);
+                   } else {
+                       difference[i] = larger.byteVersion[i];
+                   }
+               }
 
-// Both negative 1st is larger in absolute value
-// Both negative 1st is smaller in absolute value
-// ONE positive ONE negative
+           }
+           for (int j=difference.length-1; j >= 0; j --) {
+               result += difference[j];
+           }
+           result = result.replaceFirst("^0+(?!$)", "");
+           if (larger.sign == 1) {
+               result = "-" + result;
+           }
+           System.out.println(result);
+           return new BrobInt(result);
+       }
 
-    return new BrobInt(result);
-   }
-
-  /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-   *  Method to subtract the value of a BrobIntk passed as argument to this BrobInt using int array
-   *  @param  gint         BrobInt to subtract from this
-   *  @return BrobInt that is the difference of the value of this BrobInt and the one passed in
-   *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-   public BrobInt subtractInt( BrobInt gint ) {
-      throw new UnsupportedOperationException( "\n         Sorry, that operation is not yet implemented." );
-      //   can get rid of this but change tester and include that in git so he runs my tester
-   }
+    //     BrobInt item;
+    //     if (gint.sign == 0){
+    //         item = new BrobInt("-" + gint.internalValue);
+    //     } else {
+    //         System.out.println("internal " + gint.internalValue.substring);
+    //         item = new BrobInt(gint.internalValue.substring(1, internalValue.length()));
+    //         System.out.println(item);
+    //     }
+    //     return this.addByte(item);
+       //
+    //    }
 
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
    *  Method to multiply the value of a BrobIntk passed as argument to this BrobInt
@@ -291,6 +345,7 @@ public class BrobInt {
       System.out.println( Arrays.toString( d ) );
    }
 
+
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
    *  the main method redirects the user to the test class
    *  @param  args  String array which contains command line arguments
@@ -309,5 +364,9 @@ public class BrobInt {
 
     //   System.out.println(bi.toString());
     //   System.exit( 0 );
+   }
+
+   public BrobInt copy() {
+       return new BrobInt(this.toString());
    }
 }
