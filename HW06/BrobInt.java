@@ -162,6 +162,11 @@ public class BrobInt {
        return new BrobInt(result);
    }
 
+   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    *  Method to
+    *  @param  gint         BrobInt to add to this
+    *  @return
+    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
    public int isLarger(BrobInt gint) {
        if (this.byteVersion.length > gint.byteVersion.length) {
            return 1;
@@ -248,26 +253,66 @@ public class BrobInt {
            return new BrobInt(result);
        }
 
-    //     BrobInt item;
-    //     if (gint.sign == 0){
-    //         item = new BrobInt("-" + gint.internalValue);
-    //     } else {
-    //         System.out.println("internal " + gint.internalValue.substring);
-    //         item = new BrobInt(gint.internalValue.substring(1, internalValue.length()));
-    //         System.out.println(item);
-    //     }
-    //     return this.addByte(item);
-       //
-    //    }
-
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
    *  Method to multiply the value of a BrobIntk passed as argument to this BrobInt
    *  @param  gint         BrobInt to multiply by this
    *  @return BrobInt that is the product of the value of this BrobInt and the one passed in
    *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
    public BrobInt multiply( BrobInt gint ) {
-      throw new UnsupportedOperationException( "\n         Sorry, that operation is not yet implemented." );
-   }
+       String result = "";
+       byte[] smaller;
+       byte[] larger;
+       byte carry = 0;
+       if(this.byteVersion.length > gint.byteVersion.length){
+           larger = new byte[this.byteVersion.length];
+           smaller = new byte[gint.byteVersion.length];
+           for (int i=0; i < this.byteVersion.length; i++) {
+               larger[i] = this.byteVersion[i];
+           }
+           for (int i=0; i < gint.byteVersion.length; i++) {
+               smaller[i] = gint.byteVersion[i];
+           }
+       }
+       else {
+           larger = new byte[gint.byteVersion.length];
+           smaller = new byte[this.byteVersion.length];
+           for (int i=0; i < gint.byteVersion.length; i++) {
+               larger[i] = gint.byteVersion[i];
+           }
+           for (int i=0; i < this.byteVersion.length; i++) {
+               smaller[i] = this.byteVersion[i];
+           }
+       }
+
+       byte[] product = new byte[smaller.length + larger.length + 1];
+       for (int i=0; i < product.length; i ++) {
+           product[i] = 0;
+       }
+       for (int i=0; i < smaller.length; i++){
+           int k = i;
+           for (int j = 0; j < larger.length; j++){
+               product[k] = (byte)((larger[j] * smaller[i]) + product[k]);
+               if(product[k] > 9){
+                   carry = (byte)(product[k] / 10);
+                   product[k] = (byte)(product[k] % 10);
+               } else {
+                   carry = 0;
+               }
+               product[k+1] += carry;
+
+               k++;
+           }
+       }
+
+    for (int i=product.length-1; i >= 0; i--) {
+        result += product[i];
+    }
+    result = result.replaceFirst("^0+(?!$)", "");
+    if (gint.sign != this.sign) {
+        result = "-" + result;
+    }
+    return new BrobInt(result);
+}
 
   /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
    *  Method to divide the value of this BrobIntk by the BrobInt passed as argument
