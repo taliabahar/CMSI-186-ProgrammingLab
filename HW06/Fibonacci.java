@@ -1,8 +1,10 @@
 /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  * File name  :  Fibonacci.java
  * Purpose    :  Find the "nth" Fibonacci number given an argument, using BrobInt class
- * @author    :  B.J. Johnson
+ * @author    :  B.J. Johnson (skeleton)
  * Date       :  2017-04-17
+ * @author    :  B.J. Johnson (skeleton)
+ * Date       :  2018-04-18
  * Description:  @see <a href='http://bjohnson.lmu.build/cmsi186web/homework06.html'>Assignment Page</a>
  * Notes      :  None
  * Warnings   :  None
@@ -33,7 +35,17 @@ public class Fibonacci {
    private static final  int BAD_CMD_LINE_ARG = -2;
 
    public Fibonacci() {
-      super();
+       super();
+   }
+
+   public BrobInt doFibonacci(BrobInt goTo) {
+       if (goTo.isLarger(BrobInt.ZERO) == 0) {
+           return BrobInt.ZERO;
+       }
+       if (goTo.isLarger(BrobInt.ONE) == 0 || goTo.isLarger(BrobInt.TWO) == 0) {
+           return BrobInt.ONE;
+       }
+       return doFibonacci(goTo.subtractByte(BrobInt.ONE)).addByte(doFibonacci(goTo.subtractByte(BrobInt.TWO)));
    }
 
    public static void main( String[] args ) {
@@ -73,7 +85,8 @@ public class Fibonacci {
       }
 
       System.out.println( "\n\n   Starting from zero, the " + maxCount + cardinality + " Fibonacci number is: " );
-
+      Fibonacci x = new Fibonacci();
+      System.out.println(x.doFibonacci(new BrobInt(args[0])));
      // NOTE: you may want to handle the first and second Fibonacc numbers as 'special cases'...
 
      // NOTE: you WILL need to initialize your BrobInts to keep track of things....
