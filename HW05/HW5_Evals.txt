@@ -13,31 +13,31 @@ A total of one point each for the following, except where noted):
 
 class Ball           : Class file exists                   -  1 point
 constructor          : exists, initializes class           -  1 point
-getSpeed             : exists in some forme and works      -  1 point
-getPosition          : exists in some forme and works      -  1 point
-updateSpeed          : exists in some forme and works      -  1 point
-updatePosition       : exists in some forme and works      -  1 point
-isOutOfBounds        : exists in some forme and works      -  1 point
-toString             : exists in some forme and works      -  1 point
+getSpeed             : exists in some form and works      -  1 point
+getPosition          : exists in some form and works      -  1 point
+updateSpeed          : exists in some form and works      -  1 point
+updatePosition       : exists in some form and works      -  1 point
+isOutOfBounds        : exists in some form and works      -  1 point
+toString             : exists in some form and works      -  1 point
 main(tests)          : exists; has at least one test       -  1 point
 
 class Timer          : Class file exists                   -  1 point
 constructor          : exists, initializes class           -  1 point
-tick                 : exists in some forme and works      -  1 point
-toString             : exists in some forme and works      -  1 point
+tick                 : exists in some form and works      -  1 point
+toString             : exists in some form and works      -  1 point
 main(tests)          : exists, has at least one test       -  1 point
 
 class SoccerSim      : Class file exists                   -  1 point
 constructor          : exists, initializes class           -  1 point
-validateArgs         : exists in some forme and works      -  1 point
-report               : exists in some forme and works      -  1 point
-collision detect     : exists in some forme and works      -  1 point
+validateArgs         : exists in some form and works      -  1 point
+report               : exists in some form and works      -  1 point
+collision detect     : exists in some form and works      -  1 point
 main                 : exists, runs simulation             -  1 point
 sim param checks     : checks parameters (2 total/8 tests) -  4/8 = 1 out of 2 points
    failed one argument check
    failed negative time slice check
    failed too large time slice check
-   failed zero second time slace check
+   failed zero second time slice check
 
 test comes to rest   : all balls reach zero velocity       -  1 point
 test collision       : two balls collide stopping sim      -  1 point
@@ -49,4 +49,3 @@ Coding Style         : alignments, well crafted            -  5 points
 Total 33 out of 34 = 97.06% which is an A-plus
 
 Nice work!
-
