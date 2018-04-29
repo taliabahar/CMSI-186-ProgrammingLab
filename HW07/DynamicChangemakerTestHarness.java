@@ -102,7 +102,7 @@ public class DynamicChangemakerTestHarness {
    public static void test_USA() {
 
       int[] usaDenominations  = new int[] { 25, 10, 5, 1 };
-      Tuple result;
+      Tuple result = null;
 
       System.out.println( "\n\n  TESTING TO FIND OPTIMAL SOLUTION TO MAKING 99 cents USING US COINS" );
       System.out.println( "  ==================================================================" );
