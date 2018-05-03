@@ -4,12 +4,13 @@
  * @author    :  Professor Don Murphy
  * @author    :  B.J. Johnson totally ripped off from the original
  * Date       :  2017-04-19
+ * @author    :  Talia Bahar totally ripped off from B.J. Johnson
+ * Date       :  2018-04-29
  * Description:  This program provides a test harness for running tests to verify correct operaion of the
  *                "ChangeMaker.java" class.  This class is intended to be used as part of homework 7, the
  *                coin changemaker, which is a "Dynamic Programming" algorithm.
  * Notes      :  None
  * Warnings   :  None
- *
  *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  * Revision History
  * ================
@@ -59,7 +60,7 @@ public class DynamicChangemakerTestHarness {
       System.out.println( "\n\n  TESTING CHANGEMAKER PROGRAM FUNCTIONALITY" +
                           "\n  =========================================" );
 
-      test_USA();
+      test_USA();              //1,5,10,25
       test_Euros();            // 1,2,5,10,20,50
       test_SwissFrancs();      // 5,10,20,50 (NO 1 CENT COIN!)
 
